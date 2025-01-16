@@ -1,0 +1,11 @@
+/* master-layout.component.css */
+.master-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+  .content {
+    width: 100%;
+    background-color: #f4f4f4;
+  }

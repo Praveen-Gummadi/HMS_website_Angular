@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/app/authentication/signup-details/signup-details.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1736925028680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736925048185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,31 @@\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent {\r\n+  detailsForm: FormGroup;\r\n \r\n+  constructor(private fb: FormBuilder) {\r\n+    this.detailsForm = this.fb.group({\r\n+      title: ['Mr', Validators.required],\r\n+      firstName: ['', Validators.required],\r\n+      middleName: [''],\r\n+      lastName: ['', Validators.required],\r\n+      gender: ['', Validators.required],\r\n+      dob: ['', Validators.required],\r\n+      age: ['', Validators.required],\r\n+      email: ['', [Validators.required, Validators.email]],\r\n+      address: [''],\r\n+      city: [''],\r\n+      state: [''],\r\n+      zip: [''],\r\n+      country: [''],\r\n+      referredBy: [''],\r\n+    });\r\n+  }\r\n+\r\n+  onSubmit() {\r\n+    if (this.detailsForm.valid) {\r\n+      console.log('Form Data:', this.detailsForm.value);\r\n+    }\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1736925060777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import { Component } from '@angular/core';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n+import { SharedModule } from '../../shared/shared.module';\r\n \r\n @Component({\r\n   selector: 'app-signup-details',\r\n   standalone: true,\r\n-  imports: [],\r\n+  imports: [SharedModule],\r\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent {\r\n"
+                },
+                {
+                    "date": 1736932473138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Component } from '@angular/core';\r\n+import { Component, OnInit } from '@angular/core';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n import { SharedModule } from '../../shared/shared.module';\r\n \r\n @Component({\r\n@@ -30,8 +30,29 @@\n       referredBy: [''],\r\n     });\r\n   }\r\n \r\n+  ngOnInit(): void {\r\n+    this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n+      if (dob) {\r\n+        const age = this.calculateAge(dob);\r\n+        this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n+      }\r\n+    });\r\n+  }\r\n+\r\n+  calculateAge(dob: string): number {\r\n+    const today = new Date();\r\n+    const birthDate = new Date(dob);\r\n+    let age = today.getFullYear() - birthDate.getFullYear();\r\n+    const monthDiff = today.getMonth() - birthDate.getMonth();\r\n+\r\n+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n+      age--;\r\n+    }\r\n+    return age;\r\n+  }\r\n+\r\n   onSubmit() {\r\n     if (this.detailsForm.valid) {\r\n       console.log('Form Data:', this.detailsForm.value);\r\n     }\r\n"
+                },
+                {
+                    "date": 1736932500866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   imports: [SharedModule],\r\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n-export class SignupDetailsComponent {\r\n+export class SignupDetailsComponent implements OnInit {\r\n   detailsForm: FormGroup;\r\n \r\n   constructor(private fb: FormBuilder) {\r\n     this.detailsForm = this.fb.group({\r\n"
+                },
+                {
+                    "date": 1736936248300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { Component, OnInit } from '@angular/core';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n import { SharedModule } from '../../shared/shared.module';\r\n+import { SharedDataService } from '../shared-data.service';\r\n \r\n @Component({\r\n   selector: 'app-signup-details',\r\n   standalone: true,\r\n"
+                },
+                {
+                    "date": 1736936298421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n   detailsForm: FormGroup;\r\n \r\n-  constructor(private fb: FormBuilder) {\r\n+  constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n       firstName: ['', Validators.required],\r\n       middleName: [''],\r\n"
+                },
+                {
+                    "date": 1736936398628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \r\n   constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n-      firstName: ['', Validators.required],\r\n+      name: ['', Validators.required],\r\n       middleName: [''],\r\n       lastName: ['', Validators.required],\r\n       gender: ['', Validators.required],\r\n       dob: ['', Validators.required],\r\n"
+                },
+                {
+                    "date": 1736936443045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,28 @@\n       referredBy: [''],\r\n     });\r\n   }\r\n \r\n+  // ngOnInit() {\r\n+  //   // Get the form data from the service\r\n+  //   const formData = this.sharedDataService.getFormData();\r\n+  //   if (formData) {\r\n+  //     this.detailsForm.patchValue(formData); // Autofill the form fields\r\n+  //   }\r\n+  // }\r\n+\r\n   ngOnInit(): void {\r\n     this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n       if (dob) {\r\n         const age = this.calculateAge(dob);\r\n         this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n       }\r\n     });\r\n+\r\n+    const formData = this.sharedDataService.getFormData();\r\n+    if (formData) {\r\n+      this.detailsForm.patchValue(formData);\r\n+    }\r\n   }\r\n \r\n   calculateAge(dob: string): number {\r\n     const today = new Date();\r\n"
+                },
+                {
+                    "date": 1736938905268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   //     this.detailsForm.patchValue(formData); // Autofill the form fields\r\n   //   }\r\n   // }\r\n \r\n-  ngOnInit(): void {\r\n+  ngOnInit() {\r\n     this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n       if (dob) {\r\n         const age = this.calculateAge(dob);\r\n         this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n"
+                },
+                {
+                    "date": 1737004863815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { Component, OnInit } from '@angular/core';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n import { SharedModule } from '../../shared/shared.module';\r\n import { SharedDataService } from '../shared-data.service';\r\n+import { RouterLink } from '@angular/router';\r\n \r\n @Component({\r\n   selector: 'app-signup-details',\r\n   standalone: true,\r\n-  imports: [SharedModule],\r\n+  imports: [SharedModule, RouterLink],\r\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n"
+                }
+            ],
+            "date": 1736925028680,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-signup-details',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './signup-details.component.html',\r\n  styleUrl: './signup-details.component.scss'\r\n})\r\nexport class SignupDetailsComponent {\r\n\r\n}\r\n"
+        }
+    ]
+}

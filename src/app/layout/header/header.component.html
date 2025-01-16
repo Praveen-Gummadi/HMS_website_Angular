@@ -1,0 +1,51 @@
+<div class="main-container">
+  <!-- Header Section -->
+  <header>
+    <mat-toolbar class="header-toolbar" color="primary">
+      <div class="logo-section">
+        <img src="logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="spacer"></div>
+      <div class="menu-section">
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Hindi</button>
+          <button mat-menu-item>Telugu</button>
+        </mat-menu>
+        <button class="language" mat-button [matMenuTriggerFor]="menu">English▼</button>
+        <div class="contact-info">
+          <div>24/7 APPOINTMENT HELPLINE</div>
+          <div>+91 40 4567 4567</div>
+        </div>
+        <div class="contact-info">
+          <div>INTERNATIONAL</div>
+          <div>+91 40 6600 0066</div>
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <mat-toolbar class="nav-toolbar">
+      <nav class="nav-menu">
+        <a mat-button routerLink="/home">
+          <mat-icon>home</mat-icon> Home
+        </a>
+        <a mat-button routerLink="/doctors">
+          <mat-icon>groups</mat-icon> Doctors
+        </a>
+        <a mat-button routerLink="/specialities">
+          <mat-icon>local_hospital</mat-icon> Specialities
+        </a>
+        <a mat-button routerLink="/investigations">
+          <mat-icon>policy</mat-icon> Investigations
+        </a>
+        <a mat-button [routerLink]="'/signin'">
+          <mat-icon>account_circle</mat-icon> My Account
+        </a>
+      </nav>
+    </mat-toolbar>
+  </header>
+
+  <!-- Content Section -->
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

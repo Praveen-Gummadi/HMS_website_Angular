@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/layout/header/header.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1736512960037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1736512960037,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../shared/shared.module';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { RouterLink } from '@angular/router';\r\n\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [SharedModule, RouterOutlet, RouterLink],\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss'\r\n})\r\nexport class HeaderComponent {\r\n\r\n}\r\n"
+        }
+    ]
+}

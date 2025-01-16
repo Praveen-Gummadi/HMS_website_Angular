@@ -1,0 +1,282 @@
+{
+    "sourceFile": "src/app/authentication/signup/signup.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 66,
+            "patches": [
+                {
+                    "date": 1736918180022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736919031050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,20 @@\n+.body {\r\n+  background-color: #f7f8f9;\r\n+  margin-bottom: 0;\r\n+}\r\n+\r\n+.logo-section {\r\n+  display: flex;\r\n+  align-items: center;\r\n+  padding: 20px;\r\n+}\r\n+\r\n+.logo {\r\n+  height: 50px;\r\n+  margin-right: 10px;\r\n+}\r\n+\r\n .signup-container {\r\n   max-width: 400px;\r\n   margin: 50px auto;\r\n   padding: 20px;\r\n"
+                },
+                {
+                    "date": 1736920349051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,13 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 400px;\r\n-  margin: 50px auto;\r\n-  padding: 20px;\r\n-  background-color: #ffffff;\r\n-  border-radius: 10px;\r\n-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n+  margin: 20px auto;\r\n+  padding: 10px;\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  align-items: center;\r\n \r\n   h1 {\r\n     text-align: center;\r\n     font-size: 24px;\r\n"
+                },
+                {
+                    "date": 1736920392065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,12 @@\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n   h1 {\r\n+    font-size: 22px;\r\n+    font-weight: bold;\r\n+    margin-bottom: 5px;\r\n     text-align: center;\r\n-    font-size: 24px;\r\n-    margin-bottom: 20px;\r\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n"
+                },
+                {
+                    "date": 1736920409369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n-    margin-bottom: 20px;\r\n+    margin-bottom: 5px;\r\n   }\r\n \r\n   .sms-note {\r\n     font-size: 12px;\r\n"
+                },
+                {
+                    "date": 1736920436845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n   .sms-note {\r\n     font-size: 12px;\r\n     color: #666;\r\n-    margin-bottom: 20px;\r\n+    margin-bottom: 5px;\r\n     display: block;\r\n   }\r\n \r\n   button {\r\n"
+                },
+                {
+                    "date": 1736920466859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,6 +44,8 @@\n   button {\r\n     width: 100%;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n+    margin-bottom: 5px;\r\n+    border-radius: 5px;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1736920537224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,4 +48,18 @@\n     margin-bottom: 5px;\r\n     border-radius: 5px;\r\n   }\r\n }\r\n+\r\n+.img-section {\r\n+  position: fixed;\r\n+  bottom: 0;\r\n+  left: 0;\r\n+  width: 100%;\r\n+  display: flex;\r\n+  justify-content: center;\r\n+\r\n+  .image {\r\n+    max-width: 100%;\r\n+    height: auto;\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1736920613879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n+  flex-direction: row;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736920692259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n+    height: 50%;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n   .sms-note {\r\n"
+                },
+                {
+                    "date": 1736920703999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n-    height: 50%;\r\n+    height: 50px;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n   .sms-note {\r\n"
+                },
+                {
+                    "date": 1736920715151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n-    height: 50px;\r\n+    height: 20px;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n   .sms-note {\r\n"
+                },
+                {
+                    "date": 1736920754545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,8 @@\n     text-align: center;\r\n   }\r\n \r\n   .form-field {\r\n-    width: 100%;\r\n     height: 20px;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1736920761758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n     text-align: center;\r\n   }\r\n \r\n   .form-field {\r\n+    width: 100%;\r\n     height: 20px;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1736920769321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n   }\r\n \r\n   .form-field {\r\n     width: 100%;\r\n-    height: 20px;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n   .sms-note {\r\n"
+                },
+                {
+                    "date": 1736920780543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \r\n .signup-container {\r\n   max-width: 400px;\r\n   margin: 20px auto;\r\n-  padding: 10px;\r\n+  padding: 0px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n"
+                },
+                {
+                    "date": 1736920793688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 400px;\r\n-  margin: 20px auto;\r\n-  padding: 0px;\r\n+  margin: 5px auto;\r\n+  padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n"
+                },
+                {
+                    "date": 1736920810234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 400px;\r\n-  margin: 5px auto;\r\n+  margin: 50px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736920818411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 400px;\r\n-  margin: 50px auto;\r\n+  margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736920842961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n .signup-container {\r\n   max-width: 400px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n-  display: flex;\r\n+  display:table-column;\r\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n   h1 {\r\n"
+                },
+                {
+                    "date": 1736920857102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n .signup-container {\r\n   max-width: 400px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n-  display:table-column;\r\n-  flex-direction: column;\r\n+  display: flex;\r\n+  flex-direction: row;\r\n   align-items: center;\r\n \r\n   h1 {\r\n     font-size: 22px;\r\n"
+                },
+                {
+                    "date": 1736920863575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   max-width: 400px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n-  flex-direction: row;\r\n+  flex-direction: column;\r\n   align-items: center;\r\n \r\n   h1 {\r\n     font-size: 22px;\r\n"
+                },
+                {
+                    "date": 1736920889559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n \r\n   .form-field {\r\n     width: 100%;\r\n     margin-bottom: 5px;\r\n+    flex-direction: row;\r\n   }\r\n \r\n   .sms-note {\r\n     font-size: 12px;\r\n"
+                },
+                {
+                    "date": 1736920908060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   margin-right: 10px;\r\n }\r\n \r\n .signup-container {\r\n-  max-width: 400px;\r\n+  max-width: 200px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n@@ -32,9 +32,8 @@\n \r\n   .form-field {\r\n     width: 100%;\r\n     margin-bottom: 5px;\r\n-    flex-direction: row;\r\n   }\r\n \r\n   .sms-note {\r\n     font-size: 12px;\r\n"
+                },
+                {
+                    "date": 1736920935962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n   margin-right: 10px;\r\n }\r\n \r\n .signup-container {\r\n-  max-width: 200px;\r\n+  max-width: 400px;\r\n+  max-height: 300px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736920953085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 400px;\r\n-  max-height: 300px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736921094655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n   .sms-note {\r\n     font-size: 12px;\r\n     color: #666;\r\n     margin-bottom: 5px;\r\n+    margin-left: 10px;\r\n     display: block;\r\n   }\r\n \r\n   button {\r\n"
+                },
+                {
+                    "date": 1736921315347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,17 @@\n     margin-bottom: 5px;\r\n     text-align: center;\r\n   }\r\n \r\n-  .form-field {\r\n-    width: 100%;\r\n-    margin-bottom: 5px;\r\n+  .form-row {\r\n+    display: flex;\r\n+    justify-content: space-between;\r\n+    gap: 20px;\r\n+    margin-bottom: 20px;\r\n+\r\n+    .form-field {\r\n+      flex: 1;\r\n+    }\r\n   }\r\n \r\n   .sms-note {\r\n     font-size: 12px;\r\n"
+                },
+                {
+                    "date": 1736921333025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   margin-right: 10px;\r\n }\r\n \r\n .signup-container {\r\n-  max-width: 400px;\r\n+  max-width: 600px;\r\n   margin: 10px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736921431234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  flex-direction: row;\r\n+  display: flex; /* Enable flexbox */\r\n+  flex-direction: row; /* Arrange children in a row */\r\n+  align-items: flex-start; /* Align items at the start vertically */\r\n+  justify-content: space-between; /* Add spacing between children (optional) */\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736921528975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  display: flex; /* Enable flexbox */\r\n-  flex-direction: row; /* Arrange children in a row */\r\n-  align-items: flex-start; /* Align items at the start vertically */\r\n-  justify-content: space-between; /* Add spacing between children (optional) */\r\n+  display: flex;\r\n+  flex-direction: row;\r\n+  align-items: flex-start;\r\n+  // justify-content: space-between;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736921555261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n \r\n   .form-row {\r\n     display: flex;\r\n     justify-content: space-between;\r\n-    gap: 20px;\r\n-    margin-bottom: 20px;\r\n+    gap: 5px;\r\n+    margin-bottom: 5px;\r\n \r\n     .form-field {\r\n       flex: 1;\r\n     }\r\n"
+                },
+                {
+                    "date": 1736921597531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,9 @@\n   }\r\n \r\n   button {\r\n     width: 100%;\r\n+    margin-top: 5px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n     margin-bottom: 5px;\r\n     border-radius: 5px;\r\n"
+                },
+                {
+                    "date": 1736921711495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n     width: 100%;\r\n     margin-top: 5px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n-    margin-bottom: 5px;\r\n+    margin-bottom: 50px;\r\n     border-radius: 5px;\r\n   }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1736921865254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \r\n   .form-row {\r\n     display: flex;\r\n     justify-content: space-between;\r\n-    gap: 5px;\r\n+    gap: 10px;\r\n     margin-bottom: 5px;\r\n \r\n     .form-field {\r\n       flex: 1;\r\n"
+                },
+                {
+                    "date": 1736921898841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin: 10px auto;\r\n-  padding: 10px;\r\n+  padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n"
+                },
+                {
+                    "date": 1736921927510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n \r\n   .form-row {\r\n     display: flex;\r\n     justify-content: space-between;\r\n-    gap: 10px;\r\n+    gap: 20px;\r\n     margin-bottom: 5px;\r\n \r\n     .form-field {\r\n       flex: 1;\r\n"
+                },
+                {
+                    "date": 1736921987447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n   }\r\n \r\n   button {\r\n     width: 100%;\r\n-    margin-top: 5px;\r\n+    margin-top: 10px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n     margin-bottom: 50px;\r\n     border-radius: 5px;\r\n"
+                },
+                {
+                    "date": 1736922239956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  display: flex;\r\n+  // display: flex;\r\n   flex-direction: row;\r\n   align-items: flex-start;\r\n   // justify-content: space-between;\r\n }\r\n"
+                },
+                {
+                    "date": 1736922288376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  // display: flex;\r\n+  display: flex;\r\n   flex-direction: row;\r\n-  align-items: flex-start;\r\n+  align-items: center\r\n   // justify-content: space-between;\r\n }\r\n \r\n .logo-section {\r\n"
+                },
+                {
+                    "date": 1736922299050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n   display: flex;\r\n   flex-direction: row;\r\n-  align-items: center\r\n+  // align-items: flex-start;\r\n   // justify-content: space-between;\r\n }\r\n \r\n .logo-section {\r\n"
+                },
+                {
+                    "date": 1736922308406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n   display: flex;\r\n   flex-direction: row;\r\n-  // align-items: flex-start;\r\n-  // justify-content: space-between;\r\n+  align-items: flex-start;\r\n+  justify-content: space-between;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736922344545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px auto;\r\n+  margin: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922351205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px;\r\n+  // margin: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922362223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  // margin: 10px;\r\n+  margin: 10px 0;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922369429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px 0;\r\n+  margin: 10px 20px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922378316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px 20px;\r\n+  margin: 10px auto;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922396719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin: 10px auto;\r\n+  margin-left: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922405635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px auto;\r\n-  margin-left: 10px;\r\n+  // margin: 10px auto;\r\n+  // margin-left: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922414843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n+  align-self: center;\r\n \r\n   h1 {\r\n     font-size: 22px;\r\n     font-weight: bold;\r\n"
+                },
+                {
+                    "date": 1736922428542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   // margin-left: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n-  align-items: center;\r\n+  align-items:flex-start;\r\n   align-self: center;\r\n \r\n   h1 {\r\n     font-size: 22px;\r\n"
+                },
+                {
+                    "date": 1736922460955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,15 +19,14 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  // margin: 10px auto;\r\n-  // margin-left: 10px;\r\n+  margin: 10px auto;\r\n+  margin-left: 10px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n-  align-items:flex-start;\r\n-  align-self: center;\r\n+  align-items: center;\r\n \r\n   h1 {\r\n     font-size: 22px;\r\n     font-weight: bold;\r\n"
+                },
+                {
+                    "date": 1736922466342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin: 10px auto;\r\n-  margin-left: 10px;\r\n+  margin-left: 50px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922477451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin: 10px auto;\r\n-  margin-left: 50px;\r\n+  margin-left: 120px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922510825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n+  margin-inline: auto;\r\n   margin: 10px auto;\r\n   margin-left: 120px;\r\n   padding: 5px;\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736922516721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin-inline: auto;\r\n-  margin: 10px auto;\r\n-  margin-left: 120px;\r\n+  // margin: 10px auto;\r\n+  // margin-left: 120px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922544244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,10 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin-inline: auto;\r\n-  // margin: 10px auto;\r\n-  // margin-left: 120px;\r\n+  margin: 10px auto;\r\n+  margin-left: 120px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922550245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \r\n .signup-container {\r\n   max-width: 600px;\r\n   margin: 10px auto;\r\n-  margin-left: 120px;\r\n+  margin-left: 150px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1736922691578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n .img-section {\r\n   position: fixed;\r\n   bottom: 0;\r\n   left: 0;\r\n-  width: 100%;\r\n+  width: 80%;\r\n   display: flex;\r\n   justify-content: center;\r\n \r\n   .image {\r\n"
+                },
+                {
+                    "date": 1736922700570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n .img-section {\r\n   position: fixed;\r\n   bottom: 0;\r\n   left: 0;\r\n-  width: 80%;\r\n+  width: 100%;\r\n   display: flex;\r\n   justify-content: center;\r\n \r\n   .image {\r\n"
+                },
+                {
+                    "date": 1736922714228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     display: block;\r\n   }\r\n \r\n   button {\r\n-    width: 100%;\r\n+    width: 80%;\r\n     margin-top: 10px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n     margin-bottom: 50px;\r\n"
+                },
+                {
+                    "date": 1736922732518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,9 @@\n   }\r\n \r\n   button {\r\n     width: 80%;\r\n+    align-self: center;\r\n     margin-top: 10px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n     margin-bottom: 50px;\r\n"
+                },
+                {
+                    "date": 1736922749999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,10 +53,9 @@\n     display: block;\r\n   }\r\n \r\n   button {\r\n-    width: 80%;\r\n-    align-self: center;\r\n+    width: 100%;\r\n     margin-top: 10px;\r\n     padding: 10px;\r\n     font-size: 16px;\r\n     margin-bottom: 50px;\r\n"
+                },
+                {
+                    "date": 1736922765009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 10px auto;\r\n+  margin: 20px auto;\r\n   margin-left: 150px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736922772114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 20px auto;\r\n+  margin: 200px auto;\r\n   margin-left: 150px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736922803410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\r\n \r\n .signup-container {\r\n   max-width: 600px;\r\n-  margin: 200px auto;\r\n+  margin: 40px auto;\r\n   margin-left: 150px;\r\n   padding: 5px;\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1736938379857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,8 +69,9 @@\n   left: 0;\r\n   width: 100%;\r\n   display: flex;\r\n   justify-content: center;\r\n+  z-index: -1;\r\n \r\n   .image {\r\n     max-width: 100%;\r\n     height: auto;\r\n"
+                }
+            ],
+            "date": 1736918180022,
+            "name": "Commit-0",
+            "content": ".signup-container {\r\n  max-width: 400px;\r\n  margin: 50px auto;\r\n  padding: 20px;\r\n  background-color: #ffffff;\r\n  border-radius: 10px;\r\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\r\n\r\n  h1 {\r\n    text-align: center;\r\n    font-size: 24px;\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .form-field {\r\n    width: 100%;\r\n    margin-bottom: 20px;\r\n  }\r\n\r\n  .sms-note {\r\n    font-size: 12px;\r\n    color: #666;\r\n    margin-bottom: 20px;\r\n    display: block;\r\n  }\r\n\r\n  button {\r\n    width: 100%;\r\n    padding: 10px;\r\n    font-size: 16px;\r\n  }\r\n}\r\n"
+        }
+    ]
+}

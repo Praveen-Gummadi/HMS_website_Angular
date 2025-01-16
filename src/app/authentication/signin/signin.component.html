@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="logo-section">
+    <img src="greylogo.png" alt="Logo" class="logo" />
+  </div>
+
+  <div class="sign-in-container">
+    <h1>Sign In</h1>
+
+    <!-- Phone Number Input -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Phone Number</mat-label>
+      <input
+        matInput
+        type="tel"
+        placeholder="+91"
+        [(ngModel)]="mobileNumber"
+        (input)="validateForm()"
+        (keypress)="allowOnlyNumbers($event)"
+        maxlength="14"
+      />
+
+    </mat-form-field>
+
+    <!-- OTP Info -->
+    <p class="info-text">OTP will be sent to this number by SMS.</p>
+
+    <!-- Checkbox -->
+    <mat-checkbox
+      class="checkbox"
+      [(ngModel)]="isWhatsAppChecked"
+    >
+    <p class="checkbox-text">Share health tips, appointment details, and offers with me on WhatsApp</p>
+    </mat-checkbox>
+
+    <!-- Continue Button -->
+    <button
+      mat-flat-button
+      color="primary"
+      class="full-width"
+      [disabled]="!isFormValid"
+      (click)="onContinue()"
+      [routerLink]="'/otp'"
+    >
+      Continue
+    </button>
+  </div>
+
+  <div class="img-section">
+    <img src="signinbottom.png" alt="Logo" class="image" />
+  </div>
+</div>

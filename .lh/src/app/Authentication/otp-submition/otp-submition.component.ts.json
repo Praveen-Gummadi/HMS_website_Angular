@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/authentication/otp-submition/otp-submition.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1736943144983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736943566121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,30 +8,18 @@\n   templateUrl: './otp-submition.component.html',\r\n   styleUrl: './otp-submition.component.scss'\r\n })\r\n export class OtpSubmitionComponent {\r\n-  mobileNumber: string = '+91 ';\r\n+  otp: string = '';\r\n   isWhatsAppChecked: boolean = false;\r\n   isFormValid: boolean = false;\r\n \r\n-  allowOnlyNumbers(event: KeyboardEvent): void {\r\n-    const charCode = event.key.charCodeAt(0);\r\n-    if (charCode < 48 || charCode > 57) {\r\n-      event.preventDefault();\r\n-    }\r\n-  }\r\n-\r\n-  validateForm(): void {\r\n-    this.isFormValid = this.mobileNumber.trim().length >= 10\r\n-  }\r\n-\r\n   onContinue(): void {\r\n-    console.log('Mobile Number:', this.mobileNumber);\r\n+    console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n       // Simulate sending an OTP (Replace this with an actual API call)\r\n-      console.log(`Sending OTP to: ${this.mobileNumber}`);\r\n-      alert(`OTP sent to mobile number ${this.mobileNumber}`);\r\n+      alert(`OTP Submitted: ${this.otp}`);\r\n     } else {\r\n       alert('Please enter a valid mobile number and accept WhatsApp terms.');\r\n     }\r\n     // Add further logic here, e.g., calling an API\r\n"
+                },
+                {
+                    "date": 1736943653401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,12 @@\n   otp: string = '';\r\n   isWhatsAppChecked: boolean = false;\r\n   isFormValid: boolean = false;\r\n \r\n+  validateForm(): void {\r\n+    this.isFormValid = false\r\n+  }\r\n+\r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n"
+                },
+                {
+                    "date": 1736943700076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,15 @@\n   validateForm(): void {\r\n     this.isFormValid = false\r\n   }\r\n \r\n+  allowOnlyNumbers(event: KeyboardEvent): void {\r\n+    const charCode = event.key.charCodeAt(0);\r\n+    if (charCode < 48 || charCode > 57) {\r\n+      event.preventDefault();\r\n+    }\r\n+  }\r\n+\r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n"
+                },
+                {
+                    "date": 1736943710100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,19 +12,19 @@\n   otp: string = '';\r\n   isWhatsAppChecked: boolean = false;\r\n   isFormValid: boolean = false;\r\n \r\n-  validateForm(): void {\r\n-    this.isFormValid = false\r\n-  }\r\n-\r\n   allowOnlyNumbers(event: KeyboardEvent): void {\r\n     const charCode = event.key.charCodeAt(0);\r\n     if (charCode < 48 || charCode > 57) {\r\n       event.preventDefault();\r\n     }\r\n   }\r\n \r\n+  validateForm(): void {\r\n+    this.isFormValid = false\r\n+  }\r\n+\r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n"
+                },
+                {
+                    "date": 1736943812140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\r\n   }\r\n \r\n   validateForm(): void {\r\n-    this.isFormValid = false\r\n+    this.isFormValid = this.otp.trim().length >= 4\r\n   }\r\n \r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n"
+                },
+                {
+                    "date": 1736944083509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,10 @@\n   validateForm(): void {\r\n     this.isFormValid = this.otp.trim().length >= 4\r\n   }\r\n \r\n+  resendotp() {}\r\n+\r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n"
+                }
+            ],
+            "date": 1736943144983,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../shared/shared.module';\r\n\r\n@Component({\r\n  selector: 'app-otp-submition',\r\n  standalone: true,\r\n  imports: [SharedModule],\r\n  templateUrl: './otp-submition.component.html',\r\n  styleUrl: './otp-submition.component.scss'\r\n})\r\nexport class OtpSubmitionComponent {\r\n  mobileNumber: string = '+91 ';\r\n  isWhatsAppChecked: boolean = false;\r\n  isFormValid: boolean = false;\r\n\r\n  allowOnlyNumbers(event: KeyboardEvent): void {\r\n    const charCode = event.key.charCodeAt(0);\r\n    if (charCode < 48 || charCode > 57) {\r\n      event.preventDefault();\r\n    }\r\n  }\r\n\r\n  validateForm(): void {\r\n    this.isFormValid = this.mobileNumber.trim().length >= 10\r\n  }\r\n\r\n  onContinue(): void {\r\n    console.log('Mobile Number:', this.mobileNumber);\r\n    console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n    if (this.isFormValid) {\r\n      // Simulate sending an OTP (Replace this with an actual API call)\r\n      console.log(`Sending OTP to: ${this.mobileNumber}`);\r\n      alert(`OTP sent to mobile number ${this.mobileNumber}`);\r\n    } else {\r\n      alert('Please enter a valid mobile number and accept WhatsApp terms.');\r\n    }\r\n    // Add further logic here, e.g., calling an API\r\n  }\r\n\r\n}\r\n"
+        }
+    ]
+}

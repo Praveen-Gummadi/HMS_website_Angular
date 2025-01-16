@@ -1,0 +1,110 @@
+{
+    "sourceFile": "src/app/authentication/otp-submition/otp-submition.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1736943146678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1736943192065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n   height: 50px;\r\n   margin-right: 10px;\r\n }\r\n \r\n-.sign-in-container {\r\n+.otp-container {\r\n   max-width: 400px;\r\n   margin: 20px auto;\r\n   padding: 10px;\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736943873099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  // background: url('/19834.jpg') no-repeat center center fixed;\r\n-  // background-size: 1500px;\r\n-  // margin-right: 0;\r\n-  // margin: 0;\r\n-  // padding: 0;\r\n-  // height: 100%;\r\n+  height: 100vh;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n@@ -27,15 +22,8 @@\n   display: flex;\r\n   flex-direction: column;\r\n   align-items: center;\r\n \r\n-  h1 {\r\n-    font-size: 22px;\r\n-    font-weight: bold;\r\n-    margin-bottom: 5px;\r\n-    text-align: center;\r\n-  }\r\n-\r\n   .full-width {\r\n     width: 100%;\r\n     margin-bottom: 5px;\r\n   }\r\n"
+                },
+                {
+                    "date": 1736943888438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  height: 100vh;\r\n+  height: 80vh;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736943897554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  height: 80vh;\r\n+  height: 90vh;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1736944208219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .body {\r\n   background-color: #f7f8f9;\r\n   margin-bottom: 0;\r\n-  height: 90vh;\r\n+  height: 80vh;\r\n }\r\n \r\n .logo-section {\r\n   display: flex;\r\n@@ -27,8 +27,13 @@\n     width: 100%;\r\n     margin-bottom: 5px;\r\n   }\r\n \r\n+  .resend-section {\r\n+    display: flex;\r\n+    flex-direction: row;\r\n+  }\r\n+\r\n   .info-text {\r\n     color: #0055bd;\r\n     font-size: 12px;\r\n     margin-bottom: 5px;\r\n"
+                },
+                {
+                    "date": 1736944234025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,11 @@\n \r\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n+    button {\r\n+      size: 20px;\r\n+    }\r\n   }\r\n \r\n   .info-text {\r\n     color: #0055bd;\r\n"
+                },
+                {
+                    "date": 1736944240634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,8 @@\n \r\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n-    button {\r\n-      size: 20px;\r\n-    }\r\n   }\r\n \r\n   .info-text {\r\n     color: #0055bd;\r\n"
+                },
+                {
+                    "date": 1736944256269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n \r\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n+    padding: 0;\r\n   }\r\n \r\n   .info-text {\r\n     color: #0055bd;\r\n"
+                },
+                {
+                    "date": 1736944267662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \r\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n-    padding: 0;\r\n+    margin: 0;\r\n   }\r\n \r\n   .info-text {\r\n     color: #0055bd;\r\n"
+                },
+                {
+                    "date": 1736944342115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,16 +31,16 @@\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n     margin: 0;\r\n-  }\r\n \r\n-  .info-text {\r\n-    color: #0055bd;\r\n-    font-size: 12px;\r\n-    margin-bottom: 5px;\r\n-    align-self: first baseline;\r\n-    margin-left: 10px;\r\n+    .info-text {\r\n+      color: #0055bd;\r\n+      font-size: 12px;\r\n+      margin-bottom: 5px;\r\n+      align-self: first baseline;\r\n+      margin-left: 10px;\r\n+    }\r\n   }\r\n \r\n   .checkbox {\r\n     margin-bottom: 5px;\r\n"
+                },
+                {
+                    "date": 1736944364840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,8 @@\n       color: #0055bd;\r\n       font-size: 12px;\r\n       margin-bottom: 5px;\r\n       align-self: first baseline;\r\n-      margin-left: 10px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944380469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n     .info-text {\r\n       color: #0055bd;\r\n       font-size: 12px;\r\n       margin-bottom: 5px;\r\n-      align-self: first baseline;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944398558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n     margin: 0;\r\n+    gap: 10px;\r\n \r\n     .info-text {\r\n       color: #0055bd;\r\n       font-size: 12px;\r\n"
+                },
+                {
+                    "date": 1736944415950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,11 @@\n       color: #0055bd;\r\n       font-size: 12px;\r\n       margin-bottom: 5px;\r\n     }\r\n+    button {\r\n+      font-size: small;\r\n+    }\r\n   }\r\n \r\n   .checkbox {\r\n     margin-bottom: 5px;\r\n"
+                },
+                {
+                    "date": 1736944429239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n+      width: 10px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944434646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      width: 10px;\r\n+      width: 20px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944442272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      width: 20px;\r\n+      width: 40px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944450415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      width: 40px;\r\n+      width: 80px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944461273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      width: 80px;\r\n+      width: 150px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944470549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,8 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      width: 150px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944479269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n+      height: 20px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944486034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n       margin-bottom: 5px;\r\n     }\r\n     button {\r\n       font-size: small;\r\n-      height: 20px;\r\n+      height: 30px;\r\n     }\r\n   }\r\n \r\n   .checkbox {\r\n"
+                },
+                {
+                    "date": 1736944507124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n   .resend-section {\r\n     display: flex;\r\n     flex-direction: row;\r\n     margin: 0;\r\n+    margin-bottom: 10px;\r\n     gap: 10px;\r\n \r\n     .info-text {\r\n       color: #0055bd;\r\n"
+                }
+            ],
+            "date": 1736943146678,
+            "name": "Commit-0",
+            "content": ".body {\r\n  background-color: #f7f8f9;\r\n  margin-bottom: 0;\r\n  // background: url('/19834.jpg') no-repeat center center fixed;\r\n  // background-size: 1500px;\r\n  // margin-right: 0;\r\n  // margin: 0;\r\n  // padding: 0;\r\n  // height: 100%;\r\n}\r\n\r\n.logo-section {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 20px;\r\n}\r\n\r\n.logo {\r\n  height: 50px;\r\n  margin-right: 10px;\r\n}\r\n\r\n.sign-in-container {\r\n  max-width: 400px;\r\n  margin: 20px auto;\r\n  padding: 10px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n\r\n  h1 {\r\n    font-size: 22px;\r\n    font-weight: bold;\r\n    margin-bottom: 5px;\r\n    text-align: center;\r\n  }\r\n\r\n  .full-width {\r\n    width: 100%;\r\n    margin-bottom: 5px;\r\n  }\r\n\r\n  .info-text {\r\n    color: #0055bd;\r\n    font-size: 12px;\r\n    margin-bottom: 5px;\r\n    align-self: first baseline;\r\n    margin-left: 10px;\r\n  }\r\n\r\n  .checkbox {\r\n    margin-bottom: 5px;\r\n    font-size: 14px;\r\n  }\r\n\r\n  .checkbox-text {\r\n    color: #646a6e;\r\n    font-size: 12px;\r\n  }\r\n\r\n  button {\r\n    height: 48px;\r\n    font-size: 16px;\r\n    margin-bottom: 5px;\r\n    border-radius: 5px;\r\n  }\r\n}\r\n\r\n.img-section {\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n  z-index: -1;\r\n\r\n  .image {\r\n    max-width: 100%;\r\n    height: auto;\r\n  }\r\n}\r\n"
+        }
+    ]
+}

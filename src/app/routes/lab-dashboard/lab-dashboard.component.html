@@ -1,0 +1,69 @@
+<header>
+  <div class="search-container">
+    <mat-form-field class="location-field" appearance="outline">
+        <mat-label>Location</mat-label>
+        <input matInput [matAutocomplete]="auto" placeholder="Select Location" value="Bowenpally Police..." />
+        <mat-icon matSuffix>location_on</mat-icon>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of locations" [value]="option">
+                {{ option }}
+            </mat-option>
+        </mat-autocomplete>
+
+    </mat-form-field>
+
+    <mat-form-field class="searchbox" appearance="outline">
+      <mat-label>Search for Lab Test, Scan & Health Checkup Packages</mat-label>
+      <input
+        matInput
+        type="search"
+        placeholder="Search for Lab Test, Scan & Health Checkup Packages"
+      />
+      <button mat-icon-button matSuffix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+
+
+  <div class="cart-item">
+    <div class="heading">
+        <h3>Book Lab Tests</h3>
+    </div>
+    <div class="cart-button">
+        <button mat-raised-button color="primary"  [routerLink]="'/cart'">
+            <div class="cart-icon-container">
+              <mat-icon>shopping_cart</mat-icon>
+                <span class="badge">{{ ItemCount }}</span>
+                <span>Test</span>
+            </div>
+        </button>
+    </div>
+  </div>
+</header>
+
+
+<div class="card" *ngFor="let item of MedCheckUpService">
+  <mat-card class="card-container" appearance="outlined">
+      <mat-card-content class="flex-container">
+          <div class="leftside">
+              <mat-card-title>{{ item.MedService }}</mat-card-title>
+              <p class="">{{ item.Reports }}</p>
+              <p><mat-icon>home</mat-icon>Available at: {{ item.Available }}</p>
+          </div>
+
+          <div class="reightside">
+            <div class="content">
+              <p><s>₹{{ item.Price.Price }}</s></p>
+              <p>{{ item.Price.Discount }}</p>
+              ₹{{ item.Price.FinalPrice }}
+            </div>
+            <button class="matbutton" mat-raised-button color="primary" (click)="addServiceToCard(item.id)">
+              <mat-icon>add_circle</mat-icon>Add
+            </button>
+          </div>
+
+      </mat-card-content>
+  </mat-card>
+</div>

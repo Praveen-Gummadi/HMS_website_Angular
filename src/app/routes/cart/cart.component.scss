@@ -1,0 +1,666 @@
+/* Toolbar Styles */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.account-button {
+  color: white;
+  :hover{
+    transform: scale(1.09);
+  }
+
+}
+
+/* Second Line Toolbar */
+.toolbar-second-line {
+  display: flex;
+  align-items: center;
+  // padding: 0 16px;
+  height: 100px;
+}
+
+.back-button:hover{
+transform: scale(1.09);
+}
+
+
+.cart-title {
+  font-size: 16px;
+}
+
+.location-card {
+  text-align:justify;
+  display: flex;
+  align-items: center;
+  background-color: #418fdc;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 80px;
+}
+
+.location-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.location-section mat-icon {
+  padding: 5px;
+  font-size: 24px;
+  color: white;
+}
+
+.location-text {
+  font-size: 12px;
+  color: white;
+  line-height: 1.5;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 300px;
+}
+
+.dropdown-icon {
+  color: white;
+}
+
+/* Cart Section */
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.cart-card {
+  flex: 3;
+  margin-right: 20px;
+  background-color: white;
+}
+
+.summary-card {
+  flex: 1;
+  padding: 20px;
+  gap: 10px;
+  text-align:justify;
+  align-items: center;
+  background-color: white;
+}
+
+.cart-card mat-card-content {
+  padding: 20px;
+}
+
+.item-details p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.item-details mat-icon {
+  margin-right: 5px;
+  color: #1976d2;
+  // vertical-align: middle;
+}
+
+.item-price {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.item-price span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Summary Section */
+.summary-card .amount {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.summary-card button {
+  margin-top: 10px;
+}
+
+.summary-card .disclaimer {
+  margin-top: 50px;
+  color: gray;
+  font-size: 12px;
+}
+
+.summary-card mat-icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.patient-card {
+  // margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.test-card {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.test-name {
+  font-size: 14px;
+  color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.item-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.add-more-tests {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+// .add-another-patient {
+//   margin-top: 16px;
+//   display: flex;
+//   align-items: center;
+// }
+
+
+////////////////////////////
+
+
+.add-another-patient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: white;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  /* Hover effects for richer look */
+  &:hover {
+    background-color: #cbe6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Focus effects for accessibility */
+  &:focus {
+    outline: none;
+  }
+}
+
+.big-icon {
+  font-size: 32px; /* Larger icon size */
+  margin-right: 12px; /* Space between icon and text */
+}
+
+.button-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Container for the button */
+.button-container {
+  justify-content: flex-end;
+  display: flex;
+  padding: 16px;
+}
+
+
+/* step -2 */
+
+
+
+
+/* Home Slot Step Styles */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+
+.home-slot-card,
+.updates-card {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #e0e0e0; /* Light border */
+}
+
+.home-slot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.updates-card {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #e0e0e0; /* Light border */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-slot-card mat-icon {
+  font-size: 20px;
+  color: #1976d2;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.home-slot-card p {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.second-line {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.address-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.address-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.address-type {
+  display: flex;
+  gap: 8px;
+}
+
+.address-type button {
+  white-space: nowrap;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-field {
+  flex: 0 0 40%;
+  min-width: 100px;
+}
+
+.email-field {
+  flex: 0 0 59%;
+  min-width: 150px;
+}
+
+.updates-card mat-form-field {
+  margin-top: 10px;
+}
+
+.updates-card label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+//////// dates css////////////
+
+
+.date-selection-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.date-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.date-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.date-card {
+  width: 100px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .date {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .day {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .status {
+    font-size: 12px;
+    color: #4caf50;
+    margin-top: 8px;
+  }
+}
+
+.selected-date {
+  border: 2px solid #1976d2;
+  background-color: #e3f2fd;
+}
+
+button[mat-icon-button] {
+  color: #1976d2;
+}
+
+
+////////// time slot css /////////
+
+
+.time-slot-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.time-slot-card {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.slot-section {
+  margin-bottom: 24px;
+}
+
+.slot-header {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+
+  mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+    color: #fbc02d;
+  }
+}
+
+.slot-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+button[mat-stroked-button] {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  color: #333;
+  min-width: 120px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+.selected-slot {
+  border: 2px solid #1976d2;
+  background-color: #5faee6;
+}
+
+.time {
+  display: block;
+}
+
+
+////////// payment section //////////
+
+
+.payment-section {
+  max-width: 900px;
+  // margin: 0 auto;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  mat-card {
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    // margin-bottom: 24px;
+  }
+
+  .appointment-card .appointment-info p {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #444;
+    margin: 8px 0;
+
+    mat-icon {
+      margin-right: 8px;
+      font-size: 18px;
+      color: #1976d2;
+    }
+  }
+
+  .appointment-header {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1976d2;
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      margin-right: 8px;
+      font-size: 20px;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .date-time-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .order-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .order-patient {
+      display: flex;
+      align-items: center;
+
+      mat-icon {
+        margin-right: 8px;
+        font-size: 20px;
+        color: #1976d2;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+      }
+    }
+
+    .order-tests {
+      flex: 1;
+      margin-left: 16px;
+
+      mat-icon {
+        color: #1976d2;
+      }
+
+      .test-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+
+        span:first-child {
+          font-size: 14px;
+          color: #333;
+        }
+
+        span:last-child {
+          font-size: 14px;
+          font-weight: bold;
+          color: #1976d2;
+        }
+      }
+    }
+  }
+
+  .total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 16px;
+  }
+}
+
+
+
+

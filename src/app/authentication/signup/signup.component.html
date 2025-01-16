@@ -1,0 +1,78 @@
+<div class="body">
+  <div class="logo-section">
+    <img src="greylogo.png" alt="Logo" class="logo" />
+  </div>
+	<div class="signup-container">
+	  <h1>Sign Up</h1>
+	  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+          <!-- Name -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" formControlName="name" placeholder="Enter your name" />
+            <mat-error *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+            Name is required.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Gender -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+            <mat-option value="">--- Select ---</mat-option>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+            </mat-select>
+            <mat-error *ngIf="signupForm.get('gender')?.invalid && signupForm.get('gender')?.touched">
+            Gender is required.
+            </mat-error>
+          </mat-form-field>
+      </div>
+
+      <div class="form-row">
+          <!-- Email -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="Enter your email" />
+            <mat-error *ngIf="signupForm.get('email')?.invalid">
+            Please enter a valid email.
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Mobile Number -->
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Mobile No</mat-label>
+            <input matInput type="tel" formControlName="mobile" placeholder="Enter your mobile number" />
+            <mat-error *ngIf="signupForm.get('mobile')?.invalid && signupForm.get('mobile')?.touched">
+            Mobile number is required.
+            </mat-error>
+          </mat-form-field>
+      </div>
+
+
+		<small class="sms-note">OTP will be sent to this number by SMS.</small>
+
+		<!-- WhatsApp Checkbox -->
+		<mat-checkbox formControlName="whatsappOptIn">
+		  Share health tips, appointment details, and offers with me on WhatsApp
+		</mat-checkbox>
+
+		<!-- Submit Button -->
+		<button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="signupForm.invalid"
+      [routerLink]="'/signupdetails'">
+		  Continue
+		</button>
+	  </form>
+	</div>
+
+</div>
+
+<div class="img-section">
+  <img src="signinbottom.png" alt="Logo" class="image" />
+</div>
