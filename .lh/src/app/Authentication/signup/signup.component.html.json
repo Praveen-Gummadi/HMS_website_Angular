@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1736918138894,
@@ -48,6 +48,10 @@
                 {
                     "date": 1736937247174,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n       <div class=\"form-row\">\r\n           <!-- Name -->\r\n           <mat-form-field appearance=\"outline\" class=\"form-field\">\r\n             <mat-label>Name</mat-label>\r\n-            <input id=\"name\" matInput formControlName=\"name\" placeholder=\"Enter your name\" />\r\n+            <input matInput id=\"name\" formControlName=\"name\" placeholder=\"Enter your name\" />\r\n             <mat-error *ngIf=\"signupForm.get('name')?.invalid && signupForm.get('name')?.touched\">\r\n             Name is required.\r\n             </mat-error>\r\n           </mat-form-field>\r\n"
+                },
+                {
+                    "date": 1737019825689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,10 +63,9 @@\n \t\t<button\r\n       mat-flat-button\r\n       color=\"primary\"\r\n       type=\"submit\"\r\n-      [disabled]=\"signupForm.invalid\"\r\n-      [routerLink]=\"'/signupdetails'\">\r\n+      [disabled]=\"signupForm.invalid\">\r\n \t\t  Continue\r\n \t\t</button>\r\n \t  </form>\r\n \t</div>\r\n"
                 }
             ],
             "date": 1736918138894,

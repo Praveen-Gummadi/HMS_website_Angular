@@ -41,6 +41,9 @@
           <mat-label>Last Name</mat-label>
           <input matInput formControlName="lastName" placeholder="Last Name" />
         </mat-form-field>
+
+        <mat-label class="aadhar-text-field">Enter your name as per Aadhar card</mat-label>
+
       </div>
 
       <!-- Row 2: Gender, DOB, Age -->
@@ -58,7 +61,7 @@
         </div> -->
 
         <!-- Gender -->
-        <mat-form-field appearance="fill" class="form-field">
+        <mat-form-field appearance="fill" class="form-field short">
           <mat-label>Gender</mat-label>
           <mat-select formControlName="gender">
           <mat-option value="">--- Select ---</mat-option>
@@ -71,8 +74,8 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="form-field">
-          <mat-label>DOB</mat-label>
+        <mat-form-field appearance="fill" class="form-field short">
+          <mat-label>Date Of Birth</mat-label>
           <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="Select your date of birth" />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>

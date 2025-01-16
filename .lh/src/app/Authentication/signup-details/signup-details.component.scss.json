@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 116,
+            "activePatchIndex": 140,
             "patches": [
                 {
                     "date": 1736923859829,
@@ -472,6 +472,102 @@
                 {
                     "date": 1737016829401,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,9 +104,9 @@\n       align-items: center;\r\n     }\r\n \r\n     .submit-button {\r\n-      width: 50%;\r\n+      width: 30%;\r\n       &:hover {\r\n         transform: scale(1.2);\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737020431154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n }\r\n \r\n .personal-details-container {\r\n   margin-right: 40px;\r\n-  max-width: 750px;\r\n+  max-width: 800px;\r\n   padding: 10px;\r\n \r\n   .header {\r\n     display: flex;\r\n"
+                },
+                {
+                    "date": 1737020783716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n         }\r\n \r\n         mat-label {\r\n           font-size: small;\r\n+          color: #666;\r\n         }\r\n \r\n         .gender-group {\r\n           display: flex;\r\n"
+                },
+                {
+                    "date": 1737020800853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,8 @@\n         }\r\n \r\n         mat-label {\r\n           font-size: small;\r\n-          color: #666;\r\n         }\r\n \r\n         .gender-group {\r\n           display: flex;\r\n"
+                },
+                {
+                    "date": 1737020875551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-field {\r\n         flex: 1;\r\n+        font-size: small;\r\n \r\n         &.short {\r\n           flex: 0.5;\r\n         }\r\n"
+                },
+                {
+                    "date": 1737020901107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,8 @@\n       margin-bottom: 0;\r\n \r\n       .form-field {\r\n         flex: 1;\r\n-        font-size: small;\r\n \r\n         &.short {\r\n           flex: 0.5;\r\n         }\r\n"
+                },
+                {
+                    "date": 1737021004008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,13 @@\n \r\n       .form-field {\r\n         flex: 1;\r\n \r\n+        .form-label-field {\r\n+          flex: 1;\r\n+          font-size: small;\r\n+        }\r\n+\r\n         &.short {\r\n           flex: 0.5;\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1737021025444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,16 +68,16 @@\n       display: flex;\r\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n+      .form-label-field {\r\n+        flex: 1;\r\n+        font-size: small;\r\n+      }\r\n+\r\n       .form-field {\r\n         flex: 1;\r\n \r\n-        .form-label-field {\r\n-          flex: 1;\r\n-          font-size: small;\r\n-        }\r\n-\r\n         &.short {\r\n           flex: 0.5;\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1737021033664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: small;\r\n+        font-size: smaller;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021040868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: smaller;\r\n+        font-size: 10px;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021063139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,10 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: 10px;\r\n+        font-size: 12px;\r\n+        align-items: center;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021081012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,8 @@\n \r\n       .form-label-field {\r\n         flex: 1;\r\n         font-size: 12px;\r\n-        align-items: center;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021089289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: 12px;\r\n+        font-size: x-small;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021100983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: x-small;\r\n+        font-size: smaller;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021119957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,9 @@\n \r\n       .form-label-field {\r\n         flex: 1;\r\n         font-size: smaller;\r\n+        color: #666;\r\n       }\r\n \r\n       .form-field {\r\n         flex: 1;\r\n"
+                },
+                {
+                    "date": 1737021128395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n         flex: 1;\r\n-        font-size: smaller;\r\n+        font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n       .form-field {\r\n"
+                },
+                {
+                    "date": 1737021144411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n-        flex: 1;\r\n+        flex: 0.5;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021153729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .form-label-field {\r\n-        flex: 0.5;\r\n+        flex: 0.7;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021711123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       display: flex;\r\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n-      .form-label-field {\r\n+      .aadhar-text-field {\r\n         flex: 0.7;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n"
+                },
+                {
+                    "date": 1737021863037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.7;\r\n+        flex: 0.6;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021871664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.6;\r\n+        flex: 0.69;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021879810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.69;\r\n+        flex: 0.68;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021892727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.68;\r\n+        flex: 0.67;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021903484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.67;\r\n+        flex: 0.6;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
+                },
+                {
+                    "date": 1737021912137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n       flex-wrap: wrap;\r\n       margin-bottom: 0;\r\n \r\n       .aadhar-text-field {\r\n-        flex: 0.6;\r\n+        flex: 0.67;\r\n         font-size: 12px;\r\n         color: #666;\r\n       }\r\n \r\n"
                 }
             ],
             "date": 1736923859829,

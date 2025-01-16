@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SharedDataService {
 
-  constructor() { }
-
-  private formData: any = {};
+  private formData: any;
 
   setFormData(data: any) {
     this.formData = data;

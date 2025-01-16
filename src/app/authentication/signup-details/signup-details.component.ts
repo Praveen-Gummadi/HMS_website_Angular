@@ -33,14 +33,6 @@ export class SignupDetailsComponent implements OnInit {
     });
   }
 
-  // ngOnInit() {
-  //   // Get the form data from the service
-  //   const formData = this.sharedDataService.getFormData();
-  //   if (formData) {
-  //     this.detailsForm.patchValue(formData); // Autofill the form fields
-  //   }
-  // }
-
   ngOnInit() {
     this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {
       if (dob) {
@@ -51,7 +43,11 @@ export class SignupDetailsComponent implements OnInit {
 
     const formData = this.sharedDataService.getFormData();
     if (formData) {
-      this.detailsForm.patchValue(formData);
+      this.detailsForm.patchValue({
+        name: formData.name,
+        gender: formData.gender,
+        email: formData.email,
+      });
     }
   }
 

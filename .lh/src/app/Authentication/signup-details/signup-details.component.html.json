@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 75,
             "patches": [
                 {
                     "date": 1736923862168,
@@ -256,6 +256,58 @@
                 {
                     "date": 1737016557446,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,8 +133,9 @@\n       <!-- Submit Button -->\r\n       <div class=\"submit-button-container\">\r\n         <button\r\n          mat-raised-button\r\n+         color=\"primary\"\r\n          class=\"submit-button\"\r\n          [disabled]=\"detailsForm.invalid\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n"
+                },
+                {
+                    "date": 1737020361760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n           </mat-radio-group>\r\n         </div> -->\r\n \r\n         <!-- Gender -->\r\n-        <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n+        <mat-form-field appearance=\"fill\" class=\"form-field short\">\r\n           <mat-label>Gender</mat-label>\r\n           <mat-select formControlName=\"gender\">\r\n           <mat-option value=\"\">--- Select ---</mat-option>\r\n           <mat-option value=\"male\">Male</mat-option>\r\n"
+                },
+                {
+                    "date": 1737020398398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n           </mat-error>\r\n         </mat-form-field>\r\n \r\n         <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n-          <mat-label>DOB</mat-label>\r\n+          <mat-label>Date Of Birth</mat-label>\r\n           <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\" placeholder=\"Select your date of birth\" />\r\n           <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n           <mat-datepicker #picker></mat-datepicker>\r\n         </mat-form-field>\r\n"
+                },
+                {
+                    "date": 1737020486066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n           Gender is required.\r\n           </mat-error>\r\n         </mat-form-field>\r\n \r\n-        <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n+        <mat-form-field appearance=\"fill\" class=\"form-field short\">\r\n           <mat-label>Date Of Birth</mat-label>\r\n           <input matInput [matDatepicker]=\"picker\" formControlName=\"dob\" placeholder=\"Select your date of birth\" />\r\n           <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n           <mat-datepicker #picker></mat-datepicker>\r\n"
+                },
+                {
+                    "date": 1737020628687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,12 @@\n         <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n+\r\n+        <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n+          <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n+        </mat-form-field>\r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n       <div class=\"form-row\">\r\n"
+                },
+                {
+                    "date": 1737020678671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n         </mat-form-field>\r\n \r\n         <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n           <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n+          <input formControlName=\"\" />\r\n         </mat-form-field>\r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n"
+                },
+                {
+                    "date": 1737020690954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         </mat-form-field>\r\n \r\n         <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n           <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n-          <input formControlName=\"\" />\r\n+          <input matInput formControlName=\"\" />\r\n         </mat-form-field>\r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n"
+                },
+                {
+                    "date": 1737020697434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-form-field appearance=\"fill\" class=\"form-field\">\r\n+        <mat-form-field appearance=\"\" class=\"form-field\">\r\n           <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n           <input matInput formControlName=\"\" />\r\n         </mat-form-field>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1737020702621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-form-field appearance=\"\" class=\"form-field\">\r\n+        <mat-form-field class=\"form-field\">\r\n           <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n           <input matInput formControlName=\"\" />\r\n         </mat-form-field>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1737020743703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,12 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-form-field class=\"form-field\">\r\n-          <mat-label>Enter your name as per Aadhaar card</mat-label>\r\n-          <input matInput formControlName=\"\" />\r\n-        </mat-form-field>\r\n+\r\n+          <mat-label class=\"form-field\">Enter your name as per Aadhaar card</mat-label>\r\n+\r\n+\r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n       <div class=\"form-row\">\r\n"
+                },
+                {
+                    "date": 1737020924986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,12 +41,10 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n+        <mat-label\">Enter your name as per Aadhaar card</mat-label>\r\n \r\n-          <mat-label class=\"form-field\">Enter your name as per Aadhaar card</mat-label>\r\n-\r\n-\r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n       <div class=\"form-row\">\r\n"
+                },
+                {
+                    "date": 1737020953802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-label\">Enter your name as per Aadhaar card</mat-label>\r\n+        <mat-label class=\"form-label-field\">Enter your name as per Aadhaar card</mat-label>\r\n \r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n"
+                },
+                {
+                    "date": 1737021416798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-label class=\"form-label-field\">Enter your name as per Aadhaar card</mat-label>\r\n+        <mat-label class=\"aadhar-text-field\">Enter your name as per Aadhaar card</mat-label>\r\n \r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n"
+                },
+                {
+                    "date": 1737021466624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n           <mat-label>Last Name</mat-label>\r\n           <input matInput formControlName=\"lastName\" placeholder=\"Last Name\" />\r\n         </mat-form-field>\r\n \r\n-        <mat-label class=\"aadhar-text-field\">Enter your name as per Aadhaar card</mat-label>\r\n+        <mat-label class=\"aadhar-text-field\">Enter your name as per Aadhar card</mat-label>\r\n \r\n       </div>\r\n \r\n       <!-- Row 2: Gender, DOB, Age -->\r\n"
                 }
             ],
             "date": 1736923862168,

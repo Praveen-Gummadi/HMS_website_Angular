@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1736925028680,
@@ -60,6 +60,18 @@
                 {
                     "date": 1737012437931,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n-  detailsForm: FormGroup | false;\r\n+  detailsForm: FormGroup;\r\n \r\n   constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n"
+                },
+                {
+                    "date": 1737019970434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,19 +40,31 @@\n   //     this.detailsForm.patchValue(formData); // Autofill the form fields\r\n   //   }\r\n   // }\r\n \r\n+  // ngOnInit() {\r\n+  //   this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n+  //     if (dob) {\r\n+  //       const age = this.calculateAge(dob);\r\n+  //       this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n+  //     }\r\n+  //   });\r\n+\r\n+  //   const formData = this.sharedDataService.getFormData();\r\n+  //   if (formData) {\r\n+  //     this.detailsForm.patchValue(formData);\r\n+  //   }\r\n+  // }\r\n+\r\n   ngOnInit() {\r\n-    this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n-      if (dob) {\r\n-        const age = this.calculateAge(dob);\r\n-        this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n-      }\r\n-    });\r\n+    const formData = this.sharedDataService.getFormData();\r\n \r\n-    const formData = this.sharedDataService.getFormData();\r\n     if (formData) {\r\n-      this.detailsForm.patchValue(formData);\r\n+      this.detailsForm.patchValue({\r\n+        name: formData.name,\r\n+        gender: formData.gender,\r\n+        email: formData.email,\r\n+      });\r\n     }\r\n   }\r\n \r\n   calculateAge(dob: string): number {\r\n"
+                },
+                {
+                    "date": 1737021788603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,16 @@\n   //   }\r\n   // }\r\n \r\n   ngOnInit() {\r\n+    this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n+      if (dob) {\r\n+        const age = this.calculateAge(dob);\r\n+        this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n+      }\r\n+    });\r\n+\r\n     const formData = this.sharedDataService.getFormData();\r\n-\r\n     if (formData) {\r\n       this.detailsForm.patchValue({\r\n         name: formData.name,\r\n         gender: formData.gender,\r\n"
+                },
+                {
+                    "date": 1737021840359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,30 +32,8 @@\n       referredBy: [''],\r\n     });\r\n   }\r\n \r\n-  // ngOnInit() {\r\n-  //   // Get the form data from the service\r\n-  //   const formData = this.sharedDataService.getFormData();\r\n-  //   if (formData) {\r\n-  //     this.detailsForm.patchValue(formData); // Autofill the form fields\r\n-  //   }\r\n-  // }\r\n-\r\n-  // ngOnInit() {\r\n-  //   this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n-  //     if (dob) {\r\n-  //       const age = this.calculateAge(dob);\r\n-  //       this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n-  //     }\r\n-  //   });\r\n-\r\n-  //   const formData = this.sharedDataService.getFormData();\r\n-  //   if (formData) {\r\n-  //     this.detailsForm.patchValue(formData);\r\n-  //   }\r\n-  // }\r\n-\r\n   ngOnInit() {\r\n     this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n       if (dob) {\r\n         const age = this.calculateAge(dob);\r\n"
                 }
             ],
             "date": 1736925028680,
