@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 24,
             "patches": [
                 {
                     "date": 1736925028680,
@@ -72,6 +72,38 @@
                 {
                     "date": 1737021840359,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,30 +32,8 @@\n       referredBy: [''],\r\n     });\r\n   }\r\n \r\n-  // ngOnInit() {\r\n-  //   // Get the form data from the service\r\n-  //   const formData = this.sharedDataService.getFormData();\r\n-  //   if (formData) {\r\n-  //     this.detailsForm.patchValue(formData); // Autofill the form fields\r\n-  //   }\r\n-  // }\r\n-\r\n-  // ngOnInit() {\r\n-  //   this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n-  //     if (dob) {\r\n-  //       const age = this.calculateAge(dob);\r\n-  //       this.detailsForm.get('age')?.setValue(age, { emitEvent: false });\r\n-  //     }\r\n-  //   });\r\n-\r\n-  //   const formData = this.sharedDataService.getFormData();\r\n-  //   if (formData) {\r\n-  //     this.detailsForm.patchValue(formData);\r\n-  //   }\r\n-  // }\r\n-\r\n   ngOnInit() {\r\n     this.detailsForm.get('dob')?.valueChanges.subscribe((dob: string) => {\r\n       if (dob) {\r\n         const age = this.calculateAge(dob);\r\n"
+                },
+                {
+                    "date": 1737025922172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,10 @@\n     let age = today.getFullYear() - birthDate.getFullYear();\r\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-      age--;\r\n+      // age--;\r\n+      alert('Please select the valid date')\r\n     }\r\n     return age;\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1737026020193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,9 @@\n     let age = today.getFullYear() - birthDate.getFullYear();\r\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-      // age--;\r\n-      alert('Please select the valid date')\r\n+      age--;\r\n     }\r\n     return age;\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1737026058589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,12 @@\n     const birthDate = new Date(dob);\r\n     let age = today.getFullYear() - birthDate.getFullYear();\r\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n+    if (birthDate > today) {\r\n+      alert('Please select the valid date')\r\n+    }\r\n+\r\n     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n       age--;\r\n     }\r\n     return age;\r\n"
+                },
+                {
+                    "date": 1737026197075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,14 +58,14 @@\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (birthDate > today) {\r\n       alert('Please select the valid date')\r\n+    } else {\r\n+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n+        age--;\r\n+      }\r\n+      return age;\r\n     }\r\n-\r\n-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-      age--;\r\n-    }\r\n-    return age;\r\n   }\r\n \r\n   onSubmit() {\r\n     if (this.detailsForm.valid) {\r\n"
+                },
+                {
+                    "date": 1737026360671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,14 +58,15 @@\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (birthDate > today) {\r\n       alert('Please select the valid date')\r\n-    } else {\r\n-      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-        age--;\r\n-      }\r\n-      return age;\r\n+      return age\r\n     }\r\n+\r\n+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n+      age--;\r\n+    }\r\n+    return age;\r\n   }\r\n \r\n   onSubmit() {\r\n     if (this.detailsForm.valid) {\r\n"
+                },
+                {
+                    "date": 1737026402563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,11 +61,11 @@\n       alert('Please select the valid date')\r\n       return age\r\n     }\r\n \r\n-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-      age--;\r\n-    }\r\n+    // if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n+    //   age--;\r\n+    // }\r\n     return age;\r\n   }\r\n \r\n   onSubmit() {\r\n"
+                },
+                {
+                    "date": 1737026610169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,14 +58,14 @@\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (birthDate > today) {\r\n       alert('Please select the valid date')\r\n-      return age\r\n+      return 0\r\n     }\r\n \r\n-    // if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n-    //   age--;\r\n-    // }\r\n+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n+      age--;\r\n+    }\r\n     return age;\r\n   }\r\n \r\n   onSubmit() {\r\n"
+                },
+                {
+                    "date": 1737026757248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     const monthDiff = today.getMonth() - birthDate.getMonth();\r\n \r\n     if (birthDate > today) {\r\n       alert('Please select the valid date')\r\n-      return 0\r\n+      return 0;\r\n     }\r\n \r\n     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {\r\n       age--;\r\n"
                 }
             ],
             "date": 1736925028680,
