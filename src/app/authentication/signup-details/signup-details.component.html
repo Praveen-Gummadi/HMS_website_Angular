@@ -136,6 +136,7 @@
          mat-raised-button
          color="primary"
          class="submit-button"
+         [disabled]="detailsForm.invalid"
          [routerLink]="'/otp'"
          >
           Continue

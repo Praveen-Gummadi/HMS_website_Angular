@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 62,
             "patches": [
                 {
                     "date": 1736923862168,
@@ -236,6 +236,26 @@
                 {
                     "date": 1737004844845,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,14 @@\n       </div>\r\n \r\n       <!-- Submit Button -->\r\n       <div class=\"submit-button-container\">\r\n-        <button mat-raised-button color=\"primary\" class=\"submit-button\">\r\n+        <button\r\n+         mat-raised-button\r\n+         color=\"primary\"\r\n+         class=\"submit-button\"\r\n+         [routerLink]=\"'/otp'\"\r\n+         >\r\n           Continue\r\n         </button>\r\n       </div>\r\n     </form>\r\n"
+                },
+                {
+                    "date": 1737012513988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,8 +135,9 @@\n         <button\r\n          mat-raised-button\r\n          color=\"primary\"\r\n          class=\"submit-button\"\r\n+         [disabled]=\"!detailsForm\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n           Continue\r\n         </button>\r\n"
+                },
+                {
+                    "date": 1737012563388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n         <button\r\n          mat-raised-button\r\n          color=\"primary\"\r\n          class=\"submit-button\"\r\n-         [disabled]=\"!detailsForm\"\r\n+         [disabled]=\"!detailsForm.invalid\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n           Continue\r\n         </button>\r\n"
+                },
+                {
+                    "date": 1737012568963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,9 +135,9 @@\n         <button\r\n          mat-raised-button\r\n          color=\"primary\"\r\n          class=\"submit-button\"\r\n-         [disabled]=\"!detailsForm.invalid\"\r\n+         [disabled]=\"detailsForm.invalid\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n           Continue\r\n         </button>\r\n"
+                },
+                {
+                    "date": 1737016414757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,8 @@\n       <!-- Submit Button -->\r\n       <div class=\"submit-button-container\">\r\n         <button\r\n          mat-raised-button\r\n-         color=\"primary\"\r\n          class=\"submit-button\"\r\n          [disabled]=\"detailsForm.invalid\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n"
+                },
+                {
+                    "date": 1737016557446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,8 +133,9 @@\n       <!-- Submit Button -->\r\n       <div class=\"submit-button-container\">\r\n         <button\r\n          mat-raised-button\r\n+         color=\"primary\"\r\n          class=\"submit-button\"\r\n          [disabled]=\"detailsForm.invalid\"\r\n          [routerLink]=\"'/otp'\"\r\n          >\r\n"
                 }
             ],
             "date": 1736923862168,

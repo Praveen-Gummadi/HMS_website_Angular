@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 13,
             "patches": [
                 {
                     "date": 1736925028680,
@@ -48,6 +48,18 @@
                 {
                     "date": 1737004863815,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { Component, OnInit } from '@angular/core';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n import { SharedModule } from '../../shared/shared.module';\r\n import { SharedDataService } from '../shared-data.service';\r\n+import { RouterLink } from '@angular/router';\r\n \r\n @Component({\r\n   selector: 'app-signup-details',\r\n   standalone: true,\r\n-  imports: [SharedModule],\r\n+  imports: [SharedModule, RouterLink],\r\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n"
+                },
+                {
+                    "date": 1737011908584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n   detailsForm: FormGroup;\r\n+  detailsForm: boolean = false;\r\n \r\n   constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n"
+                },
+                {
+                    "date": 1737011951253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,9 @@\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n-  detailsForm: FormGroup;\r\n-  detailsForm: boolean = false;\r\n+  detailsForm: FormGroup | false;\r\n \r\n   constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n"
+                },
+                {
+                    "date": 1737012437931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   templateUrl: './signup-details.component.html',\r\n   styleUrl: './signup-details.component.scss'\r\n })\r\n export class SignupDetailsComponent implements OnInit {\r\n-  detailsForm: FormGroup | false;\r\n+  detailsForm: FormGroup;\r\n \r\n   constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {\r\n     this.detailsForm = this.fb.group({\r\n       title: ['Mr', Validators.required],\r\n"
                 }
             ],
             "date": 1736925028680,
