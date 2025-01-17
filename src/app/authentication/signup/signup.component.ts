@@ -27,7 +27,7 @@ export class SignupComponent {
   onSubmit() {
     if (this.signupForm.valid) {
       this.sharedDataService.setFormData(this.signupForm.value);
-      this.router.navigate(['/signupdetails']);
+      this.router.navigate(['/signupdetails'], {queryParams:  {key: "Praveen"} });
       console.log('Form Submitted:', this.signupForm.value);
     }
   }

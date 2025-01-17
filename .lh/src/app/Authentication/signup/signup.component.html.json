@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1736918138894,
@@ -52,6 +52,10 @@
                 {
                     "date": 1737019825689,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,10 +63,9 @@\n \t\t<button\r\n       mat-flat-button\r\n       color=\"primary\"\r\n       type=\"submit\"\r\n-      [disabled]=\"signupForm.invalid\"\r\n-      [routerLink]=\"'/signupdetails'\">\r\n+      [disabled]=\"signupForm.invalid\">\r\n \t\t  Continue\r\n \t\t</button>\r\n \t  </form>\r\n \t</div>\r\n"
+                },
+                {
+                    "date": 1737092623283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n \r\n           <!-- Mobile Number -->\r\n           <mat-form-field appearance=\"outline\" class=\"form-field\">\r\n             <mat-label>Mobile No</mat-label>\r\n-            <input matInput type=\"tel\" formControlName=\"mobile\" placeholder=\"Enter your mobile number\" />\r\n+            <input matInput type=\"tel\" formControlName=\"mobile\" placeholder=\"Enter your mobile number\" maxlength=\"10\"/>\r\n             <mat-error *ngIf=\"signupForm.get('mobile')?.invalid && signupForm.get('mobile')?.touched\">\r\n             Mobile number is required.\r\n             </mat-error>\r\n           </mat-form-field>\r\n"
                 }
             ],
             "date": 1736918138894,
