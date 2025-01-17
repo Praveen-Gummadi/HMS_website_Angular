@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp-submition',
@@ -12,6 +13,8 @@ export class OtpSubmitionComponent {
   otp: string = '';
   isWhatsAppChecked: boolean = false;
   isFormValid: boolean = false;
+
+  constructor(private router: Router) {}
 
   allowOnlyNumbers(event: KeyboardEvent): void {
     const charCode = event.key.charCodeAt(0);
@@ -32,6 +35,7 @@ export class OtpSubmitionComponent {
     if (this.isFormValid) {
       // Simulate sending an OTP (Replace this with an actual API call)
       alert(`OTP Submitted: ${this.otp}`);
+      this.router.navigate(['/signupdetails'], {queryParams:  {key: "Praveen"} });
     } else {
       alert('Please enter a valid mobile number and accept WhatsApp terms.');
     }

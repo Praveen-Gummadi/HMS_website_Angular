@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1736943144983,
@@ -32,6 +32,22 @@
                 {
                     "date": 1736944083509,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,10 @@\n   validateForm(): void {\r\n     this.isFormValid = this.otp.trim().length >= 4\r\n   }\r\n \r\n+  resendotp() {}\r\n+\r\n   onContinue(): void {\r\n     console.log('otp:', this.otp);\r\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n"
+                },
+                {
+                    "date": 1737111842495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n   otp: string = '';\r\n   isWhatsAppChecked: boolean = false;\r\n   isFormValid: boolean = false;\r\n \r\n+  constructor() {private router: Router,}\r\n+\r\n   allowOnlyNumbers(event: KeyboardEvent): void {\r\n     const charCode = event.key.charCodeAt(0);\r\n     if (charCode < 48 || charCode > 57) {\r\n       event.preventDefault();\r\n@@ -31,8 +33,9 @@\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n       // Simulate sending an OTP (Replace this with an actual API call)\r\n       alert(`OTP Submitted: ${this.otp}`);\r\n+      this.router.navigate(['/otp'], {queryParams:  {key: \"Praveen\"} });\r\n     } else {\r\n       alert('Please enter a valid mobile number and accept WhatsApp terms.');\r\n     }\r\n     // Add further logic here, e.g., calling an API\r\n"
+                },
+                {
+                    "date": 1737111878000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Component } from '@angular/core';\r\n import { SharedModule } from '../../shared/shared.module';\r\n+import { Router } from '@angular/router';\r\n \r\n @Component({\r\n   selector: 'app-otp-submition',\r\n   standalone: true,\r\n@@ -12,9 +13,9 @@\n   otp: string = '';\r\n   isWhatsAppChecked: boolean = false;\r\n   isFormValid: boolean = false;\r\n \r\n-  constructor() {private router: Router,}\r\n+  constructor(private router: Router) {}\r\n \r\n   allowOnlyNumbers(event: KeyboardEvent): void {\r\n     const charCode = event.key.charCodeAt(0);\r\n     if (charCode < 48 || charCode > 57) {\r\n"
+                },
+                {
+                    "date": 1737111903993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n       // Simulate sending an OTP (Replace this with an actual API call)\r\n       alert(`OTP Submitted: ${this.otp}`);\r\n-      this.router.navigate(['/otp'], {queryParams:  {key: \"Praveen\"} });\r\n+      this.router.navigate(['/signup'], {queryParams:  {key: \"Praveen\"} });\r\n     } else {\r\n       alert('Please enter a valid mobile number and accept WhatsApp terms.');\r\n     }\r\n     // Add further logic here, e.g., calling an API\r\n"
+                },
+                {
+                    "date": 1737111974230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     console.log('WhatsApp Consent:', this.isWhatsAppChecked);\r\n     if (this.isFormValid) {\r\n       // Simulate sending an OTP (Replace this with an actual API call)\r\n       alert(`OTP Submitted: ${this.otp}`);\r\n-      this.router.navigate(['/signup'], {queryParams:  {key: \"Praveen\"} });\r\n+      this.router.navigate(['/signupdetails'], {queryParams:  {key: \"Praveen\"} });\r\n     } else {\r\n       alert('Please enter a valid mobile number and accept WhatsApp terms.');\r\n     }\r\n     // Add further logic here, e.g., calling an API\r\n"
                 }
             ],
             "date": 1736943144983,
