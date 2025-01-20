@@ -6,9 +6,9 @@
   <div class="sign-in-container">
     <h1>Sign In</h1>
 
-    <!-- Phone Number Input -->
+    <!-- Mobile Number Input -->
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Phone Number</mat-label>
+      <mat-label>Mobile Number</mat-label>
       <input
         matInput
         type="tel"
@@ -39,7 +39,6 @@
       class="full-width"
       [disabled]="!isFormValid"
       (click)="onContinue()"
-      [routerLink]="'/otp'"
     >
       Continue
     </button>

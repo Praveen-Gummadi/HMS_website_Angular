@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/app/authentication/login.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1737114508456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737114549618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,5 +8,9 @@\n export class LoginService {\r\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n+\r\n+  getNextQuestion(): Observable<any> {\r\n+    return this.http.get(`${this.apiUrl}/Register`);\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1737114581198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  getNextQuestion(): Observable<any> {\r\n+  signinotp(): Observable<any> {\r\n     return this.http.get(`${this.apiUrl}/Register`);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737114739061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  signinotp(): Observable<any> {\r\n-    return this.http.get(`${this.apiUrl}/Register`);\r\n+  siginotp(otp: string, isWhatsAppChecked: boolean): Observable<any> {\r\n+    const data = { otp, isWhatsAppChecked };\r\n+    return this.http.post(`${this.apiUrl}/save-answer`, data);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737114750913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n   constructor(private http: HttpClient) {}\r\n \r\n   siginotp(otp: string, isWhatsAppChecked: boolean): Observable<any> {\r\n     const data = { otp, isWhatsAppChecked };\r\n-    return this.http.post(`${this.apiUrl}/save-answer`, data);\r\n+    return this.http.post(`${this.apiUrl}/Register`, data);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737114762259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  siginotp(otp: string, isWhatsAppChecked: boolean): Observable<any> {\r\n+  signinotp(otp: string, isWhatsAppChecked: boolean): Observable<any> {\r\n     const data = { otp, isWhatsAppChecked };\r\n     return this.http.post(`${this.apiUrl}/Register`, data);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737115122458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  signinotp(otp: string, isWhatsAppChecked: boolean): Observable<any> {\r\n-    const data = { otp, isWhatsAppChecked };\r\n+  signinotp(mobileNumber: string, isWhatsAppChecked: boolean): Observable<any> {\r\n+    const data = { mobileNumber, isWhatsAppChecked };\r\n     return this.http.post(`${this.apiUrl}/Register`, data);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737115828138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  signinotp(mobileNumber: string, isWhatsAppChecked: boolean): Observable<any> {\r\n+  signinOtp(mobileNumber: string, isWhatsAppChecked: boolean): Observable<{ otp: string; message: string }> {\r\n     const data = { mobileNumber, isWhatsAppChecked };\r\n-    return this.http.post(`${this.apiUrl}/Register`, data);\r\n+    return this.http.post<{ otp: string; message: string }>(`${this.apiUrl}/Register`, data);\r\n   }\r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1737116686170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,6 @@\n     const data = { mobileNumber, isWhatsAppChecked };\r\n     return this.http.post<{ otp: string; message: string }>(`${this.apiUrl}/Register`, data);\r\n   }\r\n \r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1737349944639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,6 @@\n     return this.http.post<{ otp: string; message: string }>(`${this.apiUrl}/Register`, data);\r\n   }\r\n \r\n \r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1737354648431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+import { HttpClient } from '@angular/common/http';\r\n import { Injectable } from '@angular/core';\r\n-import { HttpClient } from '@angular/common/http';\r\n import { Observable } from 'rxjs';\r\n \r\n @Injectable({\r\n   providedIn: 'root'\r\n@@ -16,5 +16,7 @@\n   }\r\n \r\n \r\n \r\n+\r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1737354674320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,17 @@\n   private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n-  signinOtp(mobileNumber: string, isWhatsAppChecked: boolean): Observable<{ otp: string; message: string }> {\r\n-    const data = { mobileNumber, isWhatsAppChecked };\r\n-    return this.http.post<{ otp: string; message: string }>(`${this.apiUrl}/Register`, data);\r\n+  generateOtp(mobileNumber: string) {\r\n+    return this.http.post(`${this.apiUrl}/generate-otp`, { mobileNumber });\r\n   }\r\n \r\n+  verifyOtp(mobileNumber: string, otp: string) {\r\n+    return this.http.post(`${this.apiUrl}/verify-otp`, { mobileNumber, otp });\r\n+  }\r\n \r\n \r\n \r\n \r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1737355098871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n   constructor(private http: HttpClient) {}\r\n \r\n   generateOtp(mobileNumber: string) {\r\n-    return this.http.post(`${this.apiUrl}/generate-otp`, { mobileNumber });\r\n+    return this.http.post(`${this.apiUrl}/Login`, { mobileNumber });\r\n   }\r\n \r\n   verifyOtp(mobileNumber: string, otp: string) {\r\n     return this.http.post(`${this.apiUrl}/verify-otp`, { mobileNumber, otp });\r\n"
+                },
+                {
+                    "date": 1737355200645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { HttpClient } from '@angular/common/http';\r\n import { Injectable } from '@angular/core';\r\n-import { Observable } from 'rxjs';\r\n-\r\n+import { HttpClientModule } from '@angular/common/http';\r\n @Injectable({\r\n   providedIn: 'root'\r\n })\r\n export class LoginService {\r\n"
+                }
+            ],
+            "date": 1737114508456,
+            "name": "Commit-0",
+            "content": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class LoginService {\r\n  private apiUrl = 'https://localhost:7241/api/UsersAuth';\r\n\r\n  constructor(private http: HttpClient) {}\r\n}\r\n"
+        }
+    ]
+}

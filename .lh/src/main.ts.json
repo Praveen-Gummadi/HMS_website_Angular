@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1737355619568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737355752842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n import { bootstrapApplication } from '@angular/platform-browser';\r\n-import { appConfig } from './app/app.config';\r\n import { AppComponent } from './app/app.component';\r\n import { importProvidersFrom } from '@angular/core';\r\n import { HttpClientModule } from '@angular/common/http';\r\n+import { appConfig } from './app/app.config';\r\n \r\n bootstrapApplication(AppComponent, {\r\n-  providers: [importProvidersFrom(HttpClientModule)],\r\n-});\r\n+  providers: [\r\n+    importProvidersFrom(HttpClientModule),\r\n+    ...appConfig.providers || [] // Spread appConfig providers if it contains any\r\n+  ],\r\n+}).catch((err) => console.error(err));\r\n"
+                }
+            ],
+            "date": 1737355619568,
+            "name": "Commit-0",
+            "content": "import { bootstrapApplication } from '@angular/platform-browser';\r\nimport { appConfig } from './app/app.config';\r\nimport { AppComponent } from './app/app.component';\r\nimport { importProvidersFrom } from '@angular/core';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nbootstrapApplication(AppComponent, {\r\n  providers: [importProvidersFrom(HttpClientModule)],\r\n});\r\n"
+        }
+    ]
+}

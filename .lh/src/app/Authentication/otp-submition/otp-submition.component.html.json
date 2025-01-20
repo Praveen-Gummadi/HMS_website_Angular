@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1736943148371,
@@ -44,6 +44,10 @@
                 {
                     "date": 1737004652201,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n       <mat-label>Enter OTP</mat-label>\r\n       <input\r\n         matInput\r\n-        type=\"tel\"\r\n+        type=\"text\"\r\n         placeholder=\"Enter OTP\"\r\n         [(ngModel)]=\"otp\"\r\n         (input)=\"validateForm()\"\r\n         (keypress)=\"allowOnlyNumbers($event)\"\r\n"
+                },
+                {
+                    "date": 1737354688159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n       mat-flat-button\r\n       color=\"primary\"\r\n       class=\"full-width\"\r\n       [disabled]=\"!isFormValid\"\r\n-      (click)=\"onContinue()\"\r\n+      (click)=\"onSubmitOtp()\"\r\n     >\r\n       Continue\r\n     </button>\r\n   </div>\r\n"
                 }
             ],
             "date": 1736943148371,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1736501973514,
@@ -32,6 +32,14 @@
                 {
                     "date": 1736932884615,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n import { MatCheckboxModule } from '@angular/material/checkbox';\r\n import { MatRadioModule } from '@angular/material/radio';\r\n import { MatSelectModule } from '@angular/material/select';\r\n import { MatDatepickerModule } from '@angular/material/datepicker';\r\n+import { MatNativeDateModule } from '@angular/material/core';\r\n \r\n @NgModule({\r\n   declarations: [],\r\n   imports: [\r\n@@ -39,8 +40,9 @@\n     MatCheckboxModule,\r\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n+    MatNativeDateModule,\r\n   ],\r\n   exports: [\r\n     CommonModule,\r\n     MatToolbarModule,\r\n@@ -59,7 +61,8 @@\n     MatCheckboxModule,\r\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n+    MatNativeDateModule,\r\n   ],\r\n })\r\n export class SharedModule { }\r\n"
+                },
+                {
+                    "date": 1737355361462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n import { MatRadioModule } from '@angular/material/radio';\r\n import { MatSelectModule } from '@angular/material/select';\r\n import { MatDatepickerModule } from '@angular/material/datepicker';\r\n import { MatNativeDateModule } from '@angular/material/core';\r\n+import { HttpClientModule } from '@angular/common/http';\r\n \r\n @NgModule({\r\n   declarations: [],\r\n   imports: [\r\n@@ -41,8 +42,9 @@\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n     MatNativeDateModule,\r\n+    HttpClientModule,\r\n   ],\r\n   exports: [\r\n     CommonModule,\r\n     MatToolbarModule,\r\n@@ -62,7 +64,8 @@\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n     MatNativeDateModule,\r\n+    HttpClientModule,\r\n   ],\r\n })\r\n export class SharedModule { }\r\n"
+                },
+                {
+                    "date": 1737370407379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n import { MatRadioModule } from '@angular/material/radio';\r\n import { MatSelectModule } from '@angular/material/select';\r\n import { MatDatepickerModule } from '@angular/material/datepicker';\r\n import { MatNativeDateModule } from '@angular/material/core';\r\n-import { HttpClientModule } from '@angular/common/http';\r\n \r\n @NgModule({\r\n   declarations: [],\r\n   imports: [\r\n@@ -42,9 +41,8 @@\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n     MatNativeDateModule,\r\n-    HttpClientModule,\r\n   ],\r\n   exports: [\r\n     CommonModule,\r\n     MatToolbarModule,\r\n@@ -64,8 +62,7 @@\n     MatRadioModule,\r\n     MatSelectModule,\r\n     MatDatepickerModule,\r\n     MatNativeDateModule,\r\n-    HttpClientModule,\r\n   ],\r\n })\r\n export class SharedModule { }\r\n"
                 }
             ],
             "date": 1736501973514,

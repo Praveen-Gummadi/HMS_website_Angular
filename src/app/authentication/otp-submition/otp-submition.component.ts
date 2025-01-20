@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-otp-submition',
@@ -9,12 +10,39 @@ import { Router } from '@angular/router';
   templateUrl: './otp-submition.component.html',
   styleUrl: './otp-submition.component.scss'
 })
-export class OtpSubmitionComponent {
+
+export class OtpSubmitionComponent implements OnInit {
+  mobileNumber: string = '';
   otp: string = '';
   isWhatsAppChecked: boolean = false;
   isFormValid: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.mobileNumber = params['mobile'];
+    });
+  }
+
+  onSubmitOtp() {
+    console.log('otp:', this.otp);
+    console.log('WhatsApp Consent:', this.isWhatsAppChecked);
+    this.loginService.verifyOtp(this.mobileNumber, this.otp).subscribe({
+      next: () => {
+        alert('OTP verified successfully');
+        this.router.navigate(['/signupdetails'], {queryParams:  {key: "Praveen"} });
+      },
+      error: (err) => alert('Error verifying OTP: ' + err.message),
+    });
+  }
+
+
+  /////************ */
 
   allowOnlyNumbers(event: KeyboardEvent): void {
     const charCode = event.key.charCodeAt(0);
@@ -28,18 +56,4 @@ export class OtpSubmitionComponent {
   }
 
   resendotp() {}
-
-  onContinue(): void {
-    console.log('otp:', this.otp);
-    console.log('WhatsApp Consent:', this.isWhatsAppChecked);
-    if (this.isFormValid) {
-      // Simulate sending an OTP (Replace this with an actual API call)
-      alert(`OTP Submitted: ${this.otp}`);
-      this.router.navigate(['/signupdetails'], {queryParams:  {key: "Praveen"} });
-    } else {
-      alert('Please enter a valid mobile number and accept WhatsApp terms.');
-    }
-    // Add further logic here, e.g., calling an API
-  }
-
 }
