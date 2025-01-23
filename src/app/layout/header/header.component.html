@@ -7,11 +7,11 @@
       </div>
       <div class="spacer"></div>
       <div class="menu-section">
-        <mat-menu #menu="matMenu">
+        <mat-menu #menu1="matMenu">
           <button mat-menu-item>Hindi</button>
           <button mat-menu-item>Telugu</button>
         </mat-menu>
-        <button class="language" mat-button [matMenuTriggerFor]="menu">English▼</button>
+        <button class="language" mat-button [matMenuTriggerFor]="menu1">English▼</button>
         <div class="contact-info">
           <div>24/7 APPOINTMENT HELPLINE</div>
           <div>+91 40 4567 4567</div>
@@ -25,7 +25,7 @@
 
     <mat-toolbar class="nav-toolbar">
       <nav class="nav-menu">
-        <a mat-button routerLink="/home">
+        <a mat-button routerLink="/">
           <mat-icon>home</mat-icon> Home
         </a>
         <a mat-button routerLink="/doctors">
@@ -37,9 +37,24 @@
         <a mat-button routerLink="/investigations">
           <mat-icon>policy</mat-icon> Investigations
         </a>
-        <a mat-button [routerLink]="'/signin'">
+        <!-- <a mat-button [routerLink]="'/signin'">
+          <mat-icon>account_circle</mat-icon> My Account
+        </a> -->
+        <a mat-button [matMenuTriggerFor]="usermenu" (click)="onAccountClick()">
           <mat-icon>account_circle</mat-icon> My Account
         </a>
+
+        <mat-menu #usermenu="matMenu">
+          <button *ngIf="isSignedIn" routerLink="/profile/overview" mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>{{ username }}</span>
+          </button>
+          <button *ngIf="isSignedIn" mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+
       </nav>
     </mat-toolbar>
   </header>

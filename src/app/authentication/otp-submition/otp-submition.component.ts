@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { SigninComponent } from '../signin/signin.component';
 
 @Component({
   selector: 'app-otp-submition',
@@ -17,27 +18,39 @@ export class OtpSubmitionComponent implements OnInit {
   isWhatsAppChecked: boolean = false;
   isFormValid: boolean = false;
 
+  isResendDisabled: boolean = true;
+  timer: number = 60;
+  interval: any;
+  responseMessage: string = '';
+  errorMessage: string = '';
+
   constructor(
     private loginService: LoginService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    // private signincompoenent: SigninComponent,
   ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.mobileNumber = params['mobile'];
+      this.mobileNumber = params['key'];
     });
+
+    this.startTimer();
   }
 
   onSubmitOtp() {
-    console.log('otp:', this.otp);
-    console.log('WhatsApp Consent:', this.isWhatsAppChecked);
     this.loginService.verifyOtp(this.mobileNumber, this.otp).subscribe({
-      next: () => {
-        alert('OTP verified successfully');
-        this.router.navigate(['/signupdetails'], {queryParams:  {key: "Praveen"} });
+      next: (response: any) => {
+        if (response.isSuccess = 'true' )
+          this.router.navigate(['/dashboard'], { queryParams: { key: response.result.token } });
+          localStorage.setItem('authToken', response.result.token);
+          localStorage.setItem('username', response.result?.user.firstName);
       },
-      error: (err) => alert('Error verifying OTP: ' + err.message),
+      error: (error: any) => {
+        this.errorMessage = error.error.errorMessages || 'An error occurred';
+        alert(this.errorMessage);
+      }
     });
   }
 
@@ -55,5 +68,22 @@ export class OtpSubmitionComponent implements OnInit {
     this.isFormValid = this.otp.trim().length >= 4
   }
 
-  resendotp() {}
+  startTimer(): void {
+    this.isResendDisabled = true;
+    this.timer = 60;
+
+    this.interval = setInterval(() => {
+      this.timer--;
+      if (this.timer === 0) {
+        this.isResendDisabled = false;
+        clearInterval(this.interval);
+      }
+    }, 1000);
+  }
+
+  resendOtp(): void {
+    console.log('Resend OTP API call triggered for mobile:', this.mobileNumber);
+    this.startTimer();
+    // this.signincompoenent.onContinue();
+  }
 }

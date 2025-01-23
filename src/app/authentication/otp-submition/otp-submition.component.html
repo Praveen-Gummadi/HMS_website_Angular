@@ -27,10 +27,14 @@
         mat-flat-button
         color="primary"
         class="button-class"
-        (click)="resendotp()"
+        (click)="resendOtp()"
+        [disabled]="isResendDisabled"
       >
         Resend OTP
       </button>
+      <span *ngIf="isResendDisabled">
+        {{ timer }}
+      </span>
     </div>
 
     <!-- Checkbox -->

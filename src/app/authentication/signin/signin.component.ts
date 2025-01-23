@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
   styleUrl: './signin.component.scss'
 })
 export class SigninComponent {
-  mobileNumber: string = '';
+  mobile: string = '+91 709502497';
   isWhatsAppChecked: boolean = false;
   isFormValid: boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
   allowOnlyNumbers(event: KeyboardEvent): void {
     const charCode = event.key.charCodeAt(0);
@@ -25,31 +28,30 @@ export class SigninComponent {
   }
 
   validateForm(): void {
-    this.isFormValid = this.mobileNumber.trim().length >= 10
+    this.isFormValid = this.mobile.trim().length >= 10
   }
 
   onContinue(): void {
-    console.log('Mobile Number:', this.mobileNumber);
-    console.log('WhatsApp Consent:', this.isWhatsAppChecked);
+    const mobileNumber = this.mobile.replace(/\D/g, '').slice(-10);
     if (this.isFormValid) {
-      console.log(`Sending OTP to: ${this.mobileNumber}`);
-
-      // Simulate sending an OTP (Replace this with an actual API call)
-
-      this.loginService.generateOtp(this.mobileNumber).subscribe({
-        next: () => {
-          alert('OTP sent successfully');
-          this.router.navigate(['/otp-submit'], { queryParams: { mobile: this.mobileNumber } });
+      this.loginService.generateOtp(mobileNumber).subscribe({
+        next: (response: any) => {
+          if (response.isSuccess) {
+            this.router.navigate(['/otp'], { queryParams: { key: mobileNumber } });
+          } else if (response.statusCode === 403) {
+            alert(response.result);
+            // this.router.navigate(['/signup'], { queryParams: { key: mobileNumber } });
+            this.router.navigate(['/signupdetails'], { queryParams: { key: mobileNumber } });
+          } else {
+            console.error('Unexpected error:', response.errorMessages.join(', '));
+            alert('Unexpected error: ' + response.errorMessages.join(', '));
+          }
         },
-        error: (err) => alert('Error sending OTP: ' + err.message),
       });
-
-      this.router.navigate(['/otp'], { queryParams: { mobile: this.mobileNumber } });
-      // alert(`OTP sent to mobile number ${this.mobileNumber}`);
-    } else {
+    }
+    else {
       alert('Please enter a valid mobile number and accept WhatsApp terms.');
     }
-    // Add further logic here, e.g., calling an API
   }
 
 }

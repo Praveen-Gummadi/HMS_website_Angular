@@ -7,6 +7,6 @@ import { appConfig } from './app/app.config';
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(HttpClientModule),
-    ...appConfig.providers || [] // Spread appConfig providers if it contains any
+    ...appConfig.providers || []
   ],
 }).catch((err) => console.error(err));

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../authentication/auth.service';
 
 
 @Component({
@@ -12,5 +13,28 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  username: string = '';
+  isSignedIn: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) {
+    // Get the authentication status
+    this.isSignedIn = this.authService.isSignedIn();
+
+    if (this.isSignedIn) {
+      this.username = this.authService.getUsername();
+    }
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/signin']);
+  }
+
+  onAccountClick(): void {
+    if (!this.isSignedIn) {
+      this.router.navigate(['/signin']);
+    }
+  }
 
 }

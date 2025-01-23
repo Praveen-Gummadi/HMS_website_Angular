@@ -8,7 +8,7 @@
     <img src="logo.png" alt="Logo" class="logo" />
   </div>
   <div class="spacer"></div>
-  <button mat-raised-button class="account-button" [routerLink]="'/signin'">
+  <button mat-flat-button class="account-button" [routerLink]="'/signin'">
     <mat-icon>account_circle</mat-icon>
     My Account
   </button>
@@ -82,7 +82,7 @@
 
             <!-- Add Patient Button -->
             <div class="button-container">
-              <button mat-raised-button class="add-another-patient" (click)="addAnotherPatient()">
+              <button mat-flat-button class="add-another-patient" (click)="addAnotherPatient()">
                 <mat-icon class="big-icon">person_add</mat-icon>
                 <span class="button-text">Add Another Patient</span>
               </button>

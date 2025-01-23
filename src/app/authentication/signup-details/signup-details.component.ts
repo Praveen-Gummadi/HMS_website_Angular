@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { SharedDataService } from '../shared-data.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup-details',
@@ -14,7 +14,11 @@ import { RouterLink } from '@angular/router';
 export class SignupDetailsComponent implements OnInit {
   detailsForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private sharedDataService: SharedDataService) {
+  constructor(
+    private fb: FormBuilder,
+    private sharedDataService: SharedDataService,
+    private route: ActivatedRoute,
+  ) {
     this.detailsForm = this.fb.group({
       title: ['Mr', Validators.required],
       name: ['', Validators.required],
@@ -30,6 +34,7 @@ export class SignupDetailsComponent implements OnInit {
       zip: [''],
       country: [''],
       referredBy: [''],
+      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
     });
   }
 
@@ -38,6 +43,12 @@ export class SignupDetailsComponent implements OnInit {
       if (dob) {
         const age = this.calculateAge(dob);
         this.detailsForm.get('age')?.setValue(age, { emitEvent: false });
+      }
+    });
+
+    this.route.queryParams.subscribe(params => {
+      if (params['key']) {
+        this.detailsForm.controls['mobile'].setValue(params['key']);
       }
     });
 
