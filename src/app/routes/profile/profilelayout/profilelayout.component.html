@@ -1,0 +1,13 @@
+<div class="main-layout">
+  <app-myheader class="header">
+    <button mat-raised-button class="toggle-button" (click)="toggleSidebar()">☰</button>
+  </app-myheader>
+
+  <div class="profile-layout">
+    <app-sidebar class="sidebar" [class.closed]="isSidebarClosed"></app-sidebar>
+    <!-- Main Content Area -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

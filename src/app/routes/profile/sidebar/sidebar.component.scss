@@ -1,0 +1,44 @@
+.sidebar {
+  width: 13%;
+  height: 100vh;
+  background-color: rgba(244, 237, 237, 0.342);
+  color: black;
+  position: fixed;
+  transition: transform 0.3s ease;
+  border-right: 1px solid #dee2e6;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar legend {
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family:cursive;
+  padding: 15px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  font-family:cursive;
+  padding: 10px;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #acb8c4;
+  border-radius: 20px;
+}

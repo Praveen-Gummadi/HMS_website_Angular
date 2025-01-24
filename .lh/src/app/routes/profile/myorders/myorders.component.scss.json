@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/app/routes/profile/myorders/myorders.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1737661959162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737662061100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n /* Main content styling */\r\n .content {\r\n-  width: 88%;\r\n+  width: 85%;\r\n   padding: 20px;\r\n }\r\n \r\n .header {\r\n"
+                },
+                {
+                    "date": 1737691981828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .filter-dropdown {\r\n   width: 150px;\r\n-  height: 60px;\r\n+  height: 40px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737691990069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .filter-dropdown {\r\n   width: 150px;\r\n-  height: 40px;\r\n+  height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737691999902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n-  width: 150px;\r\n+  width: 200px;\r\n   height: 60px;\r\n }\r\n \r\n mat-card {\r\n"
+                },
+                {
+                    "date": 1737692036596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n+  max-height: 40px;\r\n   width: 200px;\r\n-  height: 60px;\r\n+  // height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737692053216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,10 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n-  max-height: 40px;\r\n   width: 200px;\r\n-  // height: 60px;\r\n+  height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737692078609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   align-items: center;\r\n }\r\n \r\n .order-details {\r\n-  margin-top: 20px;\r\n+  margin-top: 10px;\r\n   line-height: 1.6;\r\n }\r\n \r\n .order-actions {\r\n"
+                },
+                {
+                    "date": 1737692087342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   align-items: center;\r\n }\r\n \r\n .order-details {\r\n-  margin-top: 10px;\r\n+  margin-top: 5px;\r\n   line-height: 1.6;\r\n }\r\n \r\n .order-actions {\r\n"
+                },
+                {
+                    "date": 1737692100085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n }\r\n \r\n .order-details {\r\n   margin-top: 5px;\r\n-  line-height: 1.6;\r\n+  line-height: 1.2;\r\n }\r\n \r\n .order-actions {\r\n   margin-top: 20px;\r\n"
+                }
+            ],
+            "date": 1737661959162,
+            "name": "Commit-0",
+            "content": "/* Main content styling */\r\n.content {\r\n  width: 88%;\r\n  padding: 20px;\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.header legend {\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n}\r\n\r\n.filter-dropdown {\r\n  width: 150px;\r\n  height: 60px;\r\n}\r\n\r\nmat-card {\r\n  padding: 10px;\r\n  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.order-summary {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.order-details {\r\n  margin-top: 20px;\r\n  line-height: 1.6;\r\n}\r\n\r\n.order-actions {\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer {\r\n  text-align: center;\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer button {\r\n  margin-top: 10px;\r\n}\r\n"
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "sourceFile": "src/app/app.routes.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1737625110911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737633755905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,17 +6,17 @@\n import { SigninComponent } from './authentication/signin/signin.component';\r\n import { SignupComponent } from './authentication/signup/signup.component';\r\n import { SignupDetailsComponent } from './authentication/signup-details/signup-details.component';\r\n import { OtpSubmitionComponent } from './authentication/otp-submition/otp-submition.component';\r\n-import { ProfileComponent } from './authentication/profile/profile.component';\r\n+import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilelayout.component';\r\n \r\n export const routes: Routes = [\r\n     { path: 'cart', component: CartComponent },\r\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'profile', component: ProfileComponent },\r\n+    { path: 'profile', component: ProfilelayoutComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737634035445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n import { SignupComponent } from './authentication/signup/signup.component';\r\n import { SignupDetailsComponent } from './authentication/signup-details/signup-details.component';\r\n import { OtpSubmitionComponent } from './authentication/otp-submition/otp-submition.component';\r\n import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilelayout.component';\r\n+import { MyordersComponent } from './routes/profile/myorders/myorders.component';\r\n \r\n export const routes: Routes = [\r\n     { path: 'cart', component: CartComponent },\r\n     { path: 'signin', component: SigninComponent },\r\n@@ -23,6 +24,13 @@\n             { path: 'dashboard', component: DashboardComponent },\r\n             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n             { path: 'lab', component: LabDashboardComponent },\r\n         ]\r\n-    }\r\n+    },\r\n+    {\r\n+      path: '',\r\n+      component: ProfilelayoutComponent,\r\n+      children: [\r\n+          { path: 'myorders', component: MyordersComponent },\r\n+      ]\r\n+  }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737634057438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n             { path: 'lab', component: LabDashboardComponent },\r\n         ]\r\n     },\r\n     {\r\n-      path: '',\r\n+      path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n"
+                },
+                {
+                    "date": 1737634270120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'profile', component: ProfilelayoutComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737634291036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n+    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737634912112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,12 +25,12 @@\n             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n             { path: 'lab', component: LabDashboardComponent },\r\n         ]\r\n     },\r\n-    {\r\n-      path: 'profile',\r\n-      component: ProfilelayoutComponent,\r\n-      children: [\r\n-          { path: 'myorders', component: MyordersComponent },\r\n-      ]\r\n-  }\r\n+    // {\r\n+    //   path: 'profile',\r\n+    //   component: ProfilelayoutComponent,\r\n+    //   children: [\r\n+    //       { path: 'myorders', component: MyordersComponent },\r\n+    //   ]\r\n+    // }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635041143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,12 +25,12 @@\n             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n             { path: 'lab', component: LabDashboardComponent },\r\n         ]\r\n     },\r\n-    // {\r\n-    //   path: 'profile',\r\n-    //   component: ProfilelayoutComponent,\r\n-    //   children: [\r\n-    //       { path: 'myorders', component: MyordersComponent },\r\n-    //   ]\r\n-    // }\r\n+    {\r\n+      path: 'profile',\r\n+      component: ProfilelayoutComponent,\r\n+      children: [\r\n+          // { path: 'myorders', component: MyordersComponent },\r\n+      ]\r\n+    }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635146497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n@@ -29,8 +28,8 @@\n     {\r\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n-          // { path: 'myorders', component: MyordersComponent },\r\n+          { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635211869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,9 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n+          { path: '', redirectTo: 'myorders', pathMatch: 'full' },\r\n+          { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635225769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,7 @@\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n           { path: '', redirectTo: 'myorders', pathMatch: 'full' },\r\n-          { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635231334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,7 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n-          { path: '', redirectTo: 'myorders', pathMatch: 'full' },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635356890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,8 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n+          { path: '', redirectTo: 'myorders', pathMatch: 'full' },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635370770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,7 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n-          { path: '', redirectTo: 'myorders', pathMatch: 'full' },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635522854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,8 @@\n     {\r\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n-          { path: 'myorders', component: MyordersComponent },\r\n+          // { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737635532781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n+    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737635583216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'myorders', component: MyordersComponent },\r\n+    // { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n@@ -29,8 +29,8 @@\n     {\r\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n-          // { path: 'myorders', component: MyordersComponent },\r\n+          { path: 'myorders', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737636122737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    // { path: 'myorders', component: MyordersComponent },\r\n+    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737636142658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737638344391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n+    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737638376236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'myorders', component: MyordersComponent },\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737638934291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,8 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n+          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737639857879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,8 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n-          { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n+          { path: 'mymenu', component: MyordersComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737639868019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import { SignupDetailsComponent } from './authentication/signup-details/signup-details.component';\r\n import { OtpSubmitionComponent } from './authentication/otp-submition/otp-submition.component';\r\n import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilelayout.component';\r\n import { MyordersComponent } from './routes/profile/myorders/myorders.component';\r\n+import { MyhomeComponent } from './routes/profile/myhome/myhome.component';\r\n \r\n export const routes: Routes = [\r\n     { path: 'cart', component: CartComponent },\r\n     { path: 'signin', component: SigninComponent },\r\n@@ -29,8 +30,8 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n-          { path: 'mymenu', component: MyordersComponent },\r\n+          { path: 'mymenu', component: MyhomeComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737639874260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,8 @@\n       path: 'profile',\r\n       component: ProfilelayoutComponent,\r\n       children: [\r\n           { path: 'myorders', component: MyordersComponent },\r\n-          { path: 'mymenu', component: MyhomeComponent },\r\n+          { path: 'myhome', component: MyhomeComponent },\r\n       ]\r\n     }\r\n ];\r\n"
+                },
+                {
+                    "date": 1737656197920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n+    { path: 'my', component: MyhomeComponent },\r\n+\r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1737656233829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,17 @@\n import { OtpSubmitionComponent } from './authentication/otp-submition/otp-submition.component';\r\n import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilelayout.component';\r\n import { MyordersComponent } from './routes/profile/myorders/myorders.component';\r\n import { MyhomeComponent } from './routes/profile/myhome/myhome.component';\r\n+import { MyheaderComponent } from './routes/profile/myheader/myheader.component';\r\n \r\n export const routes: Routes = [\r\n     { path: 'cart', component: CartComponent },\r\n     { path: 'signin', component: SigninComponent },\r\n     { path: 'signup', component: SignupComponent },\r\n     { path: 'signupdetails', component: SignupDetailsComponent },\r\n     { path: 'otp', component: OtpSubmitionComponent },\r\n-    { path: 'my', component: MyhomeComponent },\r\n+    { path: 'my', component: MyheaderComponent },\r\n \r\n     {\r\n         path: '',\r\n         component: MasterLayoutComponent,\r\n"
+                }
+            ],
+            "date": 1737625110911,
+            "name": "Commit-0",
+            "content": "import { Routes } from '@angular/router';\r\nimport { CartComponent } from './routes/cart/cart.component';\r\nimport { DashboardComponent } from './layout/dashboard/dashboard.component';\r\nimport { MasterLayoutComponent } from './layout/master-layout/master-layout.component';\r\nimport { LabDashboardComponent } from './routes/lab-dashboard/lab-dashboard.component';\r\nimport { SigninComponent } from './authentication/signin/signin.component';\r\nimport { SignupComponent } from './authentication/signup/signup.component';\r\nimport { SignupDetailsComponent } from './authentication/signup-details/signup-details.component';\r\nimport { OtpSubmitionComponent } from './authentication/otp-submition/otp-submition.component';\r\nimport { ProfileComponent } from './authentication/profile/profile.component';\r\n\r\nexport const routes: Routes = [\r\n    { path: 'cart', component: CartComponent },\r\n    { path: 'signin', component: SigninComponent },\r\n    { path: 'signup', component: SignupComponent },\r\n    { path: 'signupdetails', component: SignupDetailsComponent },\r\n    { path: 'otp', component: OtpSubmitionComponent },\r\n    { path: 'profile', component: ProfileComponent },\r\n    {\r\n        path: '',\r\n        component: MasterLayoutComponent,\r\n        children: [\r\n            { path: 'dashboard', component: DashboardComponent },\r\n            { path: '', redirectTo: 'dashboard', pathMatch: 'full' },\r\n            { path: 'lab', component: LabDashboardComponent },\r\n        ]\r\n    }\r\n];\r\n"
+        }
+    ]
+}

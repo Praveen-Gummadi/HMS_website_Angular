@@ -2,17 +2,7 @@
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 
-<!-- Toolbar -->
-<mat-toolbar color="primary">
-  <div class="logo-section">
-    <img src="logo.png" alt="Logo" class="logo" />
-  </div>
-  <div class="spacer"></div>
-  <button mat-flat-button class="account-button" [routerLink]="'/signin'">
-    <mat-icon>account_circle</mat-icon>
-    My Account
-  </button>
-</mat-toolbar>
+<app-myheader class="header"></app-myheader>
 
 <mat-toolbar color="primary" class="toolbar-second-line">
   <!-- Back Arrow Button -->

@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/app/routes/profile/profilelayout/profilelayout.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1737633687504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737633711868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,46 @@\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n+  isSidebarOpen = true;\r\n \r\n+  toggleSidebar() {\r\n+    this.isSidebarOpen = !this.isSidebarOpen;\r\n+  }\r\n+\r\n+  // Mock data (you can fetch these dynamically using APIs)\r\n+  orders = [\r\n+    {\r\n+      orderDate: '28 October 2024',\r\n+      orderId: '35184812',\r\n+      orderType: 'Lab tests',\r\n+      status: 'Appointment Confirmed',\r\n+      appointmentDate: '30-Oct-2024 - 12:00 PM',\r\n+      patientName: 'Sai Kumar Dothula',\r\n+    },\r\n+  ];\r\n+\r\n+  loadPastOrders() {\r\n+    console.log('Loading past orders...');\r\n+    // Implement logic to load past orders\r\n+  }\r\n+\r\n+  reschedule() {\r\n+    console.log('Rescheduling...');\r\n+    // Implement reschedule logic\r\n+  }\r\n+\r\n+  cancel() {\r\n+    console.log('Cancelling...');\r\n+    // Implement cancel logic\r\n+  }\r\n+\r\n+  navItems = [\r\n+    { label: 'Home', route: '/home' },\r\n+    { label: 'Basic Info', route: '/basic-info' },\r\n+    { label: 'My Orders', route: '/orders' },\r\n+    { label: 'Patient History', route: '/history' },\r\n+    { label: 'Reports', route: '/reports' },\r\n+  ];\r\n }\r\n+\r\n"
+                },
+                {
+                    "date": 1737635129558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import { Component } from '@angular/core';\r\n-import { RouterOutlet } from '@angular/router';\r\n+import { RouterLink, RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, RouterOutlet],\r\n+  imports: [SharedModule, RouterOutlet, RouterLink],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737635666384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { Component } from '@angular/core';\r\n import { RouterLink, RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n+import { MyordersComponent } from \"../myorders/myorders.component\";\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, RouterOutlet, RouterLink],\r\n+  imports: [SharedModule, RouterOutlet, RouterLink, MyordersComponent],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737637569741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,12 @@\n import { Component } from '@angular/core';\r\n-import { RouterLink, RouterOutlet } from '@angular/router';\r\n+import { RouterLink } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n-import { MyordersComponent } from \"../myorders/myorders.component\";\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, RouterOutlet, RouterLink, MyordersComponent],\r\n+  imports: [SharedModule, RouterLink],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n@@ -16,40 +15,6 @@\n   toggleSidebar() {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n   }\r\n \r\n-  // Mock data (you can fetch these dynamically using APIs)\r\n-  orders = [\r\n-    {\r\n-      orderDate: '28 October 2024',\r\n-      orderId: '35184812',\r\n-      orderType: 'Lab tests',\r\n-      status: 'Appointment Confirmed',\r\n-      appointmentDate: '30-Oct-2024 - 12:00 PM',\r\n-      patientName: 'Sai Kumar Dothula',\r\n-    },\r\n-  ];\r\n-\r\n-  loadPastOrders() {\r\n-    console.log('Loading past orders...');\r\n-    // Implement logic to load past orders\r\n-  }\r\n-\r\n-  reschedule() {\r\n-    console.log('Rescheduling...');\r\n-    // Implement reschedule logic\r\n-  }\r\n-\r\n-  cancel() {\r\n-    console.log('Cancelling...');\r\n-    // Implement cancel logic\r\n-  }\r\n-\r\n-  navItems = [\r\n-    { label: 'Home', route: '/home' },\r\n-    { label: 'Basic Info', route: '/basic-info' },\r\n-    { label: 'My Orders', route: '/orders' },\r\n-    { label: 'Patient History', route: '/history' },\r\n-    { label: 'Reports', route: '/reports' },\r\n-  ];\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737637756246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { Component } from '@angular/core';\r\n import { RouterLink } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n+import { SidebarComponent } from '../sidebar/sidebar.component';\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, RouterLink],\r\n+  imports: [SharedModule, SidebarComponent, RouterLink],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737637829324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import { Component } from '@angular/core';\r\n-import { RouterLink } from '@angular/router';\r\n+import { RouterLink, RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { SidebarComponent } from '../sidebar/sidebar.component';\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, SidebarComponent, RouterLink],\r\n+  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737640044023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { Component } from '@angular/core';\r\n import { RouterLink, RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { SidebarComponent } from '../sidebar/sidebar.component';\r\n+import { MyhomeComponent } from \"../myhome/myhome.component\";\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink],\r\n+  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink, MyhomeComponent],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737640073845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,13 @@\n import { Component } from '@angular/core';\r\n import { RouterLink, RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { SidebarComponent } from '../sidebar/sidebar.component';\r\n-import { MyhomeComponent } from \"../myhome/myhome.component\";\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink, MyhomeComponent],\r\n+  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737655984980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,16 @@\n import { Component } from '@angular/core';\r\n-import { RouterLink, RouterOutlet } from '@angular/router';\r\n+import { RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { SidebarComponent } from '../sidebar/sidebar.component';\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, SidebarComponent, RouterOutlet, RouterLink],\r\n+  imports: [SharedModule, SidebarComponent, RouterOutlet],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n-  isSidebarOpen = true;\r\n \r\n-  toggleSidebar() {\r\n-    this.isSidebarOpen = !this.isSidebarOpen;\r\n-  }\r\n-\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737656120915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { Component } from '@angular/core';\r\n import { RouterOutlet } from '@angular/router';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { SidebarComponent } from '../sidebar/sidebar.component';\r\n+import { MyheaderComponent } from \"../myheader/myheader.component\";\r\n \r\n @Component({\r\n   selector: 'app-profilelayout',\r\n   standalone: true,\r\n-  imports: [SharedModule, SidebarComponent, RouterOutlet],\r\n+  imports: [SharedModule, SidebarComponent, RouterOutlet, MyheaderComponent],\r\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n"
+                },
+                {
+                    "date": 1737660627144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,11 @@\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n+  isSidebarOpen = true;\r\n \r\n+  toggleSidebar() {\r\n+    this.isSidebarOpen = !this.isSidebarOpen;\r\n+  }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737661175865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n   templateUrl: './profilelayout.component.html',\r\n   styleUrl: './profilelayout.component.scss'\r\n })\r\n export class ProfilelayoutComponent {\r\n-  isSidebarOpen = true;\r\n+  isSidebarClosed = false;\r\n \r\n   toggleSidebar() {\r\n-    this.isSidebarOpen = !this.isSidebarOpen;\r\n+    this.isSidebarClosed = !this.isSidebarClosed;\r\n   }\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1737633687504,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { SharedModule } from '../../../shared/shared.module';\r\n\r\n@Component({\r\n  selector: 'app-profilelayout',\r\n  standalone: true,\r\n  imports: [SharedModule, RouterOutlet],\r\n  templateUrl: './profilelayout.component.html',\r\n  styleUrl: './profilelayout.component.scss'\r\n})\r\nexport class ProfilelayoutComponent {\r\n\r\n}\r\n"
+        }
+    ]
+}

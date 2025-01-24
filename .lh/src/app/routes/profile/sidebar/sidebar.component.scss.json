@@ -1,0 +1,174 @@
+{
+    "sourceFile": "src/app/routes/profile/sidebar/sidebar.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1737637672709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737638256903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(230, 233, 236, 0.352);\r\n+  background-color: rgba(238, 241, 244, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638267658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(238, 241, 244, 0.352);\r\n+  background-color: rgba(244, 240, 238, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638273354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(244, 240, 238, 0.352);\r\n+  background-color: rgba(236, 231, 229, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638287587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(236, 231, 229, 0.352);\r\n+  background-color: rgba(237, 229, 226, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638293035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(237, 229, 226, 0.352);\r\n+  background-color: rgba(240, 234, 231, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638303652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(240, 234, 231, 0.352);\r\n+  background-color: rgba(235, 230, 229, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737638312094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(235, 230, 229, 0.352);\r\n+  background-color: rgba(241, 236, 234, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737658028990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(241, 236, 234, 0.352);\r\n+  background-color: rgba(245, 242, 241, 0.352);\r\n   color: black;\r\n   padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n"
+                },
+                {
+                    "date": 1737659039025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,14 @@\n   font-family:cursive;\r\n   padding: 10px;\r\n }\r\n \r\n+.active-link {\r\n+  background: #6c63ff;\r\n+  color: rgb(242, 159, 159);\r\n+  border-radius: 4px;\r\n+}\r\n+\r\n .sidebar ul li {\r\n   margin: 10px 0;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737659167848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,8 @@\n   font-family:cursive;\r\n   padding: 10px;\r\n }\r\n \r\n-.active-link {\r\n-  background: #6c63ff;\r\n-  color: rgb(242, 159, 159);\r\n-  border-radius: 4px;\r\n-}\r\n-\r\n .sidebar ul li {\r\n   margin: 10px 0;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737659765203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n   font-size: 1.1em;\r\n   font-weight: bold;\r\n   font-family:cursive;\r\n   padding: 15px;\r\n-  margin-bottom: 10px;\r\n }\r\n \r\n .sidebar ul {\r\n   list-style-type: none;\r\n"
+                },
+                {
+                    "date": 1737659824799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n   width: 13%;\r\n   height: 100vh;\r\n   background-color: rgba(245, 242, 241, 0.352);\r\n   color: black;\r\n-  padding: 0px;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737660060334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(245, 242, 241, 0.352);\r\n+  background-color: rgb(240, 245, 248);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660077778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(240, 245, 248);\r\n+  background-color: rgba(240, 245, 248, 0);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660084856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(240, 245, 248, 0);\r\n+  background-color: rgba(231, 236, 239, 0);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660094821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(231, 236, 239, 0);\r\n+  background-color: rgba(231, 236, 239, 0.329);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660114630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(231, 236, 239, 0.329);\r\n+  background-color: rgba(234, 238, 240, 0.329);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660152205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(234, 238, 240, 0.329);\r\n+  background-color: whitesmoke;\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660163579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: whitesmoke;\r\n+  background-color: white;\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660181170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: white;\r\n+  background-color: whitesmoke;\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660192136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: whitesmoke;\r\n+  background-color: rgb(250, 249, 249);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660203944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(250, 249, 249);\r\n+  background-color: rgb(248, 243, 243);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660209378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(248, 243, 243);\r\n+  background-color: rgb(248, 246, 246);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660215854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(248, 246, 246);\r\n+  background-color: rgb(255, 255, 255);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660238343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(255, 255, 255);\r\n+  background-color: rgb(249, 246, 246);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660315617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgb(249, 246, 246);\r\n+  background-color: bgb(249, 246, 246);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660330022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: bgb(249, 246, 246);\r\n+  background-color: rgba(249, 246, 246, 0.598);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660336559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(249, 246, 246, 0.598);\r\n+  background-color: rgba(241, 236, 236, 0.598);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660347421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(241, 236, 236, 0.598);\r\n+  background-color: rgba(249, 245, 245, 0.598);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660355214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(249, 245, 245, 0.598);\r\n+  background-color: rgba(249, 245, 245, 0.311);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660361290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(249, 245, 245, 0.311);\r\n+  background-color: rgba(239, 234, 234, 0.311);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660367717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(239, 234, 234, 0.311);\r\n+  background-color: rgba(244, 237, 237, 0.311);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660381988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(244, 237, 237, 0.311);\r\n+  background-color: rgba(230, 224, 224, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660400558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(230, 224, 224, 0.342);\r\n+  background-color: rgba(192, 186, 186, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660406940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  background-color: rgba(192, 186, 186, 0.342);\r\n+  background-color: rgba(244, 237, 237, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n }\r\n"
+                },
+                {
+                    "date": 1737660458405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+.sidebar {\r\n+  width: 13%;\r\n+  height: 100vh;\r\n+  background-color: rgba(244, 237, 237, 0.342);\r\n+  color: black;\r\n+  position: fixed;\r\n+  transition: transform 0.3s ease;\r\n+  border-right: 1px solid #dee2e6;\r\n+}\r\n+\r\n+.sidebar.closed {\r\n+  transform: translateX(-100%);\r\n+}\r\n+\r\n+.sidebar legend {\r\n+  font-size: 1.1em;\r\n+  font-weight: bold;\r\n+  font-family:cursive;\r\n+  padding: 15px;\r\n+}\r\n+\r\n+.sidebar ul {\r\n+  list-style-type: none;\r\n+  font-family:cursive;\r\n+  padding: 10px;\r\n+}\r\n+\r\n+.sidebar ul li {\r\n+  margin: 10px 0;\r\n+}\r\n+\r\n+.sidebar ul li a {\r\n+  color: black;\r\n+  text-decoration: none;\r\n+  display: block;\r\n+  padding: 10px;\r\n+  transition: background-color 0.3s ease;\r\n+  border-radius: 20px;\r\n+}\r\n+\r\n+.sidebar ul li a:hover {\r\n+  background-color: #acb8c4;\r\n+  border-radius: 20px;\r\n+}\r\n"
+                },
+                {
+                    "date": 1737661626835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n+\r\n   background-color: rgba(244, 237, 237, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n@@ -41,47 +43,4 @@\n .sidebar ul li a:hover {\r\n   background-color: #acb8c4;\r\n   border-radius: 20px;\r\n }\r\n-.sidebar {\r\n-  width: 13%;\r\n-  height: 100vh;\r\n-  background-color: rgba(244, 237, 237, 0.342);\r\n-  color: black;\r\n-  position: fixed;\r\n-  transition: transform 0.3s ease;\r\n-}\r\n-\r\n-.sidebar.closed {\r\n-  transform: translateX(-100%);\r\n-}\r\n-\r\n-.sidebar legend {\r\n-  font-size: 1.1em;\r\n-  font-weight: bold;\r\n-  font-family:cursive;\r\n-  padding: 15px;\r\n-}\r\n-\r\n-.sidebar ul {\r\n-  list-style-type: none;\r\n-  font-family:cursive;\r\n-  padding: 10px;\r\n-}\r\n-\r\n-.sidebar ul li {\r\n-  margin: 10px 0;\r\n-}\r\n-\r\n-.sidebar ul li a {\r\n-  color: black;\r\n-  text-decoration: none;\r\n-  display: block;\r\n-  padding: 10px;\r\n-  transition: background-color 0.3s ease;\r\n-  border-radius: 20px;\r\n-}\r\n-\r\n-.sidebar ul li a:hover {\r\n-  background-color: #acb8c4;\r\n-  border-radius: 20px;\r\n-}\r\n"
+                },
+                {
+                    "date": 1737661642982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 13%;\r\n   height: 100vh;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n \r\n-  background-color: rgba(244, 237, 237, 0.342);\r\n+  // background-color: rgba(244, 237, 237, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n   border-right: 1px solid #dee2e6;\r\n"
+                },
+                {
+                    "date": 1737661682240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-\r\n-  // background-color: rgba(244, 237, 237, 0.342);\r\n+  background-color: rgba(244, 237, 237, 0.342);\r\n   color: black;\r\n   position: fixed;\r\n   transition: transform 0.3s ease;\r\n   border-right: 1px solid #dee2e6;\r\n"
+                }
+            ],
+            "date": 1737637672709,
+            "name": "Commit-0",
+            "content": ".sidebar {\r\n  width: 13%;\r\n  height: 100vh;\r\n  background-color: rgba(230, 233, 236, 0.352);\r\n  color: black;\r\n  padding: 0px;\r\n  position: fixed;\r\n  transition: transform 0.3s ease;\r\n}\r\n\r\n.sidebar.closed {\r\n  transform: translateX(-100%);\r\n}\r\n\r\n.sidebar legend {\r\n  font-size: 1.1em;\r\n  font-weight: bold;\r\n  font-family:cursive;\r\n  padding: 15px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.sidebar ul {\r\n  list-style-type: none;\r\n  font-family:cursive;\r\n  padding: 10px;\r\n}\r\n\r\n.sidebar ul li {\r\n  margin: 10px 0;\r\n}\r\n\r\n.sidebar ul li a {\r\n  color: black;\r\n  text-decoration: none;\r\n  display: block;\r\n  padding: 10px;\r\n  transition: background-color 0.3s ease;\r\n  border-radius: 20px;\r\n}\r\n\r\n.sidebar ul li a:hover {\r\n  background-color: #acb8c4;\r\n  border-radius: 20px;\r\n}\r\n"
+        }
+    ]
+}

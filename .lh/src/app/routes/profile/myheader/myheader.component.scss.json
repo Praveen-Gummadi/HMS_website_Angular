@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/routes/profile/myheader/myheader.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1737655956805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1737655956805,
+            "name": "Commit-0",
+            "content": ".logo-section {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.logo {\r\n  height: 50px;\r\n}\r\n\r\n.spacer {\r\n  flex: 1;\r\n}\r\n\r\n.account-button {\r\n  color: white;\r\n  :hover{\r\n    transform: scale(1.09);\r\n  }\r\n}\r\n"
+        }
+    ]
+}

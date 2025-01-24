@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { MatStepper } from '@angular/material/stepper';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
-import { RouterLink } from '@angular/router';
+import { MyheaderComponent } from '../profile/myheader/myheader.component';
 
 type AvailableDate = {
   day: string;
@@ -15,7 +15,7 @@ declare var Razorpay: any;
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [SharedModule, RouterLink],
+  imports: [SharedModule, MyheaderComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })

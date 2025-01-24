@@ -1,0 +1,45 @@
+<!-- Content -->
+  <div class="content">
+    <div class="header">
+      <legend>Orders</legend>
+      <mat-form-field appearance="outline" class="filter-dropdown">
+        <mat-label>Lab Test</mat-label>
+        <mat-select>
+          <mat-option value="lab-test">Lab Test</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-card>
+      <div class="order-summary">
+        <div>
+          <p>Ordered: <strong>28 October 2024</strong></p>
+          <p>Order ID: <strong>35184812</strong></p>
+        </div>
+        <div>
+          <button mat-raised-button color="primary">Appointment Details</button>
+          <button mat-raised-button color="accent">Order Details</button>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="order-details">
+        <p>Order: <strong>Lab tests</strong></p>
+        <p>Status: <strong>Appointment Confirmed</strong></p>
+        <p>Appointment Date & Time: <strong>30-Oct-2024 - 12:00 PM</strong></p>
+        <p>Patient Name: <strong>Sai Kumar Dothula</strong></p>
+      </div>
+
+      <div class="order-actions">
+        <button mat-button color="primary">Reschedule</button>
+        <button mat-button color="warn">Cancel</button>
+      </div>
+    </mat-card>
+
+    <div class="footer">
+      <p>Orders Displayed from 1st Jan 2024</p>
+      <button mat-raised-button color="accent">Load Past Orders</button>
+    </div>
+  </div>
+

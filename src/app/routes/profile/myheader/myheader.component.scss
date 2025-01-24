@@ -1,0 +1,19 @@
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.account-button {
+  color: white;
+  :hover{
+    transform: scale(1.09);
+  }
+}

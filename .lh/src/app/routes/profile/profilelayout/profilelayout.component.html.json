@@ -1,0 +1,210 @@
+{
+    "sourceFile": "src/app/routes/profile/profilelayout/profilelayout.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 48,
+            "patches": [
+                {
+                    "date": 1737633729726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737634109046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     <legend>My Profile</legend>\r\n     <ul>\r\n       <li><a routerLink=\"/\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/my-orders\">My Orders</a></li>\r\n+      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737635090049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n     <ul>\r\n-      <li><a routerLink=\"/\">Home</a></li>\r\n+      <li><button routerLink=\"/\">Home</button></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n+      <li><button routerLink=\"/myorders\">My Orders</button></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737635302477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n     <ul>\r\n-      <li><button routerLink=\"/\">Home</button></li>\r\n+      <li><button routerLink=\"/home\">Home</button></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><button routerLink=\"/myorders\">My Orders</button></li>\r\n+      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737635320407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     <legend>My Profile</legend>\r\n     <ul>\r\n       <li><button routerLink=\"/home\">Home</button></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n+      <li><button routerLink=\"/myorders\">My Orders</button></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737635600382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </ul>\r\n   </div>\r\n \r\n   <div class=\"main-content\">\r\n-    <router-outlet></router-outlet>\r\n+    <!-- <router-outlet></router-outlet> -->\r\n   </div>\r\n \r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737635605901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </ul>\r\n   </div>\r\n \r\n   <div class=\"main-content\">\r\n-    <!-- <router-outlet></router-outlet> -->\r\n+    <router-outlet></router-outlet>\r\n   </div>\r\n \r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737635658501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n   </div>\r\n \r\n   <div class=\"main-content\">\r\n     <router-outlet></router-outlet>\r\n+    <app-myorders></app-myorders>\r\n   </div>\r\n \r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737635684269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     </ul>\r\n   </div>\r\n \r\n   <div class=\"main-content\">\r\n-    <router-outlet></router-outlet>\r\n+    <!-- <router-outlet></router-outlet> -->\r\n     <app-myorders></app-myorders>\r\n   </div>\r\n \r\n </div>\r\n"
+                },
+                {
+                    "date": 1737636116497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,16 +19,16 @@\n     <legend>My Profile</legend>\r\n     <ul>\r\n       <li><button routerLink=\"/home\">Home</button></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><button routerLink=\"/myorders\">My Orders</button></li>\r\n+      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n \r\n   <div class=\"main-content\">\r\n-    <!-- <router-outlet></router-outlet> -->\r\n+    <router-outlet></router-outlet>\r\n     <app-myorders></app-myorders>\r\n   </div>\r\n \r\n </div>\r\n"
+                },
+                {
+                    "date": 1737636225793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n     <ul>\r\n-      <li><button routerLink=\"/home\">Home</button></li>\r\n+      <li><a routerLink=\"/home\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n"
+                },
+                {
+                    "date": 1737637082528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,26 +12,14 @@\n     </button>\r\n   </mat-toolbar>\r\n </div>\r\n \r\n-<div class=\"container\">\r\n-  <!-- Sidebar -->\r\n-  <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n-    <legend>My Profile</legend>\r\n-    <ul>\r\n-      <li><a routerLink=\"/home\">Home</a></li>\r\n-      <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n-      <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n-      <li><a routerLink=\"/reports\">Reports</a></li>\r\n-    </ul>\r\n+<div class=\"profile-layout\">\r\n+  <!-- <app-header></app-header> -->\r\n+  <!-- Main Content Area -->\r\n+  <div class=\"content\">\r\n+    <!-- <router-outlet></router-outlet> -->\r\n   </div>\r\n-\r\n-  <div class=\"main-content\">\r\n-    <router-outlet></router-outlet>\r\n-    <app-myorders></app-myorders>\r\n-  </div>\r\n-\r\n </div>\r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737637728652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   </mat-toolbar>\r\n </div>\r\n \r\n <div class=\"profile-layout\">\r\n-  <!-- <app-header></app-header> -->\r\n+  <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n     <!-- <router-outlet></router-outlet> -->\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737637808626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n-    <!-- <router-outlet></router-outlet> -->\r\n+    <router-outlet></router-outlet>\r\n   </div>\r\n </div>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737638834452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,52 +21,4 @@\n   </div>\r\n </div>\r\n \r\n \r\n-\r\n-  <!-- Content -->\r\n-  <!-- <div class=\"content\">\r\n-    <div class=\"header\">\r\n-      <legend>Orders</legend>\r\n-      <mat-form-field appearance=\"fill\" class=\"filter-dropdown\">\r\n-        <mat-label>Lab Test</mat-label>\r\n-        <mat-select>\r\n-          <mat-option value=\"lab-test\">Lab Test</mat-option>\r\n-        </mat-select>\r\n-      </mat-form-field>\r\n-    </div>\r\n-\r\n-    <mat-card>\r\n-      <div class=\"order-summary\">\r\n-        <div>\r\n-          <p>Ordered: <strong>28 October 2024</strong></p>\r\n-          <p>Order ID: <strong>35184812</strong></p>\r\n-        </div>\r\n-        <div>\r\n-          <button mat-raised-button color=\"primary\">Appointment Details</button>\r\n-          <button mat-raised-button color=\"accent\">Order Details</button>\r\n-        </div>\r\n-      </div>\r\n-\r\n-      <mat-divider></mat-divider>\r\n-\r\n-      <div class=\"order-details\">\r\n-        <p>Order: <strong>Lab tests</strong></p>\r\n-        <p>Status: <strong>Appointment Confirmed</strong></p>\r\n-        <p>Appointment Date & Time: <strong>30-Oct-2024 - 12:00 PM</strong></p>\r\n-        <p>Patient Name: <strong>Sai Kumar Dothula</strong></p>\r\n-      </div>\r\n-\r\n-      <div class=\"order-actions\">\r\n-        <button mat-button color=\"primary\">Reschedule</button>\r\n-        <button mat-button color=\"warn\">Cancel</button>\r\n-      </div>\r\n-    </mat-card>\r\n-\r\n-    <div class=\"footer\">\r\n-      <p>Orders Displayed from 1st Jan 2024</p>\r\n-      <button mat-raised-button color=\"accent\">Load Past Orders</button>\r\n-    </div>\r\n-  </div>\r\n-</div> -->\r\n-\r\n-\r\n"
+                },
+                {
+                    "date": 1737640027842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n+    <app-myhome></app-myhome>\r\n     <router-outlet></router-outlet>\r\n   </div>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737640066361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n-    <app-myhome></app-myhome>\r\n     <router-outlet></router-outlet>\r\n   </div>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737640392068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\">\r\n+<div class=\"tool-bar\" aria-posinset=\"exit_to_app>\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737640405278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\" aria-posinset=\"exit_to_app>\r\n+<div class=\"tool-bar\" aria-posinset=\"exit_to_app\">\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737640418400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\" aria-posinset=\"exit_to_app\">\r\n+<div class=\"tool-bar\" style=\"position: relative;\">\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737640425929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\" style=\"position: relative;\">\r\n+<div class=\"tool-bar\" style=\"position: fixed;\">\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737640516788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\" style=\"position: fixed;\">\r\n+<div class=\"tool-bar\">\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737655526062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <!-- Toolbar -->\r\n-<div class=\"tool-bar\">\r\n+<div class=\"header\">\r\n   <mat-toolbar color=\"primary\">\r\n     <div class=\"logo-section\">\r\n       <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737655912391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,4 @@\n-<!-- Toolbar -->\r\n-<div class=\"header\">\r\n-  <mat-toolbar color=\"primary\">\r\n-    <div class=\"logo-section\">\r\n-      <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n-    </div>\r\n-    <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n-    <div class=\"spacer\"></div>\r\n-    <button mat-flat-button class=\"account-button\" routerLink=\"\">\r\n-      <mat-icon>account_circle</mat-icon>\r\n-      My Account\r\n-    </button>\r\n-  </mat-toolbar>\r\n-</div>\r\n-\r\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n"
+                },
+                {
+                    "date": 1737656112942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <div class=\"profile-layout\">\r\n+  <app-myheader></app-myheader>\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n     <router-outlet></router-outlet>\r\n"
+                },
+                {
+                    "date": 1737656862455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n+<app-myheader></app-myheader>\r\n+\r\n <div class=\"profile-layout\">\r\n-  <app-myheader></app-myheader>\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n     <router-outlet></router-outlet>\r\n"
+                },
+                {
+                    "date": 1737656891937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<app-myheader></app-myheader>\r\n+<app-myheader style=\"position: fixed;\"></app-myheader>\r\n \r\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n"
+                },
+                {
+                    "date": 1737656925823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<app-myheader style=\"position: fixed;\"></app-myheader>\r\n+<app-myheader style=\"position: fixed; width: 100;\"></app-myheader>\r\n \r\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n"
+                },
+                {
+                    "date": 1737656982512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n-<app-myheader style=\"position: fixed; width: 100;\"></app-myheader>\r\n+<div class=\"main-layout\"></div>\r\n \r\n+<app-myheader style=\"position: fixed; width: 100%;\"></app-myheader>\r\n+\r\n <div class=\"profile-layout\">\r\n   <app-sidebar></app-sidebar>\r\n   <!-- Main Content Area -->\r\n   <div class=\"content\">\r\n"
+                },
+                {
+                    "date": 1737656998577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n-<div class=\"main-layout\"></div>\r\n+<div class=\"main-layout\">\r\n+  <app-myheader style=\"position: fixed; width: 100%;\"></app-myheader>\r\n \r\n-<app-myheader style=\"position: fixed; width: 100%;\"></app-myheader>\r\n+  <div class=\"profile-layout\">\r\n+    <app-sidebar></app-sidebar>\r\n+    <!-- Main Content Area -->\r\n+    <div class=\"content\">\r\n+      <router-outlet></router-outlet>\r\n+    </div>\r\n+  </div>\r\n \r\n-<div class=\"profile-layout\">\r\n-  <app-sidebar></app-sidebar>\r\n-  <!-- Main Content Area -->\r\n-  <div class=\"content\">\r\n-    <router-outlet></router-outlet>\r\n-  </div>\r\n </div>\r\n \r\n \r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1737657081799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <div class=\"main-layout\">\r\n-  <app-myheader style=\"position: fixed; width: 100%;\"></app-myheader>\r\n+  <app-myheader></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n     <app-sidebar></app-sidebar>\r\n     <!-- Main Content Area -->\r\n"
+                },
+                {
+                    "date": 1737657232591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,11 @@\n <div class=\"main-layout\">\r\n-  <app-myheader></app-myheader>\r\n+  <app-myheader class=\"header\"></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar></app-sidebar>\r\n+    <app-sidebar class=\"sidebar\"></app-sidebar>\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n-\r\n </div>\r\n-\r\n-\r\n-\r\n-\r\n"
+                },
+                {
+                    "date": 1737660631894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,12 @@\n   <app-myheader class=\"header\"></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n+    <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+  style=\"margin-left: 5px; margin-top: 5px;\">\r\n+  <mat-icon>menu</mat-icon>\r\n+</button>\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737660729058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n <div class=\"main-layout\">\r\n   <app-myheader class=\"header\"></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\"></app-sidebar>\r\n-    <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-  style=\"margin-left: 5px; margin-top: 5px;\">\r\n-  <mat-icon>menu</mat-icon>\r\n-</button>\r\n+    <app-sidebar class=\"sidebar\">\r\n+      <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+        style=\"margin-left: 5px; margin-top: 5px;\">\r\n+        <mat-icon>menu</mat-icon>\r\n+      </button>\r\n+    </app-sidebar>\r\n+\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737660792430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,16 @@\n <div class=\"main-layout\">\r\n   <app-myheader class=\"header\"></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\">\r\n-      <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-        style=\"margin-left: 5px; margin-top: 5px;\">\r\n-        <mat-icon>menu</mat-icon>\r\n-      </button>\r\n-    </app-sidebar>\r\n+    <app-sidebar class=\"sidebar\"></app-sidebar>\r\n \r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n+      <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+      style=\"margin-left: 5px; margin-top: 5px;\">\r\n+      <mat-icon>menu</mat-icon>\r\n+    </button>\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n </div>\r\n"
+                },
+                {
+                    "date": 1737660819919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n \r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n-      <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+      <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n       style=\"margin-left: 5px; margin-top: 5px;\">\r\n       <mat-icon>menu</mat-icon>\r\n     </button>\r\n       <router-outlet></router-outlet>\r\n"
+                },
+                {
+                    "date": 1737660844654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,15 @@\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n \r\n     <!-- Main Content Area -->\r\n-    <div class=\"content\">\r\n-      <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-      style=\"margin-left: 5px; margin-top: 5px;\">\r\n-      <mat-icon>menu</mat-icon>\r\n-    </button>\r\n+\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n </div>\r\n+\r\n+<div class=\"content\">\r\n+  <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+  style=\"margin-left: 5px; margin-top: 5px;\">\r\n+  <mat-icon>menu</mat-icon>\r\n+</button>\r\n"
+                },
+                {
+                    "date": 1737660888983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,15 +4,14 @@\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n \r\n     <!-- Main Content Area -->\r\n-\r\n+    <div class=\"content\">\r\n+      <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+      style=\"margin-left: 5px; margin-top: 5px;\">\r\n+      <mat-icon>menu</mat-icon>\r\n+    </button>\r\n+    </div>\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n-</div>\r\n \r\n-<div class=\"content\">\r\n-  <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-  style=\"margin-left: 5px; margin-top: 5px;\">\r\n-  <mat-icon>menu</mat-icon>\r\n-</button>\r\n"
+                },
+                {
+                    "date": 1737660917209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-      style=\"margin-left: 5px; margin-top: 5px;\">\r\n+      style=\"margin-left: 50px; margin-top: 50px;\">\r\n       <mat-icon>menu</mat-icon>\r\n     </button>\r\n     </div>\r\n       <router-outlet></router-outlet>\r\n"
+                },
+                {
+                    "date": 1737660937371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,10 @@\n   <app-myheader class=\"header\"></app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n-\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n-      <button mat-raised-button *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-      style=\"margin-left: 50px; margin-top: 50px;\">\r\n-      <mat-icon>menu</mat-icon>\r\n-    </button>\r\n-    </div>\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n-\r\n+</div>\r\n"
+                },
+                {
+                    "date": 1737661103478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <div class=\"main-layout\">\r\n-  <app-myheader class=\"header\"></app-myheader>\r\n+  <app-myheader class=\"header\">\r\n+    <button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n+  </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\"></app-sidebar>\r\n     <!-- Main Content Area -->\r\n"
+                },
+                {
+                    "date": 1737661395112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,9 @@\n     <button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\"></app-sidebar>\r\n-    <!-- Main Content Area -->\r\n+    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>    <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737661451595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n     <button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>    <!-- Main Content Area -->\r\n+    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n+    <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737661469645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"main-layout\">\r\n   <app-myheader class=\"header\">\r\n-    <button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n+    <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n     <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n"
+                },
+                {
+                    "date": 1737661778268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,22 @@\n     <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n+    <div class=\"container\">\r\n+      <!-- Sidebar -->\r\n+      <div class=\"sidebar\" [class.closed]=\"!isSidebarClosed\" [ngClass]=\"{ 'collapsed': !isSidebarClosed }\">\r\n+        <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon></legend>\r\n+        <ul>\r\n+          <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n+          <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n+          <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n+          <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n+          <li><a routerLink=\"/reports\">Reports</a></li>\r\n+        </ul>\r\n+      </div>\r\n+    </div>\r\n+    <!-- <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar> -->\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737661828854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,21 +3,8 @@\n     <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <div class=\"container\">\r\n-      <!-- Sidebar -->\r\n-      <div class=\"sidebar\" [class.closed]=\"!isSidebarClosed\" [ngClass]=\"{ 'collapsed': !isSidebarClosed }\">\r\n-        <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon></legend>\r\n-        <ul>\r\n-          <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n-          <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-          <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n-          <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n-          <li><a routerLink=\"/reports\">Reports</a></li>\r\n-        </ul>\r\n-      </div>\r\n-    </div>\r\n     <!-- <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar> -->\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n"
+                },
+                {
+                    "date": 1737661836888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <!-- <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar> -->\r\n+    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737709741088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n+    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarOpen\"></app-sidebar>\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1737709770879,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     <button mat-raised-button class=\"toggle-button\" (click)=\"toggleSidebar()\">☰</button>\r\n   </app-myheader>\r\n \r\n   <div class=\"profile-layout\">\r\n-    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarOpen\"></app-sidebar>\r\n+    <app-sidebar class=\"sidebar\" [class.closed]=\"isSidebarClosed\"></app-sidebar>\r\n     <!-- Main Content Area -->\r\n     <div class=\"content\">\r\n       <router-outlet></router-outlet>\r\n     </div>\r\n"
+                }
+            ],
+            "date": 1737633729726,
+            "name": "Commit-0",
+            "content": "<!-- Toolbar -->\r\n<div class=\"tool-bar\">\r\n  <mat-toolbar color=\"primary\">\r\n    <div class=\"logo-section\">\r\n      <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n    </div>\r\n    <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n    <div class=\"spacer\"></div>\r\n    <button mat-flat-button class=\"account-button\" routerLink=\"\">\r\n      <mat-icon>account_circle</mat-icon>\r\n      My Account\r\n    </button>\r\n  </mat-toolbar>\r\n</div>\r\n\r\n<div class=\"container\">\r\n  <!-- Sidebar -->\r\n  <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n    <legend>My Profile</legend>\r\n    <ul>\r\n      <li><a routerLink=\"/\">Home</a></li>\r\n      <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n      <li><a routerLink=\"/my-orders\">My Orders</a></li>\r\n      <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n      <li><a routerLink=\"/reports\">Reports</a></li>\r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"main-content\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n\r\n</div>\r\n\r\n\r\n\r\n  <!-- Content -->\r\n  <!-- <div class=\"content\">\r\n    <div class=\"header\">\r\n      <legend>Orders</legend>\r\n      <mat-form-field appearance=\"fill\" class=\"filter-dropdown\">\r\n        <mat-label>Lab Test</mat-label>\r\n        <mat-select>\r\n          <mat-option value=\"lab-test\">Lab Test</mat-option>\r\n        </mat-select>\r\n      </mat-form-field>\r\n    </div>\r\n\r\n    <mat-card>\r\n      <div class=\"order-summary\">\r\n        <div>\r\n          <p>Ordered: <strong>28 October 2024</strong></p>\r\n          <p>Order ID: <strong>35184812</strong></p>\r\n        </div>\r\n        <div>\r\n          <button mat-raised-button color=\"primary\">Appointment Details</button>\r\n          <button mat-raised-button color=\"accent\">Order Details</button>\r\n        </div>\r\n      </div>\r\n\r\n      <mat-divider></mat-divider>\r\n\r\n      <div class=\"order-details\">\r\n        <p>Order: <strong>Lab tests</strong></p>\r\n        <p>Status: <strong>Appointment Confirmed</strong></p>\r\n        <p>Appointment Date & Time: <strong>30-Oct-2024 - 12:00 PM</strong></p>\r\n        <p>Patient Name: <strong>Sai Kumar Dothula</strong></p>\r\n      </div>\r\n\r\n      <div class=\"order-actions\">\r\n        <button mat-button color=\"primary\">Reschedule</button>\r\n        <button mat-button color=\"warn\">Cancel</button>\r\n      </div>\r\n    </mat-card>\r\n\r\n    <div class=\"footer\">\r\n      <p>Orders Displayed from 1st Jan 2024</p>\r\n      <button mat-raised-button color=\"accent\">Load Past Orders</button>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n\r\n\r\n"
+        }
+    ]
+}

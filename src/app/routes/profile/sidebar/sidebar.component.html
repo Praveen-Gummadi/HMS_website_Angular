@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- Sidebar -->
+  <div class="sidebar" [class.closed]="!isSidebarOpen" [ngClass]="{ 'collapsed': !isSidebarOpen }">
+    <legend>My Profile <mat-icon (click)="toggleSidebar()" style="margin-left: 10px; vertical-align: middle;">menu</mat-icon></legend>
+    <ul>
+      <li><a routerLink="/profile/myhome">Home</a></li>
+      <li><a routerLink="/basic-info">Basic Info</a></li>
+      <li><a routerLink="/profile/myorders">My Orders</a></li>
+      <li><a routerLink="/patient-history">Patient History</a></li>
+      <li><a routerLink="/reports">Reports</a></li>
+    </ul>
+  </div>
+</div>
+
+<button mat-mini-fab *ngIf="!isSidebarOpen" (click)="toggleSidebar()"
+  style="margin-left: 5px; margin-top: 5px;">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<!-- <mat-icon (click)="toggleSidebar()" *ngIf="!isSidebarOpen" style="padding: 10px;">menu</mat-icon> -->
+

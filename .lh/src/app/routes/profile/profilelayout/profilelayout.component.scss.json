@@ -1,0 +1,394 @@
+{
+    "sourceFile": "src/app/routes/profile/profilelayout/profilelayout.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 94,
+            "patches": [
+                {
+                    "date": 1737633596587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737633832339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n }\r\n \r\n .logo {\r\n   height: 50px;\r\n-  margin-right: 10px;\r\n+  margin-right: 5px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1737633857194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n }\r\n \r\n .logo {\r\n   height: 50px;\r\n-  margin-right: 5px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1737636049684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .container {\r\n   display: flex;\r\n-  font-family: Arial, sans-serif;\r\n+  flex-direction: row;\r\n }\r\n \r\n /* Toolbar Styles */\r\n .logo-section {\r\n"
+                },
+                {
+                    "date": 1737636062667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .container {\r\n   display: flex;\r\n-  flex-direction: row;\r\n+  flex-direction: column;\r\n }\r\n \r\n /* Toolbar Styles */\r\n .logo-section {\r\n"
+                },
+                {
+                    "date": 1737636272168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,4 @@\n-.container {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-}\r\n-\r\n /* Toolbar Styles */\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n"
+                },
+                {
+                    "date": 1737636363406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,54 +65,61 @@\n   background-color: #acb8c4;\r\n   border-radius: 20px;\r\n }\r\n \r\n-/* Main content styling */\r\n-.content {\r\n-  width: 88%;\r\n-  padding: 20px;\r\n-}\r\n \r\n-.header {\r\n+.container {\r\n   display: flex;\r\n-  justify-content: space-between;\r\n-  align-items: center;\r\n+  flex-direction: column;\r\n }\r\n \r\n-.header legend {\r\n-  font-size: 20px;\r\n-  font-weight: bold;\r\n-}\r\n \r\n-.filter-dropdown {\r\n-  width: 150px;\r\n-  height: 60px;\r\n-}\r\n+// /* Main content styling */\r\n+// .content {\r\n+//   width: 88%;\r\n+//   padding: 20px;\r\n+// }\r\n \r\n-mat-card {\r\n-  padding: 10px;\r\n-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n-}\r\n+// .header {\r\n+//   display: flex;\r\n+//   justify-content: space-between;\r\n+//   align-items: center;\r\n+// }\r\n \r\n-.order-summary {\r\n-  display: flex;\r\n-  justify-content: space-between;\r\n-  align-items: center;\r\n-}\r\n+// .header legend {\r\n+//   font-size: 20px;\r\n+//   font-weight: bold;\r\n+// }\r\n \r\n-.order-details {\r\n-  margin-top: 20px;\r\n-  line-height: 1.6;\r\n-}\r\n+// .filter-dropdown {\r\n+//   width: 150px;\r\n+//   height: 60px;\r\n+// }\r\n \r\n-.order-actions {\r\n-  margin-top: 20px;\r\n-}\r\n+// mat-card {\r\n+//   padding: 10px;\r\n+//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n+// }\r\n \r\n-.footer {\r\n-  text-align: center;\r\n-  margin-top: 20px;\r\n-}\r\n+// .order-summary {\r\n+//   display: flex;\r\n+//   justify-content: space-between;\r\n+//   align-items: center;\r\n+// }\r\n \r\n-.footer button {\r\n-  margin-top: 10px;\r\n-}\r\n+// .order-details {\r\n+//   margin-top: 20px;\r\n+//   line-height: 1.6;\r\n+// }\r\n+\r\n+// .order-actions {\r\n+//   margin-top: 20px;\r\n+// }\r\n+\r\n+// .footer {\r\n+//   text-align: center;\r\n+//   margin-top: 20px;\r\n+// }\r\n+\r\n+// .footer button {\r\n+//   margin-top: 10px;\r\n+// }\r\n"
+                },
+                {
+                    "date": 1737636479403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,13 @@\n   display: flex;\r\n   flex-direction: column;\r\n }\r\n \r\n+ .main-content {\r\n+  display: flex;\r\n+ }\r\n \r\n+\r\n // /* Main content styling */\r\n // .content {\r\n //   width: 88%;\r\n //   padding: 20px;\r\n"
+                },
+                {
+                    "date": 1737636488368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n }\r\n \r\n  .main-content {\r\n   display: flex;\r\n+  margin-left: auto;\r\n  }\r\n \r\n \r\n // /* Main content styling */\r\n"
+                },
+                {
+                    "date": 1737636509799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n }\r\n \r\n  .main-content {\r\n   display: flex;\r\n-  margin-left: auto;\r\n+  flex: auto;\r\n  }\r\n \r\n \r\n // /* Main content styling */\r\n"
+                },
+                {
+                    "date": 1737636517314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n }\r\n \r\n  .main-content {\r\n   display: flex;\r\n-  flex: auto;\r\n+  flex:content;\r\n  }\r\n \r\n \r\n // /* Main content styling */\r\n"
+                },
+                {
+                    "date": 1737636540421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n   flex-direction: column;\r\n }\r\n \r\n  .main-content {\r\n-  display: flex;\r\n+  margin-left: 13%;\r\n   flex:content;\r\n  }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737636626250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,13 @@\n   }\r\n \r\n }\r\n \r\n+.container {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+}\r\n+\r\n .sidebar {\r\n   width: 13%;\r\n   height: 100vh;\r\n   background-color: rgba(230, 233, 236, 0.352);\r\n@@ -66,13 +71,10 @@\n   border-radius: 20px;\r\n }\r\n \r\n \r\n-.container {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-}\r\n \r\n+\r\n  .main-content {\r\n   margin-left: 13%;\r\n   flex:content;\r\n  }\r\n"
+                },
+                {
+                    "date": 1737636643834,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n \r\n \r\n \r\n  .main-content {\r\n-  margin-left: 13%;\r\n+  // margin-left: 13%;\r\n   flex:content;\r\n  }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737636660399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n \r\n \r\n  .main-content {\r\n   // margin-left: 13%;\r\n-  flex:content;\r\n+  display: flex;\r\n  }\r\n \r\n \r\n // /* Main content styling */\r\n"
+                },
+                {
+                    "date": 1737637007281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,109 +24,5 @@\n   display: flex;\r\n   flex-direction: column;\r\n }\r\n \r\n-.sidebar {\r\n-  width: 13%;\r\n-  height: 100vh;\r\n-  background-color: rgba(230, 233, 236, 0.352);\r\n-  color: black;\r\n-  padding: 0px;\r\n-  position: fixed;\r\n-  transition: transform 0.3s ease;\r\n-}\r\n \r\n-.sidebar.closed {\r\n-  transform: translateX(-100%);\r\n-}\r\n-\r\n-.sidebar legend {\r\n-  font-size: 1.1em;\r\n-  font-weight: bold;\r\n-  font-family:cursive;\r\n-  padding: 15px;\r\n-  margin-bottom: 10px;\r\n-}\r\n-\r\n-.sidebar ul {\r\n-  list-style-type: none;\r\n-  font-family:cursive;\r\n-  padding: 10px;\r\n-}\r\n-\r\n-.sidebar ul li {\r\n-  margin: 10px 0;\r\n-}\r\n-\r\n-.sidebar ul li a {\r\n-  color: black;\r\n-  text-decoration: none;\r\n-  display: block;\r\n-  padding: 10px;\r\n-  transition: background-color 0.3s ease;\r\n-  border-radius: 20px;\r\n-}\r\n-\r\n-.sidebar ul li a:hover {\r\n-  background-color: #acb8c4;\r\n-  border-radius: 20px;\r\n-}\r\n-\r\n-\r\n-\r\n-\r\n- .main-content {\r\n-  // margin-left: 13%;\r\n-  display: flex;\r\n- }\r\n-\r\n-\r\n-// /* Main content styling */\r\n-// .content {\r\n-//   width: 88%;\r\n-//   padding: 20px;\r\n-// }\r\n-\r\n-// .header {\r\n-//   display: flex;\r\n-//   justify-content: space-between;\r\n-//   align-items: center;\r\n-// }\r\n-\r\n-// .header legend {\r\n-//   font-size: 20px;\r\n-//   font-weight: bold;\r\n-// }\r\n-\r\n-// .filter-dropdown {\r\n-//   width: 150px;\r\n-//   height: 60px;\r\n-// }\r\n-\r\n-// mat-card {\r\n-//   padding: 10px;\r\n-//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n-// }\r\n-\r\n-// .order-summary {\r\n-//   display: flex;\r\n-//   justify-content: space-between;\r\n-//   align-items: center;\r\n-// }\r\n-\r\n-// .order-details {\r\n-//   margin-top: 20px;\r\n-//   line-height: 1.6;\r\n-// }\r\n-\r\n-// .order-actions {\r\n-//   margin-top: 20px;\r\n-// }\r\n-\r\n-// .footer {\r\n-//   text-align: center;\r\n-//   margin-top: 20px;\r\n-// }\r\n-\r\n-// .footer button {\r\n-//   margin-top: 10px;\r\n-// }\r\n"
+                },
+                {
+                    "date": 1737637962331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,15 @@\n   flex-direction: column;\r\n }\r\n \r\n \r\n+//////////////////////////////////////\r\n+\r\n+\r\n+.profile-layout {\r\n+  display: flex;\r\n+  min-height: 100vh;\r\n+  flex-direction: column;\r\n+  overflow: hidden;\r\n+}\r\n+\r\n+\r\n"
+                },
+                {
+                    "date": 1737637989461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,5 +35,12 @@\n   flex-direction: column;\r\n   overflow: hidden;\r\n }\r\n \r\n+.content {\r\n+  // margin-left: 250px;  /* Match the width of the sidebar */\r\n+  padding: 20px;\r\n+  width: 100%;\r\n+  background-color: #f4f4f4;\r\n+}\r\n \r\n+\r\n"
+                },
+                {
+                    "date": 1737638013979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,8 @@\n }\r\n \r\n .content {\r\n   // margin-left: 250px;  /* Match the width of the sidebar */\r\n-  padding: 20px;\r\n   width: 100%;\r\n   background-color: #f4f4f4;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737638859505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,9 @@\n \r\n .profile-layout {\r\n   display: flex;\r\n   min-height: 100vh;\r\n-  flex-direction: column;\r\n-  overflow: hidden;\r\n+  flex-direction: row;\r\n }\r\n \r\n .content {\r\n   // margin-left: 250px;  /* Match the width of the sidebar */\r\n"
+                },
+                {
+                    "date": 1737640199724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,17 +28,19 @@\n \r\n //////////////////////////////////////\r\n \r\n \r\n-.profile-layout {\r\n-  display: flex;\r\n-  min-height: 100vh;\r\n-  flex-direction: row;\r\n+.profile-layout app-sidebar {\r\n+  display: inline-block;\r\n+  vertical-align: top; /* Important for alignment */\r\n+  width: 250px;\r\n+  /* Sidebar styles */\r\n }\r\n \r\n-.content {\r\n-  // margin-left: 250px;  /* Match the width of the sidebar */\r\n-  width: 100%;\r\n-  background-color: #f4f4f4;\r\n+.profile-layout .content {\r\n+  display: inline-block;\r\n+  vertical-align: top;\r\n+  width: calc(100% - 250px); /* Calculate remaining width */\r\n+  padding: 20px;\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737640230237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,19 +28,22 @@\n \r\n //////////////////////////////////////\r\n \r\n \r\n+.profile-layout {\r\n+  display: grid;\r\n+  grid-template-columns: 250px 1fr; /* Sidebar width and remaining space */\r\n+  min-height: 100vh;\r\n+}\r\n+\r\n .profile-layout app-sidebar {\r\n-  display: inline-block;\r\n-  vertical-align: top; /* Important for alignment */\r\n-  width: 250px;\r\n   /* Sidebar styles */\r\n+  background-color: #f0f0f0;\r\n+  padding: 20px;\r\n }\r\n \r\n .profile-layout .content {\r\n-  display: inline-block;\r\n-  vertical-align: top;\r\n-  width: calc(100% - 250px); /* Calculate remaining width */\r\n-  padding: 20px;\r\n+    padding: 20px;\r\n+    overflow-y: auto;/*If content is large add scroll bar */\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737640255790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n /* Toolbar Styles */\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n+  position: fixed;\r\n }\r\n \r\n .logo {\r\n   height: 50px;\r\n"
+                },
+                {
+                    "date": 1737640272232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n /* Toolbar Styles */\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n-  position: fixed;\r\n }\r\n \r\n .logo {\r\n   height: 50px;\r\n"
+                },
+                {
+                    "date": 1737640302649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n /* Toolbar Styles */\r\n+\r\n+.tool-bar {\r\n+  position: fixed;\r\n+}\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n }\r\n"
+                },
+                {
+                    "date": 1737640342179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,5 @@\n /* Toolbar Styles */\r\n-\r\n-.tool-bar {\r\n-  position: fixed;\r\n-}\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n }\r\n"
+                },
+                {
+                    "date": 1737640493871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,10 @@\n //////////////////////////////////////\r\n \r\n \r\n .profile-layout {\r\n-  display: grid;\r\n-  grid-template-columns: 250px 1fr; /* Sidebar width and remaining space */\r\n-  min-height: 100vh;\r\n+  display: flex;\r\n+  flex-direction: row;\r\n }\r\n \r\n .profile-layout app-sidebar {\r\n   /* Sidebar styles */\r\n"
+                },
+                {
+                    "date": 1737640526619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \r\n \r\n .profile-layout {\r\n   display: flex;\r\n-  flex-direction: row;\r\n+  grid-template-columns: 250px 1fr;\r\n }\r\n \r\n .profile-layout app-sidebar {\r\n   /* Sidebar styles */\r\n"
+                },
+                {
+                    "date": 1737640554711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,11 @@\n //////////////////////////////////////\r\n \r\n \r\n .profile-layout {\r\n-  display: flex;\r\n-  grid-template-columns: 250px 1fr;\r\n+  display: grid;\r\n+  grid-template-columns: 15% 1fr;\r\n+  min-height: 100vh;\r\n }\r\n \r\n .profile-layout app-sidebar {\r\n   /* Sidebar styles */\r\n"
+                },
+                {
+                    "date": 1737655459629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,12 @@\n \r\n .profile-layout {\r\n   display: grid;\r\n   grid-template-columns: 15% 1fr;\r\n-  min-height: 100vh;\r\n+  height: 100vh;\r\n }\r\n \r\n .profile-layout app-sidebar {\r\n-  /* Sidebar styles */\r\n   background-color: #f0f0f0;\r\n   padding: 20px;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737655473101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,8 @@\n }\r\n \r\n .profile-layout .content {\r\n     padding: 20px;\r\n-    overflow-y: auto;/*If content is large add scroll bar */\r\n+    // overflow-y: auto;\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737655557121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-/* Toolbar Styles */\r\n+.header {\r\n+  position: fixed;\r\n+}\r\n+\r\n .logo-section {\r\n   display: flex;\r\n   align-items: center;\r\n }\r\n"
+                },
+                {
+                    "date": 1737655578517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +1,31 @@\n .header {\r\n   position: fixed;\r\n-}\r\n \r\n-.logo-section {\r\n-  display: flex;\r\n-  align-items: center;\r\n-}\r\n+  .logo-section {\r\n+    display: flex;\r\n+    align-items: center;\r\n+  }\r\n \r\n-.logo {\r\n-  height: 50px;\r\n-}\r\n+  .logo {\r\n+    height: 50px;\r\n+  }\r\n \r\n-.spacer {\r\n-  flex: 1;\r\n-}\r\n+  .spacer {\r\n+    flex: 1;\r\n+  }\r\n \r\n-.account-button {\r\n-  color: white;\r\n-  :hover{\r\n-    transform: scale(1.09);\r\n+  .account-button {\r\n+    color: white;\r\n+    :hover{\r\n+      transform: scale(1.09);\r\n+    }\r\n+\r\n   }\r\n-\r\n }\r\n \r\n+\r\n+\r\n .container {\r\n   display: flex;\r\n   flex-direction: column;\r\n }\r\n"
+                },
+                {
+                    "date": 1737655613782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,31 +1,25 @@\n-.header {\r\n-  position: fixed;\r\n+.logo-section {\r\n+  display: flex;\r\n+  align-items: center;\r\n+}\r\n \r\n-  .logo-section {\r\n-    display: flex;\r\n-    align-items: center;\r\n-  }\r\n+.logo {\r\n+  height: 50px;\r\n+}\r\n \r\n-  .logo {\r\n-    height: 50px;\r\n-  }\r\n+.spacer {\r\n+  flex: 1;\r\n+}\r\n \r\n-  .spacer {\r\n-    flex: 1;\r\n+.account-button {\r\n+  color: white;\r\n+  :hover{\r\n+    transform: scale(1.09);\r\n   }\r\n \r\n-  .account-button {\r\n-    color: white;\r\n-    :hover{\r\n-      transform: scale(1.09);\r\n-    }\r\n-\r\n-  }\r\n }\r\n \r\n-\r\n-\r\n .container {\r\n   display: flex;\r\n   flex-direction: column;\r\n }\r\n"
+                },
+                {
+                    "date": 1737656049609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,4 @@\n-.logo-section {\r\n-  display: flex;\r\n-  align-items: center;\r\n-}\r\n-\r\n-.logo {\r\n-  height: 50px;\r\n-}\r\n-\r\n-.spacer {\r\n-  flex: 1;\r\n-}\r\n-\r\n-.account-button {\r\n-  color: white;\r\n-  :hover{\r\n-    transform: scale(1.09);\r\n-  }\r\n-\r\n-}\r\n-\r\n-.container {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-}\r\n-\r\n-\r\n-//////////////////////////////////////\r\n-\r\n-\r\n .profile-layout {\r\n   display: grid;\r\n   grid-template-columns: 15% 1fr;\r\n   height: 100vh;\r\n"
+                },
+                {
+                    "date": 1737657062323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+.main-layout {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+}\r\n+\r\n .profile-layout {\r\n   display: grid;\r\n   grid-template-columns: 15% 1fr;\r\n   height: 100vh;\r\n"
+                },
+                {
+                    "date": 1737657353401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,74 @@\n+// .main-layout {\r\n+//   display: flex;\r\n+//   flex-direction: column;\r\n+// }\r\n+\r\n+// .profile-layout {\r\n+//   display: grid;\r\n+//   grid-template-columns: 15% 1fr;\r\n+//   height: 100vh;\r\n+// }\r\n+\r\n+// .profile-layout app-sidebar {\r\n+//   background-color: #f0f0f0;\r\n+//   padding: 20px;\r\n+// }\r\n+\r\n+// .profile-layout .content {\r\n+//     padding: 20px;\r\n+//     // overflow-y: auto;\r\n+// }\r\n+\r\n+\r\n+\r\n+/* General Reset */\r\n+* {\r\n+  margin: 0;\r\n+  padding: 0;\r\n+  box-sizing: border-box;\r\n+}\r\n+\r\n+body, html {\r\n+  height: 100%;\r\n+}\r\n+\r\n+/* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n   flex-direction: column;\r\n+  height: 100%;\r\n }\r\n \r\n+/* Header stays at the top */\r\n+.header {\r\n+  height: 60px; /* Adjust height as needed */\r\n+  background-color: #007bff; /* Example background color */\r\n+  color: white;\r\n+  display: flex;\r\n+  align-items: center;\r\n+  padding: 0 16px;\r\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n+}\r\n+\r\n+/* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n-  display: grid;\r\n-  grid-template-columns: 15% 1fr;\r\n-  height: 100vh;\r\n+  display: flex;\r\n+  flex: 1;\r\n+  height: calc(100% - 60px); /* Subtract header height */\r\n }\r\n \r\n-.profile-layout app-sidebar {\r\n-  background-color: #f0f0f0;\r\n-  padding: 20px;\r\n+/* Sidebar */\r\n+.sidebar {\r\n+  width: 250px; /* Adjust width as needed */\r\n+  background-color: #f8f9fa; /* Example background color */\r\n+  border-right: 1px solid #dee2e6;\r\n+  padding: 16px;\r\n }\r\n \r\n-.profile-layout .content {\r\n-    padding: 20px;\r\n-    // overflow-y: auto;\r\n+/* Main Content Area */\r\n+.content {\r\n+  flex: 1;\r\n+  padding: 16px;\r\n+  overflow-y: auto; /* Allow scrolling for content */\r\n }\r\n \r\n-\r\n"
+                },
+                {
+                    "date": 1737657406855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n }\r\n \r\n /* Header stays at the top */\r\n .header {\r\n+  width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1737657439028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,18 +20,9 @@\n // }\r\n \r\n \r\n \r\n-/* General Reset */\r\n-* {\r\n-  margin: 0;\r\n-  padding: 0;\r\n-  box-sizing: border-box;\r\n-}\r\n \r\n-body, html {\r\n-  height: 100%;\r\n-}\r\n \r\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n"
+                },
+                {
+                    "date": 1737657461982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,11 +36,8 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   display: flex;\r\n-  align-items: center;\r\n-  padding: 0 16px;\r\n-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n"
+                },
+                {
+                    "date": 1737657477033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,8 @@\n \r\n /* Header stays at the top */\r\n .header {\r\n   width: 100%;\r\n-  height: 60px; /* Adjust height as needed */\r\n-  background-color: #007bff; /* Example background color */\r\n-  color: white;\r\n   display: flex;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657490316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,8 @@\n \r\n /* Header stays at the top */\r\n .header {\r\n   width: 100%;\r\n-  display: flex;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n"
+                },
+                {
+                    "date": 1737657510237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,12 @@\n \r\n /* Header stays at the top */\r\n .header {\r\n   width: 100%;\r\n+  height: 60px; /* Adjust height as needed */\r\n+  background-color: #007bff; /* Example background color */\r\n+  color: white;\r\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n"
+                },
+                {
+                    "date": 1737657540697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,18 @@\n // }\r\n \r\n \r\n \r\n+/* General Reset */\r\n+* {\r\n+  margin: 0;\r\n+  padding: 0;\r\n+  box-sizing: border-box;\r\n+}\r\n \r\n+body, html {\r\n+  height: 100%;\r\n+}\r\n \r\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n@@ -35,8 +44,11 @@\n   width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n+  display: flex;\r\n+  align-items: center;\r\n+  padding: 0 16px;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657550893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,8 @@\n   width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n-  display: flex;\r\n   align-items: center;\r\n   padding: 0 16px;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n"
+                },
+                {
+                    "date": 1737657575520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,8 @@\n   width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n-  align-items: center;\r\n   padding: 0 16px;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657583237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,8 @@\n   width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n-  padding: 0 16px;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657620189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,10 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n+  border-bottom: 1px solid #dee2e6;\r\n+  ;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n"
+                },
+                {
+                    "date": 1737657644767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,8 @@\n \r\n /* Sidebar */\r\n .sidebar {\r\n   width: 250px; /* Adjust width as needed */\r\n-  background-color: #f8f9fa; /* Example background color */\r\n   border-right: 1px solid #dee2e6;\r\n   padding: 16px;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657654800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n }\r\n \r\n /* Sidebar */\r\n .sidebar {\r\n-  width: 250px; /* Adjust width as needed */\r\n+  width: 15%; /* Adjust width as needed */\r\n   border-right: 1px solid #dee2e6;\r\n   padding: 16px;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657685619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,8 @@\n /* Sidebar */\r\n .sidebar {\r\n   width: 15%; /* Adjust width as needed */\r\n   border-right: 1px solid #dee2e6;\r\n-  padding: 16px;\r\n }\r\n \r\n /* Main Content Area */\r\n .content {\r\n"
+                },
+                {
+                    "date": 1737657720110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,7 @@\n \r\n /* Main Content Area */\r\n .content {\r\n   flex: 1;\r\n-  padding: 16px;\r\n   overflow-y: auto; /* Allow scrolling for content */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657725355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,7 +65,8 @@\n \r\n /* Main Content Area */\r\n .content {\r\n   flex: 1;\r\n+  padding: 16px;\r\n   overflow-y: auto; /* Allow scrolling for content */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657789799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,10 +58,10 @@\n }\r\n \r\n /* Sidebar */\r\n .sidebar {\r\n-  width: 15%; /* Adjust width as needed */\r\n-  border-right: 1px solid #dee2e6;\r\n+  width: 15%;\r\n+  // border-right: 1px solid #dee2e6;\r\n }\r\n \r\n /* Main Content Area */\r\n .content {\r\n"
+                },
+                {
+                    "date": 1737657802679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,8 +65,8 @@\n \r\n /* Main Content Area */\r\n .content {\r\n   flex: 1;\r\n-  padding: 16px;\r\n+  padding: 0px;\r\n   overflow-y: auto; /* Allow scrolling for content */\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657837863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,14 +59,14 @@\n \r\n /* Sidebar */\r\n .sidebar {\r\n   width: 15%;\r\n-  // border-right: 1px solid #dee2e6;\r\n+  border-right: 1px solid #dee2e6;\r\n }\r\n \r\n /* Main Content Area */\r\n .content {\r\n   flex: 1;\r\n-  padding: 0px;\r\n-  overflow-y: auto; /* Allow scrolling for content */\r\n+  padding: 16px;\r\n+  overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737657845392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 1px solid #dee2e6;\r\n+  border-bottom: 10px solid #dee2e6;\r\n   ;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657858680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n   flex-direction: column;\r\n   height: 100%;\r\n }\r\n \r\n-/* Header stays at the top */\r\n+\r\n .header {\r\n   width: 100%;\r\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n"
+                },
+                {
+                    "date": 1737657884746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,20 +19,8 @@\n //     // overflow-y: auto;\r\n // }\r\n \r\n \r\n-\r\n-/* General Reset */\r\n-* {\r\n-  margin: 0;\r\n-  padding: 0;\r\n-  box-sizing: border-box;\r\n-}\r\n-\r\n-body, html {\r\n-  height: 100%;\r\n-}\r\n-\r\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1737657896326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 10px solid #dee2e6;\r\n+  border-bottom: 1px solid #dee2e6;\r\n   ;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657904530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 1px solid #dee2e6;\r\n+  border-bottom: 5px solid #dee2e6;\r\n   ;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657918406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   height: 60px; /* Adjust height as needed */\r\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 5px solid #dee2e6;\r\n+  border-bottom: 3px solid #dee2e6;\r\n   ;\r\n }\r\n \r\n /* Profile Layout for Sidebar and Content */\r\n"
+                },
+                {
+                    "date": 1737657935423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,13 +37,12 @@\n   border-bottom: 3px solid #dee2e6;\r\n   ;\r\n }\r\n \r\n-/* Profile Layout for Sidebar and Content */\r\n .profile-layout {\r\n   display: flex;\r\n   flex: 1;\r\n-  height: calc(100% - 60px); /* Subtract header height */\r\n+  height: calc(100% - 60px);\r\n }\r\n \r\n /* Sidebar */\r\n .sidebar {\r\n"
+                },
+                {
+                    "date": 1737657957192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,24 +34,21 @@\n   background-color: #007bff; /* Example background color */\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n   border-bottom: 3px solid #dee2e6;\r\n-  ;\r\n }\r\n \r\n .profile-layout {\r\n   display: flex;\r\n   flex: 1;\r\n   height: calc(100% - 60px);\r\n }\r\n \r\n-/* Sidebar */\r\n .sidebar {\r\n   width: 15%;\r\n   border-right: 1px solid #dee2e6;\r\n }\r\n \r\n-/* Main Content Area */\r\n .content {\r\n   flex: 1;\r\n   padding: 16px;\r\n   overflow-y: auto;\r\n"
+                },
+                {
+                    "date": 1737657978098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n-  width: 15%;\r\n+  width: 20%;\r\n   border-right: 1px solid #dee2e6;\r\n }\r\n \r\n .content {\r\n"
+                },
+                {
+                    "date": 1737657992412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n-  width: 20%;\r\n+  width: 13%;\r\n   border-right: 1px solid #dee2e6;\r\n }\r\n \r\n .content {\r\n"
+                },
+                {
+                    "date": 1737658865739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,12 @@\n   flex: 1;\r\n   height: calc(100% - 60px);\r\n }\r\n \r\n-.sidebar {\r\n-  width: 13%;\r\n-  border-right: 1px solid #dee2e6;\r\n-}\r\n+// .sidebar {\r\n+//   width: 13%;\r\n+//   border-right: 1px solid #dee2e6;\r\n+// }\r\n \r\n .content {\r\n   flex: 1;\r\n   padding: 16px;\r\n"
+                },
+                {
+                    "date": 1737660529146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,12 @@\n   flex: 1;\r\n   height: calc(100% - 60px);\r\n }\r\n \r\n-// .sidebar {\r\n-//   width: 13%;\r\n-//   border-right: 1px solid #dee2e6;\r\n-// }\r\n+.sidebar {\r\n+  width: 13%;\r\n+  border-right: 1px solid #dee2e6;\r\n+}\r\n \r\n .content {\r\n   flex: 1;\r\n   padding: 16px;\r\n"
+                },
+                {
+                    "date": 1737661240137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,16 @@\n-// .main-layout {\r\n-//   display: flex;\r\n-//   flex-direction: column;\r\n-// }\r\n+* General Reset */\r\n+* {\r\n+  margin: 0;\r\n+  padding: 0;\r\n+  box-sizing: border-box;\r\n+}\r\n \r\n-// .profile-layout {\r\n-//   display: grid;\r\n-//   grid-template-columns: 15% 1fr;\r\n-//   height: 100vh;\r\n-// }\r\n+body, html {\r\n+  height: 100%;\r\n+}\r\n \r\n-// .profile-layout app-sidebar {\r\n-//   background-color: #f0f0f0;\r\n-//   padding: 20px;\r\n-// }\r\n \r\n-// .profile-layout .content {\r\n-//     padding: 20px;\r\n-//     // overflow-y: auto;\r\n-// }\r\n-\r\n-\r\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n   flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1737661257468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\r\n * General Reset */\r\n * {\r\n   margin: 0;\r\n   padding: 0;\r\n"
+                },
+                {
+                    "date": 1737661282569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-\r\n-* General Reset */\r\n+/* General Reset */\r\n * {\r\n   margin: 0;\r\n   padding: 0;\r\n   box-sizing: border-box;\r\n"
+                },
+                {
+                    "date": 1737661345259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,18 +25,30 @@\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n   border-bottom: 3px solid #dee2e6;\r\n }\r\n+.toggle-button {\r\n+  background: none;\r\n+  border: none;\r\n+  color: white;\r\n+  font-size: 24px;\r\n+  cursor: pointer;\r\n+}\r\n \r\n .profile-layout {\r\n   display: flex;\r\n   flex: 1;\r\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n-  width: 13%;\r\n+  // width: 13%;\r\n+  // border-right: 1px solid #dee2e6;\r\n+  width: 250px;\r\n+  background-color: #f8f9fa;\r\n   border-right: 1px solid #dee2e6;\r\n+  padding: 16px;\r\n+  transition: width 0.3s ease;\r\n }\r\n \r\n .content {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1737661362003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,14 @@\n   padding: 16px;\r\n   transition: width 0.3s ease;\r\n }\r\n \r\n+.sidebar.closed {\r\n+  width: 0;\r\n+  padding: 0;\r\n+  overflow: hidden;\r\n+}\r\n+\r\n .content {\r\n   flex: 1;\r\n   padding: 16px;\r\n   overflow-y: auto;\r\n"
+                },
+                {
+                    "date": 1737661494844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,15 +40,15 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n-  // width: 13%;\r\n+  width: 13%;\r\n+  border-right: 1px solid #dee2e6;\r\n+  // width: 250px;\r\n+  // background-color: #f8f9fa;\r\n   // border-right: 1px solid #dee2e6;\r\n-  width: 250px;\r\n-  background-color: #f8f9fa;\r\n-  border-right: 1px solid #dee2e6;\r\n-  padding: 16px;\r\n-  transition: width 0.3s ease;\r\n+  // padding: 16px;\r\n+  // transition: width 0.3s ease;\r\n }\r\n \r\n .sidebar.closed {\r\n   width: 0;\r\n"
+                },
+                {
+                    "date": 1737661539303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,14 +19,14 @@\n \r\n \r\n .header {\r\n   width: 100%;\r\n-  height: 60px; /* Adjust height as needed */\r\n-  background-color: #007bff; /* Example background color */\r\n+  height: 60px;\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n   border-bottom: 3px solid #dee2e6;\r\n }\r\n+\r\n .toggle-button {\r\n   background: none;\r\n   border: none;\r\n   color: white;\r\n"
+                },
+                {
+                    "date": 1737661574523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   width: 100%;\r\n   height: 60px;\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 3px solid #dee2e6;\r\n+  border-bottom: 30px solid #dee2e6;\r\n }\r\n \r\n .toggle-button {\r\n   background: none;\r\n"
+                },
+                {
+                    "date": 1737661582743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,12 @@\n \r\n .header {\r\n   width: 100%;\r\n   height: 60px;\r\n+  background-color: #007bff;\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 30px solid #dee2e6;\r\n+  border-bottom: 3px solid #dee2e6;\r\n }\r\n \r\n .toggle-button {\r\n   background: none;\r\n"
+                },
+                {
+                    "date": 1737661612222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,10 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n+\r\n   width: 13%;\r\n   border-right: 1px solid #dee2e6;\r\n   // width: 250px;\r\n   // background-color: #f8f9fa;\r\n"
+                },
+                {
+                    "date": 1737662097021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,8 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n .sidebar {\r\n-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-\r\n   width: 13%;\r\n   border-right: 1px solid #dee2e6;\r\n   // width: 250px;\r\n   // background-color: #f8f9fa;\r\n"
+                },
+                {
+                    "date": 1737662166015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n+  width: 100%;\r\n   flex: 1;\r\n   padding: 16px;\r\n   overflow-y: auto;\r\n }\r\n"
+                },
+                {
+                    "date": 1737662202864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  width: 100%;\r\n   flex: 1;\r\n-  padding: 16px;\r\n+  padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662218131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  flex: 1;\r\n+  flex: 2;\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662237092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  flex: 2;\r\n+  display: flex;\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662246637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  display: flex;\r\n+\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662260025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-\r\n+ flex-wrap: wrap;\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662271095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n- flex-wrap: wrap;\r\n+  flex: 5;\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662285688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  flex: 5;\r\n+  flex: 10;\r\n   padding: 10px;\r\n   overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662333283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,7 +59,6 @@\n \r\n .content {\r\n   flex: 10;\r\n   padding: 10px;\r\n-  overflow-y: auto;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662339257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,8 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n-  flex: 10;\r\n+  flex: 1;\r\n   padding: 10px;\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1737662350867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n /* General Reset */\r\n * {\r\n   margin: 0;\r\n   padding: 0;\r\n-  box-sizing: border-box;\r\n }\r\n \r\n body, html {\r\n   height: 100%;\r\n"
+                },
+                {
+                    "date": 1737662389585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   padding: 0;\r\n }\r\n \r\n body, html {\r\n+  width: 100%;\r\n   height: 100%;\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737662407580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,9 @@\n-/* General Reset */\r\n-* {\r\n-  margin: 0;\r\n-  padding: 0;\r\n-}\r\n-\r\n-body, html {\r\n-  width: 100%;\r\n-  height: 100%;\r\n-}\r\n-\r\n-\r\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n   flex-direction: column;\r\n-  height: 100%;\r\n+  height: 120%;\r\n }\r\n \r\n \r\n .header {\r\n"
+                },
+                {
+                    "date": 1737662413841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /* Main Layout */\r\n .main-layout {\r\n   display: flex;\r\n   flex-direction: column;\r\n-  height: 120%;\r\n+  height: 100%;\r\n }\r\n \r\n \r\n .header {\r\n"
+                },
+                {
+                    "date": 1737662429568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n   cursor: pointer;\r\n }\r\n \r\n .profile-layout {\r\n+  width: 100%;\r\n   display: flex;\r\n   flex: 1;\r\n   height: calc(100% - 60px);\r\n }\r\n"
+                },
+                {
+                    "date": 1737662444269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,9 @@\n   overflow: hidden;\r\n }\r\n \r\n .content {\r\n+  width: 100%;\r\n   flex: 1;\r\n   padding: 10px;\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1737633596587,
+            "name": "Commit-0",
+            "content": ".container {\r\n  display: flex;\r\n  font-family: Arial, sans-serif;\r\n}\r\n\r\n/* Toolbar Styles */\r\n.logo-section {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.logo {\r\n  height: 50px;\r\n  margin-right: 10px;\r\n}\r\n\r\n.spacer {\r\n  flex: 1;\r\n}\r\n\r\n.account-button {\r\n  color: white;\r\n  :hover{\r\n    transform: scale(1.09);\r\n  }\r\n\r\n}\r\n\r\n.sidebar {\r\n  width: 13%;\r\n  height: 100vh;\r\n  background-color: rgba(230, 233, 236, 0.352);\r\n  color: black;\r\n  padding: 0px;\r\n  position: fixed;\r\n  transition: transform 0.3s ease;\r\n}\r\n\r\n.sidebar.closed {\r\n  transform: translateX(-100%);\r\n}\r\n\r\n.sidebar legend {\r\n  font-size: 1.1em;\r\n  font-weight: bold;\r\n  font-family:cursive;\r\n  padding: 15px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.sidebar ul {\r\n  list-style-type: none;\r\n  font-family:cursive;\r\n  padding: 10px;\r\n}\r\n\r\n.sidebar ul li {\r\n  margin: 10px 0;\r\n}\r\n\r\n.sidebar ul li a {\r\n  color: black;\r\n  text-decoration: none;\r\n  display: block;\r\n  padding: 10px;\r\n  transition: background-color 0.3s ease;\r\n  border-radius: 20px;\r\n}\r\n\r\n.sidebar ul li a:hover {\r\n  background-color: #acb8c4;\r\n  border-radius: 20px;\r\n}\r\n\r\n/* Main content styling */\r\n.content {\r\n  width: 88%;\r\n  padding: 20px;\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.header legend {\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n}\r\n\r\n.filter-dropdown {\r\n  width: 150px;\r\n  height: 60px;\r\n}\r\n\r\nmat-card {\r\n  padding: 10px;\r\n  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.order-summary {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.order-details {\r\n  margin-top: 20px;\r\n  line-height: 1.6;\r\n}\r\n\r\n.order-actions {\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer {\r\n  text-align: center;\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer button {\r\n  margin-top: 10px;\r\n}\r\n"
+        }
+    ]
+}

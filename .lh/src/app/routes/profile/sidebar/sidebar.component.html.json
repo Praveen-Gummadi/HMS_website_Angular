@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/app/routes/profile/sidebar/sidebar.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1737637639732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737638710621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n-<!-- Sidebar -->\r\n-<div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n-  <legend>My Profile</legend>\r\n-  <ul>\r\n-    <li><a routerLink=\"/home\">Home</a></li>\r\n-    <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-    <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n-    <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n-    <li><a routerLink=\"/reports\">Reports</a></li>\r\n-  </ul>\r\n+<div class=\"container\">\r\n+  <!-- Sidebar -->\r\n+  <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n+    <legend>My Profile</legend>\r\n+    <ul>\r\n+      <li><a routerLink=\"/home\">Home</a></li>\r\n+      <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n+      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n+      <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n+      <li><a routerLink=\"/reports\">Reports</a></li>\r\n+    </ul>\r\n+  </div>\r\n </div>\r\n+\r\n"
+                },
+                {
+                    "date": 1737638786187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n+  <router-outlet></router-outlet>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737639645829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     <legend>My Profile</legend>\r\n     <ul>\r\n       <li><a routerLink=\"/home\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n+      <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1737639667144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,6 @@\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n-  <router-outlet></router-outlet>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737639845440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n     <ul>\r\n-      <li><a routerLink=\"/home\">Home</a></li>\r\n+      <li><a routerLink=\"/profile/mymenu\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n"
+                },
+                {
+                    "date": 1737639886015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n     <ul>\r\n-      <li><a routerLink=\"/profile/mymenu\">Home</a></li>\r\n+      <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n       <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n       <li><a routerLink=\"/reports\">Reports</a></li>\r\n"
+                },
+                {
+                    "date": 1737658316527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile</legend>\r\n+    <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737658416626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,14 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n+<button\r\n+mat-fab\r\n+color=\"primary\"\r\n+class=\"floating-toggle-button\"\r\n+*ngIf=\"!isSidebarOpen\"\r\n+(click)=\"toggleSidebar()\"\r\n+>\r\n+<mat-icon>menu</mat-icon>\r\n+</button>\r\n+\r\n"
+                },
+                {
+                    "date": 1737658451684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n-    <legend>My Profile</legend>\r\n-    <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737658488926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   </div>\r\n </div>\r\n \r\n <button\r\n-mat-fab\r\n+mat-mini-fab\r\n color=\"primary\"\r\n class=\"floating-toggle-button\"\r\n *ngIf=\"!isSidebarOpen\"\r\n (click)=\"toggleSidebar()\"\r\n"
+                },
+                {
+                    "date": 1737658511173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,9 @@\n   </div>\r\n </div>\r\n \r\n <button\r\n-mat-mini-fab\r\n color=\"primary\"\r\n-class=\"floating-toggle-button\"\r\n *ngIf=\"!isSidebarOpen\"\r\n (click)=\"toggleSidebar()\"\r\n >\r\n <mat-icon>menu</mat-icon>\r\n"
+                },
+                {
+                    "date": 1737658544049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,6 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button\r\n-color=\"primary\"\r\n-*ngIf=\"!isSidebarOpen\"\r\n-(click)=\"toggleSidebar()\"\r\n->\r\n-<mat-icon>menu</mat-icon>\r\n-</button>\r\n+<mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n \r\n"
+                },
+                {
+                    "date": 1737658625229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,16 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n+<button\r\n+mat-mini-fab\r\n+color=\"primary\"\r\n+class=\"floating-toggle-button\"\r\n+*ngIf=\"!isSidebarOpen\"\r\n+(click)=\"toggleSidebar()\"\r\n+>\r\n+<mat-icon>menu</mat-icon>\r\n+</button>\r\n \r\n+<mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n+\r\n"
+                },
+                {
+                    "date": 1737658637906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,16 +11,16 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button\r\n+<!-- <button\r\n mat-mini-fab\r\n color=\"primary\"\r\n class=\"floating-toggle-button\"\r\n *ngIf=\"!isSidebarOpen\"\r\n (click)=\"toggleSidebar()\"\r\n >\r\n <mat-icon>menu</mat-icon>\r\n-</button>\r\n+</button> -->\r\n \r\n <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n \r\n"
+                },
+                {
+                    "date": 1737658671175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,6 @@\n >\r\n <mat-icon>menu</mat-icon>\r\n </button> -->\r\n \r\n-<mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"margin-left: 10px;\">menu</mat-icon>\r\n+<mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon>\r\n \r\n"
+                },
+                {
+                    "date": 1737658727439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,16 +11,10 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<!-- <button\r\n-mat-mini-fab\r\n-color=\"primary\"\r\n-class=\"floating-toggle-button\"\r\n-*ngIf=\"!isSidebarOpen\"\r\n-(click)=\"toggleSidebar()\"\r\n->\r\n-<mat-icon>menu</mat-icon>\r\n-</button> -->\r\n+<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\">\r\n+  <mat-icon>menu</mat-icon>\r\n+</button>\r\n \r\n-<mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon>\r\n+<!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n \r\n"
+                },
+                {
+                    "date": 1737658749579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\">\r\n+<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"padding: 10px;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737658767084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"padding: 10px;\">\r\n+<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737658791114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">\r\n+<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"padding: 10px;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737658829735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n-<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\" style=\"padding: 10px;\">\r\n+<button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+  style=\"margin-left: 5px; margin-top: 5px;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737659013147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n-      <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n-      <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n-      <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n-      <li><a routerLink=\"/reports\">Reports</a></li>\r\n+      <li><a routerLink=\"/profile/myhome\" routerLinkActive=\"active-link\">Home</a></li>\r\n+      <li><a routerLink=\"/basic-info\" routerLinkActive=\"active-link\">Basic Info</a></li>\r\n+      <li><a routerLink=\"/profile/myorders\" routerLinkActive=\"active-link\">My Orders</a></li>\r\n+      <li><a routerLink=\"/patient-history\" routerLinkActive=\"active-link\">Patient History</a></li>\r\n+      <li><a routerLink=\"/reports\" routerLinkActive=\"active-link\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737659175850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,13 @@\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n     <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n-      <li><a routerLink=\"/profile/myhome\" routerLinkActive=\"active-link\">Home</a></li>\r\n-      <li><a routerLink=\"/basic-info\" routerLinkActive=\"active-link\">Basic Info</a></li>\r\n-      <li><a routerLink=\"/profile/myorders\" routerLinkActive=\"active-link\">My Orders</a></li>\r\n-      <li><a routerLink=\"/patient-history\" routerLinkActive=\"active-link\">Patient History</a></li>\r\n-      <li><a routerLink=\"/reports\" routerLinkActive=\"active-link\">Reports</a></li>\r\n+      <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n+      <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n+      <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n+      <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n+      <li><a routerLink=\"/reports\">Reports</a></li>\r\n     </ul>\r\n   </div>\r\n </div>\r\n \r\n"
+                },
+                {
+                    "date": 1737659368160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n-  <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n+  <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n     <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n"
+                },
+                {
+                    "date": 1737659623470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n-    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"padding: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737659639373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n-    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"padding: 10px;\">menu</mat-icon></legend>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737659666775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n-    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"padding: 5px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737659843750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n-    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"padding: 5px;\">menu</mat-icon></legend>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737659876039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <div class=\"container\">\r\n   <!-- Sidebar -->\r\n   <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n-    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px;\">menu</mat-icon></legend>\r\n+    <legend>My Profile <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon></legend>\r\n     <ul>\r\n       <li><a routerLink=\"/profile/myhome\">Home</a></li>\r\n       <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n       <li><a routerLink=\"/profile/myorders\">My Orders</a></li>\r\n"
+                },
+                {
+                    "date": 1737659932749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   </div>\r\n </div>\r\n \r\n <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-  style=\"margin-left: 5px; margin-top: 5px;\">\r\n+  style=\"margin-left: 5px; margin-top: 5px; z-index: 1;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737659957754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   </div>\r\n </div>\r\n \r\n <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-  style=\"margin-left: 5px; margin-top: 5px; z-index: 1;\">\r\n+  style=\"margin-left: 5px; margin-top: 5px; z-index: -1;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                },
+                {
+                    "date": 1737659976750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   </div>\r\n </div>\r\n \r\n <button mat-mini-fab *ngIf=\"!isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n-  style=\"margin-left: 5px; margin-top: 5px; z-index: -1;\">\r\n+  style=\"margin-left: 5px; margin-top: 5px;\">\r\n   <mat-icon>menu</mat-icon>\r\n </button>\r\n \r\n <!-- <mat-icon (click)=\"toggleSidebar()\" *ngIf=\"!isSidebarOpen\" style=\"padding: 10px;\">menu</mat-icon> -->\r\n"
+                }
+            ],
+            "date": 1737637639732,
+            "name": "Commit-0",
+            "content": "<!-- Sidebar -->\r\n<div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\">\r\n  <legend>My Profile</legend>\r\n  <ul>\r\n    <li><a routerLink=\"/home\">Home</a></li>\r\n    <li><a routerLink=\"/basic-info\">Basic Info</a></li>\r\n    <li><a routerLink=\"/myorders\">My Orders</a></li>\r\n    <li><a routerLink=\"/patient-history\">Patient History</a></li>\r\n    <li><a routerLink=\"/reports\">Reports</a></li>\r\n  </ul>\r\n</div>\r\n"
+        }
+    ]
+}
