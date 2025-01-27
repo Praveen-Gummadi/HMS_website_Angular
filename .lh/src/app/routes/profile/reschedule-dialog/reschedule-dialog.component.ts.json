@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/app/routes/profile/reschedule-dialog/reschedule-dialog.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1737971711621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737971726167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { Component, Inject } from '@angular/core';\r\n import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n+import { SharedModule } from '../../../shared/shared.module';\r\n \r\n @Component({\r\n   selector: 'app-reschedule-dialog',\r\n   standalone: true,\r\n-  imports: [],\r\n+  imports: [SharedModule],\r\n   templateUrl: './reschedule-dialog.component.html',\r\n   styleUrl: './reschedule-dialog.component.scss'\r\n })\r\n export class RescheduleDialogComponent {\r\n"
+                },
+                {
+                    "date": 1737971866451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n import { Component, Inject } from '@angular/core';\r\n import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n+import { MatDialog } from '@angular/material/dialog';\r\n+import { MatDialogModule } from '@angular/material/dialog';\r\n+\r\n import { SharedModule } from '../../../shared/shared.module';\r\n \r\n @Component({\r\n   selector: 'app-reschedule-dialog',\r\n   standalone: true,\r\n-  imports: [SharedModule],\r\n+  imports: [SharedModule, MatDialogModule],\r\n   templateUrl: './reschedule-dialog.component.html',\r\n   styleUrl: './reschedule-dialog.component.scss'\r\n })\r\n export class RescheduleDialogComponent {\r\n"
+                },
+                {
+                    "date": 1737971939554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { Component, Inject } from '@angular/core';\r\n import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n-import { MatDialog } from '@angular/material/dialog';\r\n import { MatDialogModule } from '@angular/material/dialog';\r\n \r\n import { SharedModule } from '../../../shared/shared.module';\r\n \r\n@@ -13,19 +12,22 @@\n   templateUrl: './reschedule-dialog.component.html',\r\n   styleUrl: './reschedule-dialog.component.scss'\r\n })\r\n export class RescheduleDialogComponent {\r\n-  constructor(private dialog: MatDialog) {}\r\n+  rescheduleForm: FormGroup;\r\n \r\n-  openRescheduleDialog() {\r\n-    const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n-      width: '400px', // Adjust width as needed\r\n-      data: {} // Pass any data if needed\r\n+  constructor(\r\n+    public dialogRef: MatDialogRef<RescheduleDialogComponent>,\r\n+    private fb: FormBuilder\r\n+  ) {\r\n+    this.rescheduleForm = this.fb.group({\r\n+      reason: ['', Validators.required],\r\n+      otherReason: ['']\r\n     });\r\n+  }\r\n \r\n-    dialogRef.afterClosed().subscribe(result => {\r\n-      if (result) {\r\n-        console.log('Reschedule Data:', result); // Handle the form data\r\n-      }\r\n-    });\r\n+  submit() {\r\n+    if (this.rescheduleForm.valid) {\r\n+      this.dialogRef.close(this.rescheduleForm.value); // Pass form data back\r\n+    }\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1737971711621,
+            "name": "Commit-0",
+            "content": "import { Component, Inject } from '@angular/core';\r\nimport { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-reschedule-dialog',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './reschedule-dialog.component.html',\r\n  styleUrl: './reschedule-dialog.component.scss'\r\n})\r\nexport class RescheduleDialogComponent {\r\n  constructor(private dialog: MatDialog) {}\r\n\r\n  openRescheduleDialog() {\r\n    const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n      width: '400px', // Adjust width as needed\r\n      data: {} // Pass any data if needed\r\n    });\r\n\r\n    dialogRef.afterClosed().subscribe(result => {\r\n      if (result) {\r\n        console.log('Reschedule Data:', result); // Handle the form data\r\n      }\r\n    });\r\n  }\r\n}\r\n"
+        }
+    ]
+}

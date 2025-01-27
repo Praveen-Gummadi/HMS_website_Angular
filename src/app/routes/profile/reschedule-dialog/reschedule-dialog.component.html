@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Reschedule Appointment</h2>
+<mat-dialog-content>
+  <form [formGroup]="rescheduleForm">
+    <p class="required-field">* Reason for reschedule</p>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select Reason</mat-label>
+      <mat-select formControlName="reason" required>
+        <mat-option value="personal">Personal Reason</mat-option>
+        <mat-option value="technical">Technical Issue</mat-option>
+        <mat-option value="health">Health Concern</mat-option>
+        <mat-option value="other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" *ngIf="rescheduleForm.get('reason')?.value === 'other'">
+      <mat-label>Any Other Reason</mat-label>
+      <textarea matInput formControlName="otherReason" rows="2"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-raised-button color="primary" [disabled]="rescheduleForm.invalid" (click)="submit()">Yes</button>
+</mat-dialog-actions>

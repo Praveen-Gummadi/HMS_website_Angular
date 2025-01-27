@@ -3,20 +3,52 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 9,
             "patches": [
                 {
-                    "date": 1737661987325,
+                    "date": 1737958320993,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 },
                 {
-                    "date": 1737662022771,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { Component } from '@angular/core';\r\n+import { SharedModule } from '../../../shared/shared.module';\r\n \r\n @Component({\r\n   selector: 'app-myorders',\r\n   standalone: true,\r\n-  imports: [],\r\n+  imports: [SharedModule],\r\n   templateUrl: './myorders.component.html',\r\n   styleUrl: './myorders.component.scss'\r\n })\r\n export class MyordersComponent {\r\n"
+                    "date": 1737958464179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   templateUrl: './myorders.component.html',\r\n   styleUrl: './myorders.component.scss'\r\n })\r\n export class MyordersComponent {\r\n-  selectedFilter: string = 'all'; // Default filter\r\n+  selectedFilter: string = 'all-orders';\r\n   orders = [\r\n     {\r\n       id: '35184812',\r\n       date: '28 October 2024',\r\n"
+                },
+                {
+                    "date": 1737971973417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,15 +51,15 @@\n     // Add logic to cancel the order\r\n   }\r\n \r\n   getCalendarDate(appointment: string): string {\r\n-    return appointment.split(',')[0]; // Extract the date\r\n+    return appointment.split(',')[0];\r\n   }\r\n \r\n   getCalendarDay(appointment: string): string {\r\n-    return 'Sat, Jan 25'; // Replace with actual day logic if needed\r\n+    return 'Sat, Jan 25';\r\n   }\r\n \r\n   getCalendarTime(appointment: string): string {\r\n-    return appointment.split(',')[1].trim(); // Extract the time\r\n+    return appointment.split(',')[1].trim();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1737972003075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { Component } from '@angular/core';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n+import { MatDialog } from '@angular/material/dialog';\r\n+import { RescheduleDialogComponent } from '../reschedule-dialog/reschedule-dialog.component';\r\n \r\n @Component({\r\n   selector: 'app-myorders',\r\n   standalone: true,\r\n"
+                },
+                {
+                    "date": 1737972026069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,11 @@\n   styleUrl: './myorders.component.scss'\r\n })\r\n export class MyordersComponent {\r\n   selectedFilter: string = 'all-orders';\r\n+\r\n+  constructor(private dialog: MatDialog) {}\r\n+\r\n   orders = [\r\n     {\r\n       id: '35184812',\r\n       date: '28 October 2024',\r\n"
+                },
+                {
+                    "date": 1737972061641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,5 +66,18 @@\n \r\n   getCalendarTime(appointment: string): string {\r\n     return appointment.split(',')[1].trim();\r\n   }\r\n+\r\n+  openRescheduleDialog() {\r\n+    const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n+      width: '400px', // Adjust width as needed\r\n+      data: {} // Pass any data if needed\r\n+    });\r\n+\r\n+    dialogRef.afterClosed().subscribe(result => {\r\n+      if (result) {\r\n+        console.log('Reschedule Data:', result); // Handle the form data\r\n+      }\r\n+    });\r\n+  }\r\n }\r\n"
+                },
+                {
+                    "date": 1737972418564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,10 +46,18 @@\n     }\r\n   }\r\n \r\n   refreshOrder(orderId: string) {\r\n-    console.log(`Refresh order with ID: ${orderId}`);\r\n-    // Add logic to refresh the order\r\n+    const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n+      width: '400px', // Adjust width as needed\r\n+      data: {} // Pass any data if needed\r\n+    });\r\n+\r\n+    dialogRef.afterClosed().subscribe(result => {\r\n+      if (result) {\r\n+        console.log('Reschedule Data:', result); // Handle the form data\r\n+      }\r\n+    });\r\n   }\r\n \r\n   cancelOrder(orderId: string) {\r\n     console.log(`Cancel order with ID: ${orderId}`);\r\n"
+                },
+                {
+                    "date": 1737972469832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       );\r\n     }\r\n   }\r\n \r\n-  refreshOrder(orderId: string) {\r\n+  openRescheduleDialog(orderId: string) {\r\n     const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n       width: '400px', // Adjust width as needed\r\n       data: {} // Pass any data if needed\r\n     });\r\n@@ -74,18 +74,5 @@\n \r\n   getCalendarTime(appointment: string): string {\r\n     return appointment.split(',')[1].trim();\r\n   }\r\n-\r\n-  openRescheduleDialog() {\r\n-    const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n-      width: '400px', // Adjust width as needed\r\n-      data: {} // Pass any data if needed\r\n-    });\r\n-\r\n-    dialogRef.afterClosed().subscribe(result => {\r\n-      if (result) {\r\n-        console.log('Reschedule Data:', result); // Handle the form data\r\n-      }\r\n-    });\r\n-  }\r\n }\r\n"
+                },
+                {
+                    "date": 1737972488939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n       );\r\n     }\r\n   }\r\n \r\n-  openRescheduleDialog(orderId: string) {\r\n+  RescheduleDialog(orderId: string) {\r\n     const dialogRef = this.dialog.open(RescheduleDialogComponent, {\r\n       width: '400px', // Adjust width as needed\r\n       data: {} // Pass any data if needed\r\n     });\r\n"
+                },
+                {
+                    "date": 1737973090495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { Component } from '@angular/core';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { MatDialog } from '@angular/material/dialog';\r\n import { RescheduleDialogComponent } from '../reschedule-dialog/reschedule-dialog.component';\r\n+import { CancelOrderDialogComponent } from '../cancel-order-dialog/cancel-order-dialog.component';\r\n \r\n @Component({\r\n   selector: 'app-myorders',\r\n   standalone: true,\r\n@@ -59,10 +60,18 @@\n     });\r\n   }\r\n \r\n   cancelOrder(orderId: string) {\r\n-    console.log(`Cancel order with ID: ${orderId}`);\r\n-    // Add logic to cancel the order\r\n+    const dialogRef = this.dialog.open(CancelOrderDialogComponent, {\r\n+      width: '400px',\r\n+      data: {} // Pass any data if needed\r\n+    });\r\n+\r\n+    dialogRef.afterClosed().subscribe(result => {\r\n+      if (result) {\r\n+        console.log('Cancellation Data:', result);\r\n+      }\r\n+    });\r\n   }\r\n \r\n   getCalendarDate(appointment: string): string {\r\n     return appointment.split(',')[0];\r\n"
                 }
             ],
-            "date": 1737661987325,
+            "date": 1737958320993,
             "name": "Commit-0",
-            "content": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-myorders',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './myorders.component.html',\r\n  styleUrl: './myorders.component.scss'\r\n})\r\nexport class MyordersComponent {\r\n  // Mock data (you can fetch these dynamically using APIs)\r\n  orders = [\r\n    {\r\n      orderDate: '28 October 2024',\r\n      orderId: '35184812',\r\n      orderType: 'Lab tests',\r\n      status: 'Appointment Confirmed',\r\n      appointmentDate: '30-Oct-2024 - 12:00 PM',\r\n      patientName: 'Sai Kumar Dothula',\r\n    },\r\n  ];\r\n\r\n  loadPastOrders() {\r\n    console.log('Loading past orders...');\r\n    // Implement logic to load past orders\r\n  }\r\n\r\n  reschedule() {\r\n    console.log('Rescheduling...');\r\n    // Implement reschedule logic\r\n  }\r\n\r\n  cancel() {\r\n    console.log('Cancelling...');\r\n    // Implement cancel logic\r\n  }\r\n}\r\n"
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../../shared/shared.module';\r\n\r\n@Component({\r\n  selector: 'app-myorders',\r\n  standalone: true,\r\n  imports: [SharedModule],\r\n  templateUrl: './myorders.component.html',\r\n  styleUrl: './myorders.component.scss'\r\n})\r\nexport class MyordersComponent {\r\n  selectedFilter: string = 'all'; // Default filter\r\n  orders = [\r\n    {\r\n      id: '35184812',\r\n      date: '28 October 2024',\r\n      type: 'Virtual Consultation',\r\n      status: 'Confirmed',\r\n      appointment: '25 Jan 2025, 12:15 PM',\r\n      patient: 'Rajesh',\r\n    },\r\n    {\r\n      id: '35184813',\r\n      date: '15 December 2024',\r\n      type: 'Lab Test',\r\n      status: 'Pending',\r\n      appointment: '27 Jan 2025, 10:30 AM',\r\n      patient: 'Suresh',\r\n    },\r\n  ];\r\n\r\n  filteredOrders = [...this.orders];\r\n\r\n  filterOrders() {\r\n    if (this.selectedFilter === 'all') {\r\n      this.filteredOrders = [...this.orders];\r\n    } else {\r\n      this.filteredOrders = this.orders.filter(\r\n        (order) => order.type.toLowerCase() === this.selectedFilter\r\n      );\r\n    }\r\n  }\r\n\r\n  refreshOrder(orderId: string) {\r\n    console.log(`Refresh order with ID: ${orderId}`);\r\n    // Add logic to refresh the order\r\n  }\r\n\r\n  cancelOrder(orderId: string) {\r\n    console.log(`Cancel order with ID: ${orderId}`);\r\n    // Add logic to cancel the order\r\n  }\r\n\r\n  getCalendarDate(appointment: string): string {\r\n    return appointment.split(',')[0]; // Extract the date\r\n  }\r\n\r\n  getCalendarDay(appointment: string): string {\r\n    return 'Sat, Jan 25'; // Replace with actual day logic if needed\r\n  }\r\n\r\n  getCalendarTime(appointment: string): string {\r\n    return appointment.split(',')[1].trim(); // Extract the time\r\n  }\r\n}\r\n"
         }
     ]
 }

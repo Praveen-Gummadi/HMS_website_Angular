@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/routes/profile/reschedule-dialog/reschedule-dialog.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1737971616347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1737972237893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n }\r\n \r\n .required-field {\r\n   color: red;\r\n-  font-size: 12px;\r\n+  font-size: 10px;\r\n   margin-bottom: 8px;\r\n }\r\n"
+                }
+            ],
+            "date": 1737971616347,
+            "name": "Commit-0",
+            "content": ".full-width {\r\n  width: 100%;\r\n}\r\n\r\n.required-field {\r\n  color: red;\r\n  font-size: 12px;\r\n  margin-bottom: 8px;\r\n}\r\n"
+        }
+    ]
+}

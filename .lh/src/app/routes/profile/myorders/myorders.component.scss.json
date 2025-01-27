@@ -3,52 +3,696 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 9,
+            "activePatchIndex": 170,
             "patches": [
                 {
-                    "date": 1737661959162,
+                    "date": 1737958104507,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
                 },
                 {
-                    "date": 1737662061100,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n /* Main content styling */\r\n .content {\r\n-  width: 88%;\r\n+  width: 85%;\r\n   padding: 20px;\r\n }\r\n \r\n .header {\r\n"
+                    "date": 1737958272123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,50 @@\n /* Main content styling */\r\n-.content {\r\n-  width: 99%;\r\n-  padding: 5px;\r\n+.orders-section {\r\n+  background: #fff;\r\n+  border-radius: 8px;\r\n+  padding: 20px;\r\n+\r\n+  .filter-dropdown {\r\n+    margin-bottom: 20px;\r\n+    width: 200px;\r\n+  }\r\n+\r\n+  .order-card {\r\n+    margin-bottom: 20px;\r\n+\r\n+    .order-actions {\r\n+      margin-top: 10px;\r\n+\r\n+      button {\r\n+        margin-right: 10px;\r\n+      }\r\n+    }\r\n+\r\n+    .order-calendar {\r\n+      margin-top: 10px;\r\n+      .calendar-box {\r\n+        background-color: #304f9e;\r\n+        color: #fff;\r\n+        padding: 10px;\r\n+        border-radius: 8px;\r\n+        text-align: center;\r\n+\r\n+        .calendar-date {\r\n+          font-size: 16px;\r\n+          font-weight: bold;\r\n+        }\r\n+\r\n+        .calendar-day,\r\n+        .calendar-time {\r\n+          font-size: 14px;\r\n+        }\r\n+      }\r\n+    }\r\n+  }\r\n }\r\n \r\n+\r\n .header {\r\n   display: flex;\r\n   justify-content: space-between;\r\n   align-items: center;\r\n"
                 },
                 {
-                    "date": 1737691981828,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .filter-dropdown {\r\n   width: 150px;\r\n-  height: 60px;\r\n+  height: 40px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                    "date": 1737958570565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n     .order-calendar {\r\n       margin-top: 10px;\r\n       .calendar-box {\r\n-        background-color: #304f9e;\r\n+        background-color: #b9cdff;\r\n         color: #fff;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n"
                 },
                 {
-                    "date": 1737691990069,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\r\n \r\n .filter-dropdown {\r\n   width: 150px;\r\n-  height: 40px;\r\n+  height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                    "date": 1737958659581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,10 @@\n   background: #fff;\r\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n-  .filter-dropdown {\r\n-    margin-bottom: 20px;\r\n-    width: 200px;\r\n-  }\r\n-\r\n   .order-card {\r\n-    margin-bottom: 20px;\r\n+    // margin-bottom: 20px;\r\n \r\n     .order-actions {\r\n       margin-top: 10px;\r\n \r\n"
                 },
                 {
-                    "date": 1737691999902,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n-  width: 150px;\r\n+  width: 200px;\r\n   height: 60px;\r\n }\r\n \r\n mat-card {\r\n"
+                    "date": 1737958677199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n   .order-card {\r\n-    // margin-bottom: 20px;\r\n+    margin-bottom: 10px;\r\n \r\n     .order-actions {\r\n       margin-top: 10px;\r\n \r\n"
                 },
                 {
-                    "date": 1737692036596,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n+  max-height: 40px;\r\n   width: 200px;\r\n-  height: 60px;\r\n+  // height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                    "date": 1737958692827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   .order-card {\r\n     margin-bottom: 10px;\r\n \r\n     .order-actions {\r\n-      margin-top: 10px;\r\n+      // margin-top: 10px;\r\n \r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n"
                 },
                 {
-                    "date": 1737692053216,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,10 @@\n   font-weight: bold;\r\n }\r\n \r\n .filter-dropdown {\r\n-  max-height: 40px;\r\n   width: 200px;\r\n-  // height: 60px;\r\n+  height: 60px;\r\n }\r\n \r\n mat-card {\r\n   padding: 10px;\r\n"
+                    "date": 1737958747306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n /* Main content styling */\r\n .orders-section {\r\n+  display: flex;\r\n+  flex-direction: row;\r\n   background: #fff;\r\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n"
                 },
                 {
-                    "date": 1737692078609,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   align-items: center;\r\n }\r\n \r\n .order-details {\r\n-  margin-top: 20px;\r\n+  margin-top: 10px;\r\n   line-height: 1.6;\r\n }\r\n \r\n .order-actions {\r\n"
+                    "date": 1737958767305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n /* Main content styling */\r\n .orders-section {\r\n   display: flex;\r\n-  flex-direction: row;\r\n   background: #fff;\r\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n"
                 },
                 {
-                    "date": 1737692087342,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   align-items: center;\r\n }\r\n \r\n .order-details {\r\n-  margin-top: 10px;\r\n+  margin-top: 5px;\r\n   line-height: 1.6;\r\n }\r\n \r\n .order-actions {\r\n"
+                    "date": 1737958772818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n /* Main content styling */\r\n .orders-section {\r\n-  display: flex;\r\n   background: #fff;\r\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n"
                 },
                 {
-                    "date": 1737692100085,
-                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n }\r\n \r\n .order-details {\r\n   margin-top: 5px;\r\n-  line-height: 1.6;\r\n+  line-height: 1.2;\r\n }\r\n \r\n .order-actions {\r\n   margin-top: 20px;\r\n"
+                    "date": 1737958821261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n   border-radius: 8px;\r\n   padding: 20px;\r\n \r\n   .order-card {\r\n+    display: flex;\r\n+    flex-direction: row;\r\n     margin-bottom: 10px;\r\n \r\n     .order-actions {\r\n       // margin-top: 10px;\r\n"
+                },
+                {
+                    "date": 1737958987380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,12 @@\n     display: flex;\r\n     flex-direction: row;\r\n     margin-bottom: 10px;\r\n \r\n+    .mat-card-header {\r\n+      flex-direction: row;\r\n+    }\r\n+\r\n     .order-actions {\r\n       // margin-top: 10px;\r\n \r\n       button {\r\n"
+                },
+                {
+                    "date": 1737959014505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n     flex-direction: row;\r\n     margin-bottom: 10px;\r\n \r\n     .mat-card-header {\r\n+      display: flex;\r\n       flex-direction: row;\r\n     }\r\n \r\n     .order-actions {\r\n"
+                },
+                {
+                    "date": 1737959040155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   padding: 20px;\r\n \r\n   .order-card {\r\n     display: flex;\r\n-    flex-direction: row;\r\n+    flex-direction: column;\r\n     margin-bottom: 10px;\r\n \r\n     .mat-card-header {\r\n       display: flex;\r\n"
+                },
+                {
+                    "date": 1737959074995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,13 @@\n       display: flex;\r\n       flex-direction: row;\r\n     }\r\n \r\n+    .mat-card-title {\r\n+      display: flex;\r\n+      flex-direction: row;\r\n+    }\r\n+\r\n     .order-actions {\r\n       // margin-top: 10px;\r\n \r\n       button {\r\n"
+                },
+                {
+                    "date": 1737959136471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,13 @@\n     display: flex;\r\n     flex-direction: column;\r\n     margin-bottom: 10px;\r\n \r\n+    .Order-header{\r\n+      display: flex;\r\n+      flex-direction: row;\r\n+    }\r\n+\r\n     .mat-card-header {\r\n       display: flex;\r\n       flex-direction: row;\r\n     }\r\n"
+                },
+                {
+                    "date": 1737959177125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n+      margin-right: 20px;\r\n     }\r\n \r\n     .mat-card-header {\r\n       display: flex;\r\n"
+                },
+                {
+                    "date": 1737959195448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n       margin-right: 20px;\r\n+      gap: 20px;\r\n     }\r\n \r\n     .mat-card-header {\r\n       display: flex;\r\n"
+                },
+                {
+                    "date": 1737960175758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n-      margin-right: 20px;\r\n+      background: #fff;\r\n       gap: 20px;\r\n     }\r\n \r\n     .mat-card-header {\r\n"
+                },
+                {
+                    "date": 1737960389379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n       flex-direction: row;\r\n     }\r\n \r\n     .order-actions {\r\n+      background: #fff;\r\n       // margin-top: 10px;\r\n \r\n       button {\r\n         margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737960716261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,22 +11,15 @@\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n-      background: #fff;\r\n       gap: 20px;\r\n     }\r\n \r\n-    .mat-card-header {\r\n-      display: flex;\r\n-      flex-direction: row;\r\n+    mat-card-content {\r\n+      background-color: #fff;\r\n     }\r\n \r\n-    .mat-card-title {\r\n-      display: flex;\r\n-      flex-direction: row;\r\n-    }\r\n-\r\n     .order-actions {\r\n       background: #fff;\r\n       // margin-top: 10px;\r\n \r\n"
+                },
+                {
+                    "date": 1737960927590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,14 @@\n       flex-direction: row;\r\n       gap: 20px;\r\n     }\r\n \r\n+    mat-card-actions,\r\n     mat-card-content {\r\n       background-color: #fff;\r\n     }\r\n \r\n+\r\n     .order-actions {\r\n       background: #fff;\r\n       // margin-top: 10px;\r\n \r\n"
+                },
+                {
+                    "date": 1737961037075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-      // margin-top: 10px;\r\n+      margin-top: 10px;\r\n \r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n"
+                },
+                {
+                    "date": 1737961088160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-      margin-top: 10px;\r\n \r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n"
+                },
+                {
+                    "date": 1737961101417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-\r\n+gap: 10px;\r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961107473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-gap: 10px;\r\n+      gap: 10px;\r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961159331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-      gap: 10px;\r\n+      display: flex;\r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961174817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-      display: flex;\r\n+      margin-right: 10px;\r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961229452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,14 +17,14 @@\n \r\n     mat-card-actions,\r\n     mat-card-content {\r\n       background-color: #fff;\r\n+      gap: 10px;\r\n     }\r\n \r\n \r\n     .order-actions {\r\n       background: #fff;\r\n-      margin-right: 10px;\r\n       button {\r\n         margin-right: 10px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961394713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,13 @@\n       flex-direction: row;\r\n       gap: 20px;\r\n     }\r\n \r\n+    .order-body {\r\n+      display: flex;\r\n+      flex-direction: row;\r\n+    }\r\n+\r\n     mat-card-actions,\r\n     mat-card-content {\r\n       background-color: #fff;\r\n       gap: 10px;\r\n"
+                },
+                {
+                    "date": 1737961477818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n       display: flex;\r\n       flex-direction: row;\r\n     }\r\n \r\n-    mat-card-actions,\r\n     mat-card-content {\r\n       background-color: #fff;\r\n       gap: 10px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1737961491743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,13 @@\n \r\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n+      background-color: #fff;\r\n+\r\n     }\r\n \r\n     mat-card-content {\r\n-      background-color: #fff;\r\n       gap: 10px;\r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737961528886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,16 +18,20 @@\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n-\r\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n     }\r\n \r\n+    mat-card-actions {\r\n+      display: flex;\r\n+      flex-direction: column;\r\n+    }\r\n \r\n+\r\n     .order-actions {\r\n       background: #fff;\r\n       button {\r\n         margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737961540460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       gap: 10px;\r\n     }\r\n \r\n     mat-card-actions {\r\n-      display: flex;\r\n+      // display: flex;\r\n       flex-direction: column;\r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737961557736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n     }\r\n \r\n     mat-card-actions {\r\n       // display: flex;\r\n+      align-items: flex-start;\r\n       flex-direction: column;\r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737961578419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n+      gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n"
+                },
+                {
+                    "date": 1737961594829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n       gap: 10px;\r\n     }\r\n \r\n     mat-card-actions {\r\n-      // display: flex;\r\n       align-items: flex-start;\r\n       flex-direction: column;\r\n+      padding: 20px;\r\n     }\r\n \r\n \r\n     .order-actions {\r\n"
+                },
+                {
+                    "date": 1737961604092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n       flex-direction: column;\r\n-      padding: 20px;\r\n+      gap: 20px;\r\n     }\r\n \r\n \r\n     .order-actions {\r\n"
+                },
+                {
+                    "date": 1737961609907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n       flex-direction: column;\r\n-      gap: 20px;\r\n+      gap: 10px;\r\n     }\r\n \r\n \r\n     .order-actions {\r\n"
+                },
+                {
+                    "date": 1737961776706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,16 @@\n     mat-card-actions {\r\n       align-items: flex-start;\r\n       flex-direction: column;\r\n       gap: 10px;\r\n+      .action-button {\r\n+        width: 150px;\r\n+        display: flex;\r\n+        justify-content: center;\r\n+        align-items: center;\r\n+        text-align: center;\r\n+        white-space: nowrap;\r\n+      }\r\n     }\r\n \r\n \r\n     .order-actions {\r\n"
+                },
+                {
+                    "date": 1737961842653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /* Main content styling */\r\n .orders-section {\r\n   background: #fff;\r\n   border-radius: 8px;\r\n-  padding: 20px;\r\n+  padding: 10px;\r\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1737961859088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /* Main content styling */\r\n .orders-section {\r\n   background: #fff;\r\n   border-radius: 8px;\r\n-  padding: 10px;\r\n+  padding: 20px;\r\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1737962185178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n-      gap: 20px;\r\n+      // gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n"
+                },
+                {
+                    "date": 1737962192218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n-      // gap: 20px;\r\n+      gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n"
+                },
+                {
+                    "date": 1737962201900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /* Main content styling */\r\n .orders-section {\r\n   background: #fff;\r\n   border-radius: 8px;\r\n-  padding: 20px;\r\n+  // padding: 20px;\r\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n"
+                },
+                {
+                    "date": 1737962222892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,13 @@\n /* Main content styling */\r\n .orders-section {\r\n   background: #fff;\r\n   border-radius: 8px;\r\n-  // padding: 20px;\r\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n-    margin-bottom: 10px;\r\n+    // margin-bottom: 10px;\r\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1737962332235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n-    // margin-bottom: 10px;\r\n+    margin-bottom: 10px;\r\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1737962515129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n-      margin-top: 10px;\r\n       .calendar-box {\r\n         background-color: #b9cdff;\r\n         color: #fff;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737962589067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n+      padding: 0;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962604367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      gap: 10px;\r\n+      gap: 0;\r\n       padding: 0;\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737962613534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n \r\n     mat-card-content {\r\n       gap: 0;\r\n       padding: 0;\r\n+      inline-size: none;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962623907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       gap: 0;\r\n-      padding: 0;\r\n+      padding: 10px;\r\n       inline-size: none;\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737962631779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       gap: 0;\r\n-      padding: 10px;\r\n+      padding: 5px;\r\n       inline-size: none;\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737962647251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n     mat-card-content {\r\n       gap: 0;\r\n       padding: 5px;\r\n-      inline-size: none;\r\n+      inline-size: 0;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962658364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \r\n     mat-card-content {\r\n       gap: 0;\r\n       padding: 5px;\r\n-      inline-size: 0;\r\n+      inline-size: 10;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962677706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,10 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      gap: 0;\r\n-      padding: 5px;\r\n-      inline-size: 10;\r\n+      gap: 10px;\r\n+      padding: 0;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962686565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n-      padding: 0;\r\n+      padding: 10px;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737962714743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n-    margin-bottom: 10px;\r\n+    // margin-bottom: 10px;\r\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1737962719842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \r\n   .order-card {\r\n     display: flex;\r\n     flex-direction: column;\r\n-    // margin-bottom: 10px;\r\n+    margin-bottom: 10px;\r\n \r\n     .Order-header{\r\n       display: flex;\r\n       flex-direction: row;\r\n"
+                },
+                {
+                    "date": 1737962805497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n+      display: grid;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962827063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      display: grid;\r\n+      display:flexbox;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962842251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      display:flexbox;\r\n+      display:inline-table;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962879518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       display:inline-table;\r\n+      inset-inline-start: 10px;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962897783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     }\r\n \r\n     mat-card-content {\r\n       display:inline-table;\r\n-      inset-inline-start: 10px;\r\n+      inset-inline-start:initial;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962906530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,8 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      display:inline-table;\r\n-      inset-inline-start:initial;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962938228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n+      font-size: 1rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962946039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      font-size: 1rem;\r\n+      font-size: 0.5rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737962978110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,13 @@\n     mat-card-content {\r\n       font-size: 0.5rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n+\r\n+      .p {\r\n+        font-size: 0.5rem;\r\n+\r\n+      }\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737963005481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,11 @@\n     mat-card-content {\r\n       font-size: 0.5rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n+      mat-card-content p {\r\n+        font-size: 0.5rem;\r\n+      }\r\n \r\n       .p {\r\n         font-size: 0.5rem;\r\n \r\n"
+                },
+                {
+                    "date": 1737963015273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,16 +24,8 @@\n     mat-card-content {\r\n       font-size: 0.5rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n-      mat-card-content p {\r\n-        font-size: 0.5rem;\r\n-      }\r\n-\r\n-      .p {\r\n-        font-size: 0.5rem;\r\n-\r\n-      }\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737963190043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,13 @@\n     }\r\n \r\n \r\n     .order-actions {\r\n-      background: #fff;\r\n-      button {\r\n-        margin-right: 10px;\r\n-      }\r\n+      flex-direction: column;\r\n+\r\n+      // button {\r\n+      //   margin-right: 10px;\r\n+      // }\r\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n"
+                },
+                {
+                    "date": 1737963200341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n     }\r\n \r\n \r\n     .order-actions {\r\n+      display: flex;\r\n       flex-direction: column;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737963207105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     }\r\n \r\n \r\n     .order-actions {\r\n-      display: flex;\r\n+      // display: flex;\r\n       flex-direction: column;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737963216521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,12 @@\n     }\r\n \r\n \r\n     .order-actions {\r\n-      // display: flex;\r\n+      display: flex;\r\n       flex-direction: column;\r\n+      gap: 10px\r\n+      ;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n       // }\r\n"
+                },
+                {
+                    "date": 1737963231701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,10 @@\n \r\n     .order-actions {\r\n       display: flex;\r\n       flex-direction: column;\r\n-      gap: 10px\r\n-      ;\r\n+      padding: 10px;\r\n+      gap: 10px;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n       // }\r\n"
+                },
+                {
+                    "date": 1737963273740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n       gap: 20px;\r\n     }\r\n \r\n     mat-card-content {\r\n-      font-size: 0.5rem;\r\n       gap: 10px;\r\n       padding: 10px;\r\n     }\r\n \r\n@@ -46,8 +45,11 @@\n       display: flex;\r\n       flex-direction: column;\r\n       padding: 10px;\r\n       gap: 10px;\r\n+      justify-content: center;\r\n+      align-items: center;\r\n+      text-align: center;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n       // }\r\n"
+                },
+                {
+                    "date": 1737963279080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,8 @@\n       flex-direction: column;\r\n       padding: 10px;\r\n       gap: 10px;\r\n       justify-content: center;\r\n-      align-items: center;\r\n       text-align: center;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737963286092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,8 @@\n       display: flex;\r\n       flex-direction: column;\r\n       padding: 10px;\r\n       gap: 10px;\r\n-      justify-content: center;\r\n       text-align: center;\r\n \r\n       // button {\r\n       //   margin-right: 10px;\r\n"
+                },
+                {
+                    "date": 1737963721995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,11 +47,11 @@\n       padding: 10px;\r\n       gap: 10px;\r\n       text-align: center;\r\n \r\n-      // button {\r\n-      //   margin-right: 10px;\r\n-      // }\r\n+      button {\r\n+        width: 150px;\r\n+      }\r\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n"
+                },
+                {
+                    "date": 1737963728688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n-        width: 150px;\r\n+        width: 250px;\r\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n"
+                },
+                {
+                    "date": 1737963735435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n-        width: 250px;\r\n+        width: 200px;\r\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n"
+                },
+                {
+                    "date": 1737963743630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n-        width: 200px;\r\n+        width: 210px;\r\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n"
+                },
+                {
+                    "date": 1737963878594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     .order-actions {\r\n       display: flex;\r\n       flex-direction: column;\r\n       padding: 10px;\r\n-      gap: 10px;\r\n+      // gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n         width: 210px;\r\n"
+                },
+                {
+                    "date": 1737963885739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     .order-actions {\r\n       display: flex;\r\n       flex-direction: column;\r\n       padding: 10px;\r\n-      // gap: 10px;\r\n+      gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n         width: 210px;\r\n"
+                },
+                {
+                    "date": 1737963893368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n-        width: 210px;\r\n+        width: 220px;\r\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n"
+                },
+                {
+                    "date": 1737963902784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n       gap: 10px;\r\n       text-align: center;\r\n \r\n       button {\r\n-        width: 220px;\r\n+        width: 230px;\r\n       }\r\n     }\r\n \r\n     .order-calendar {\r\n"
+                },
+                {
+                    "date": 1737967344820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,14 @@\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n       padding: 10px;\r\n+\r\n+      p {\r\n+        margin: 0; /* Remove any default margins */\r\n+        line-height: 1.2; /* Adjust the line height for reduced spacing */\r\n+        font-size: 14px; /* Optionally adjust the font size */\r\n+      }\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737967368501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,11 +25,11 @@\n       gap: 10px;\r\n       padding: 10px;\r\n \r\n       p {\r\n-        margin: 0; /* Remove any default margins */\r\n-        line-height: 1.2; /* Adjust the line height for reduced spacing */\r\n-        font-size: 14px; /* Optionally adjust the font size */\r\n+        margin: 0;\r\n+        line-height: 1;\r\n+        font-size: 14px;\r\n       }\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737967386201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       gap: 10px;\r\n       padding: 10px;\r\n \r\n       p {\r\n-        margin: 0;\r\n+        margin: 10px;\r\n         line-height: 1;\r\n         font-size: 14px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737967395982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       gap: 10px;\r\n       padding: 10px;\r\n \r\n       p {\r\n-        margin: 10px;\r\n+        // margin: 10px;\r\n         line-height: 1;\r\n         font-size: 14px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737967410059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1;\r\n-        font-size: 14px;\r\n+        font-size: 13px;\r\n       }\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737967533813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     }\r\n \r\n     .order-body {\r\n       display: flex;\r\n+      align-items: center;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n@@ -27,9 +28,9 @@\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1;\r\n-        font-size: 13px;\r\n+        font-size: 12px;\r\n       }\r\n     }\r\n \r\n     mat-card-actions {\r\n"
+                },
+                {
+                    "date": 1737967551120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n     }\r\n \r\n     .order-body {\r\n       display: flex;\r\n-      align-items: center;\r\n       flex-direction: row;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1737967595441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       padding: 10px;\r\n \r\n       p {\r\n         // margin: 10px;\r\n-        line-height: 1;\r\n+        line-height: 1.2;\r\n         font-size: 12px;\r\n       }\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737967654678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         background-color: #b9cdff;\r\n         color: #fff;\r\n-        padding: 10px;\r\n+        // padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n         .calendar-date {\r\n"
+                },
+                {
+                    "date": 1737967661818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         background-color: #b9cdff;\r\n         color: #fff;\r\n-        // padding: 10px;\r\n+        padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n         .calendar-date {\r\n"
+                },
+                {
+                    "date": 1737967703435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,8 +66,14 @@\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n+        p {\r\n+          // margin: 10px;\r\n+          line-height: 1.2;\r\n+          // font-size: 12px;\r\n+        }\r\n+\r\n         .calendar-date {\r\n           font-size: 16px;\r\n           font-weight: bold;\r\n         }\r\n"
+                },
+                {
+                    "date": 1737967715315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         text-align: center;\r\n \r\n         p {\r\n           // margin: 10px;\r\n-          line-height: 1.2;\r\n+          line-height: 1;\r\n           // font-size: 12px;\r\n         }\r\n \r\n         .calendar-date {\r\n"
+                },
+                {
+                    "date": 1737967888040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,11 +67,9 @@\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n         p {\r\n-          // margin: 10px;\r\n           line-height: 1;\r\n-          // font-size: 12px;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n@@ -79,9 +77,9 @@\n         }\r\n \r\n         .calendar-day,\r\n         .calendar-time {\r\n-          font-size: 14px;\r\n+          font-size: 12px;\r\n         }\r\n       }\r\n     }\r\n   }\r\n"
+                },
+                {
+                    "date": 1737967921095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,8 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         background-color: #b9cdff;\r\n-        color: #fff;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n"
+                },
+                {
+                    "date": 1737967964792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,8 +60,9 @@\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n+        margin-top: 10px;\r\n         background-color: #b9cdff;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n"
+                },
+                {
+                    "date": 1737968126540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n       padding: 10px;\r\n+      display: grid;\r\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1.2;\r\n"
+                },
+                {
+                    "date": 1737968144262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n     mat-card-content {\r\n       gap: 10px;\r\n       padding: 10px;\r\n       display: grid;\r\n+      grid-template-columns: auto 1fr;\r\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1.2;\r\n"
+                },
+                {
+                    "date": 1737968195212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n       gap: 10px;\r\n       padding: 10px;\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n+      gap: 8px 16px; /* Adjust spacing between rows and columns */\r\n+  font-size: 14px; /* Adjust the font size for compact text */\r\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1.2;\r\n"
+                },
+                {
+                    "date": 1737968275835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,12 +23,8 @@\n \r\n     mat-card-content {\r\n       gap: 10px;\r\n       padding: 10px;\r\n-      display: grid;\r\n-      grid-template-columns: auto 1fr;\r\n-      gap: 8px 16px; /* Adjust spacing between rows and columns */\r\n-  font-size: 14px; /* Adjust the font size for compact text */\r\n \r\n       p {\r\n         // margin: 10px;\r\n         line-height: 1.2;\r\n"
+                },
+                {
+                    "date": 1737968376432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,29 @@\n         font-size: 12px;\r\n       }\r\n     }\r\n \r\n+    .order-details {\r\n+      display: grid;\r\n+      grid-template-columns: auto 1fr; /* Two columns: labels on the left, values on the right */\r\n+      gap: 8px 16px; /* Adjust spacing between rows and columns */\r\n+      font-size: 14px; /* Adjust the font size for compact text */\r\n+    }\r\n+\r\n+    .order-row {\r\n+      display: contents; /* Maintain grid layout for rows */\r\n+    }\r\n+\r\n+    .label {\r\n+      font-weight: bold; /* Bold for labels */\r\n+      text-align: right; /* Align text to the right */\r\n+      padding-right: 8px; /* Add spacing between label and value */\r\n+    }\r\n+\r\n+    .value {\r\n+      text-align: left; /* Align values to the left */\r\n+    }\r\n+\r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n       flex-direction: column;\r\n       gap: 10px;\r\n"
+                },
+                {
+                    "date": 1737968407900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,8 @@\n       display: contents; /* Maintain grid layout for rows */\r\n     }\r\n \r\n     .label {\r\n-      font-weight: bold; /* Bold for labels */\r\n-      text-align: right; /* Align text to the right */\r\n       padding-right: 8px; /* Add spacing between label and value */\r\n     }\r\n \r\n     .value {\r\n"
+                },
+                {
+                    "date": 1737968437647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n       display: contents; /* Maintain grid layout for rows */\r\n     }\r\n \r\n     .label {\r\n-      padding-right: 8px; /* Add spacing between label and value */\r\n+      padding-right: 5px;\r\n     }\r\n \r\n     .value {\r\n       text-align: left; /* Align values to the left */\r\n"
+                },
+                {
+                    "date": 1737968491789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,23 +33,23 @@\n     }\r\n \r\n     .order-details {\r\n       display: grid;\r\n-      grid-template-columns: auto 1fr; /* Two columns: labels on the left, values on the right */\r\n-      gap: 8px 16px; /* Adjust spacing between rows and columns */\r\n-      font-size: 14px; /* Adjust the font size for compact text */\r\n+      grid-template-columns: auto 1fr;\r\n+      gap: 8px 16px;\r\n+      font-size: 12px;\r\n     }\r\n \r\n     .order-row {\r\n-      display: contents; /* Maintain grid layout for rows */\r\n+      display: contents;\r\n     }\r\n \r\n     .label {\r\n       padding-right: 5px;\r\n     }\r\n \r\n     .value {\r\n-      text-align: left; /* Align values to the left */\r\n+      text-align: left;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737968501026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n       gap: 8px 16px;\r\n+      line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n     .order-row {\r\n"
+                },
+                {
+                    "date": 1737968510506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n       gap: 10px;\r\n       padding: 10px;\r\n \r\n       p {\r\n-        // margin: 10px;\r\n         line-height: 1.2;\r\n         font-size: 12px;\r\n       }\r\n     }\r\n"
+                },
+                {
+                    "date": 1737968594122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,144 @@\n+/* Main content styling */\r\n+.orders-section {\r\n+  background: #fff;\r\n+  border-radius: 8px;\r\n+\r\n+  .order-card {\r\n+    display: flex;\r\n+    flex-direction: column;\r\n+    margin-bottom: 10px;\r\n+\r\n+    .Order-header{\r\n+      display: flex;\r\n+      flex-direction: row;\r\n+      gap: 20px;\r\n+    }\r\n+\r\n+    .order-body {\r\n+      display: flex;\r\n+      flex-direction: row;\r\n+      background-color: #fff;\r\n+      gap: 20px;\r\n+    }\r\n+\r\n+    mat-card-content {\r\n+      gap: 10px;\r\n+      padding: 10px;\r\n+    }\r\n+\r\n+    .order-details {\r\n+      display: grid;\r\n+      grid-template-columns: auto 1fr;\r\n+      // gap: 8px 16px;\r\n+      line-height: 1.2;\r\n+      font-size: 12px;\r\n+    }\r\n+\r\n+    .order-row {\r\n+      display: contents;\r\n+    }\r\n+\r\n+    .label {\r\n+      padding-right: 5px;\r\n+    }\r\n+\r\n+    .value {\r\n+      text-align: left;\r\n+    }\r\n+\r\n+    mat-card-actions {\r\n+      align-items: flex-start;\r\n+      flex-direction: column;\r\n+      gap: 10px;\r\n+      .action-button {\r\n+        width: 150px;\r\n+        display: flex;\r\n+        justify-content: center;\r\n+        align-items: center;\r\n+        text-align: center;\r\n+        white-space: nowrap;\r\n+      }\r\n+    }\r\n+\r\n+\r\n+    .order-actions {\r\n+      display: flex;\r\n+      flex-direction: column;\r\n+      padding: 10px;\r\n+      gap: 10px;\r\n+      text-align: center;\r\n+\r\n+      button {\r\n+        width: 230px;\r\n+      }\r\n+    }\r\n+\r\n+    .order-calendar {\r\n+      .calendar-box {\r\n+        margin-top: 10px;\r\n+        background-color: #b9cdff;\r\n+        padding: 10px;\r\n+        border-radius: 8px;\r\n+        text-align: center;\r\n+\r\n+        p {\r\n+          line-height: 1;\r\n+        }\r\n+\r\n+        .calendar-date {\r\n+          font-size: 16px;\r\n+          font-weight: bold;\r\n+        }\r\n+\r\n+        .calendar-day,\r\n+        .calendar-time {\r\n+          font-size: 12px;\r\n+        }\r\n+      }\r\n+    }\r\n+  }\r\n+}\r\n+\r\n+\r\n+.header {\r\n+  display: flex;\r\n+  justify-content: space-between;\r\n+  align-items: center;\r\n+}\r\n+\r\n+.header legend {\r\n+  font-size: 20px;\r\n+  font-weight: bold;\r\n+}\r\n+\r\n+.filter-dropdown {\r\n+  font-size: 14px;\r\n+  height: 35px;\r\n+  margin-bottom: 10px;\r\n+\r\n+  .dropdown {\r\n+    width: 120px;\r\n+    padding: 4px;\r\n+    font-size: 14px;\r\n+    height: 30px;\r\n+    border: 1px solid #ccc;\r\n+    border-radius: 5px;\r\n+    background-color: solid #f9f9f9;\r\n+  }\r\n+\r\n+  .dropdown option {\r\n+    font-size: 13px;\r\n+  }\r\n+}\r\n+\r\n+\r\n+\r\n+\r\n+.footer {\r\n+  text-align: center;\r\n+  margin-top: 20px;\r\n+}\r\n+\r\n+.footer button {\r\n+  margin-top: 10px;\r\n+}\r\n"
+                },
+                {
+                    "date": 1737968601763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n-      // gap: 8px 16px;\r\n+      gap: 5px 16px;\r\n       line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n@@ -141,153 +141,4 @@\n \r\n .footer button {\r\n   margin-top: 10px;\r\n }\r\n-/* Main content styling */\r\n-.orders-section {\r\n-  background: #fff;\r\n-  border-radius: 8px;\r\n-\r\n-  .order-card {\r\n-    display: flex;\r\n-    flex-direction: column;\r\n-    margin-bottom: 10px;\r\n-\r\n-    .Order-header{\r\n-      display: flex;\r\n-      flex-direction: row;\r\n-      gap: 20px;\r\n-    }\r\n-\r\n-    .order-body {\r\n-      display: flex;\r\n-      flex-direction: row;\r\n-      background-color: #fff;\r\n-      gap: 20px;\r\n-    }\r\n-\r\n-    mat-card-content {\r\n-      gap: 10px;\r\n-      padding: 10px;\r\n-\r\n-      p {\r\n-        line-height: 1.2;\r\n-        font-size: 12px;\r\n-      }\r\n-    }\r\n-\r\n-    .order-details {\r\n-      display: grid;\r\n-      grid-template-columns: auto 1fr;\r\n-      gap: 8px 16px;\r\n-      line-height: 1.2;\r\n-      font-size: 12px;\r\n-    }\r\n-\r\n-    .order-row {\r\n-      display: contents;\r\n-    }\r\n-\r\n-    .label {\r\n-      padding-right: 5px;\r\n-    }\r\n-\r\n-    .value {\r\n-      text-align: left;\r\n-    }\r\n-\r\n-    mat-card-actions {\r\n-      align-items: flex-start;\r\n-      flex-direction: column;\r\n-      gap: 10px;\r\n-      .action-button {\r\n-        width: 150px;\r\n-        display: flex;\r\n-        justify-content: center;\r\n-        align-items: center;\r\n-        text-align: center;\r\n-        white-space: nowrap;\r\n-      }\r\n-    }\r\n-\r\n-\r\n-    .order-actions {\r\n-      display: flex;\r\n-      flex-direction: column;\r\n-      padding: 10px;\r\n-      gap: 10px;\r\n-      text-align: center;\r\n-\r\n-      button {\r\n-        width: 230px;\r\n-      }\r\n-    }\r\n-\r\n-    .order-calendar {\r\n-      .calendar-box {\r\n-        margin-top: 10px;\r\n-        background-color: #b9cdff;\r\n-        padding: 10px;\r\n-        border-radius: 8px;\r\n-        text-align: center;\r\n-\r\n-        p {\r\n-          line-height: 1;\r\n-        }\r\n-\r\n-        .calendar-date {\r\n-          font-size: 16px;\r\n-          font-weight: bold;\r\n-        }\r\n-\r\n-        .calendar-day,\r\n-        .calendar-time {\r\n-          font-size: 12px;\r\n-        }\r\n-      }\r\n-    }\r\n-  }\r\n-}\r\n-\r\n-\r\n-.header {\r\n-  display: flex;\r\n-  justify-content: space-between;\r\n-  align-items: center;\r\n-}\r\n-\r\n-.header legend {\r\n-  font-size: 20px;\r\n-  font-weight: bold;\r\n-}\r\n-\r\n-.filter-dropdown {\r\n-  font-size: 14px;\r\n-  height: 35px;\r\n-  margin-bottom: 10px;\r\n-\r\n-  .dropdown {\r\n-    width: 120px;\r\n-    padding: 4px;\r\n-    font-size: 14px;\r\n-    height: 30px;\r\n-    border: 1px solid #ccc;\r\n-    border-radius: 5px;\r\n-    background-color: solid #f9f9f9;\r\n-  }\r\n-\r\n-  .dropdown option {\r\n-    font-size: 13px;\r\n-  }\r\n-}\r\n-\r\n-\r\n-\r\n-\r\n-.footer {\r\n-  text-align: center;\r\n-  margin-top: 20px;\r\n-}\r\n-\r\n-.footer button {\r\n-  margin-top: 10px;\r\n-}\r\n"
+                },
+                {
+                    "date": 1737968608000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n-      gap: 5px 16px;\r\n+      gap: 5px 1px;\r\n       line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737968613377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n-      gap: 5px 1px;\r\n+      gap: 5px 16px;\r\n       line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737968618557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n-      gap: 5px 16px;\r\n+      gap: 5px 10px;\r\n       line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737968642007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \r\n     .order-details {\r\n       display: grid;\r\n       grid-template-columns: auto 1fr;\r\n-      gap: 5px 10px;\r\n+      gap: 8px 16px;\r\n       line-height: 1.2;\r\n       font-size: 12px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737968666800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,12 +37,8 @@\n     .order-row {\r\n       display: contents;\r\n     }\r\n \r\n-    .label {\r\n-      padding-right: 5px;\r\n-    }\r\n-\r\n     .value {\r\n       text-align: left;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737968702164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n     }\r\n \r\n     .value {\r\n       text-align: left;\r\n+      gap: 10px;\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737968940575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \r\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n+      align-content: center;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n \r\n@@ -39,9 +40,9 @@\n     }\r\n \r\n     .value {\r\n       text-align: left;\r\n-      gap: 10px;\r\n+\r\n     }\r\n \r\n     mat-card-actions {\r\n       align-items: flex-start;\r\n"
+                },
+                {
+                    "date": 1737968952981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n \r\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n-      align-content: center;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737969097908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \r\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n+      align-items: center;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1737969158009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,8 @@\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n-        margin-top: 10px;\r\n         background-color: #b9cdff;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n"
+                },
+                {
+                    "date": 1737969302991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n \r\n     .order-body {\r\n       display: flex;\r\n       flex-direction: row;\r\n+      justify-content: space-between;\r\n       align-items: center;\r\n       background-color: #fff;\r\n       gap: 20px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1737969338522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n+        margin-right: 10px;\r\n         background-color: #b9cdff;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n"
+                },
+                {
+                    "date": 1737969424662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,15 +115,15 @@\n   height: 35px;\r\n   margin-bottom: 10px;\r\n \r\n   .dropdown {\r\n-    width: 120px;\r\n-    padding: 4px;\r\n+    width: 150px;\r\n+    padding: 5px;\r\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n     border-radius: 5px;\r\n-    background-color: solid #f9f9f9;\r\n+    background-color: #f9f9f9;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n"
+                },
+                {
+                    "date": 1737969459598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,9 @@\n     padding: 5px;\r\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n-    border-radius: 5px;\r\n+    border-radius: 10px;\r\n     background-color: #f9f9f9;\r\n   }\r\n \r\n   .dropdown option {\r\n"
+                },
+                {
+                    "date": 1737969466866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,10 @@\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n+    border-radius: 10px;\r\n+\r\n   }\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737969482298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,16 +120,13 @@\n     padding: 5px;\r\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n-    border-radius: 10px;\r\n-    background-color: #f9f9f9;\r\n+    border-radius: 5px;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n-    border-radius: 10px;\r\n-\r\n   }\r\n }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1737969511854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,8 +121,9 @@\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n     border-radius: 5px;\r\n+    font-family: 'Courier New', Courier, monospace;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n"
+                },
+                {
+                    "date": 1737969530050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n     border-radius: 5px;\r\n-    font-family: 'Courier New', Courier, monospace;\r\n+    font-weight: bold;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n"
+                },
+                {
+                    "date": 1737969538447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,8 @@\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n     border-radius: 5px;\r\n-    font-weight: bold;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n"
+                },
+                {
+                    "date": 1737969587998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,8 +121,9 @@\n     font-size: 14px;\r\n     height: 30px;\r\n     border: 1px solid #ccc;\r\n     border-radius: 5px;\r\n+    margin-inline: 5px;\r\n   }\r\n \r\n   .dropdown option {\r\n     font-size: 13px;\r\n"
+                },
+                {
+                    "date": 1737969849235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,7 +137,4 @@\n   text-align: center;\r\n   margin-top: 20px;\r\n }\r\n \r\n-.footer button {\r\n-  margin-top: 10px;\r\n-}\r\n"
+                },
+                {
+                    "date": 1737969856857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -136,5 +136,4 @@\n .footer {\r\n   text-align: center;\r\n   margin-top: 20px;\r\n }\r\n-\r\n"
+                },
+                {
+                    "date": 1737970404493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,10 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        background-color: #b9cdff;\r\n+        // background-color: #b9cdff;\r\n+        background-color: white;\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n"
+                },
+                {
+                    "date": 1737970450417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,8 +76,10 @@\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #b9cdff;\r\n         background-color: white;\r\n+        border: 1px solid #ccc;\r\n+\r\n         padding: 10px;\r\n         border-radius: 8px;\r\n         text-align: center;\r\n \r\n"
+                },
+                {
+                    "date": 1737970464482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,11 +77,10 @@\n         margin-right: 10px;\r\n         // background-color: #b9cdff;\r\n         background-color: white;\r\n         border: 1px solid #ccc;\r\n-\r\n         padding: 10px;\r\n-        border-radius: 8px;\r\n+        border-radius: 10px;\r\n         text-align: center;\r\n \r\n         p {\r\n           line-height: 1;\r\n"
+                },
+                {
+                    "date": 1737970470950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n         // background-color: #b9cdff;\r\n         background-color: white;\r\n         border: 1px solid #ccc;\r\n         padding: 10px;\r\n-        border-radius: 10px;\r\n+        border-radius: 20px;\r\n         text-align: center;\r\n \r\n         p {\r\n           line-height: 1;\r\n"
+                },
+                {
+                    "date": 1737970490465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,11 +77,11 @@\n         margin-right: 10px;\r\n         // background-color: #b9cdff;\r\n         background-color: white;\r\n         border: 1px solid #ccc;\r\n-        padding: 10px;\r\n         border-radius: 20px;\r\n         text-align: center;\r\n+        padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n         }\r\n"
+                },
+                {
+                    "date": 1737970548889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,8 +79,9 @@\n         background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 20px;\r\n         text-align: center;\r\n+        color: blue;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n"
+                },
+                {
+                    "date": 1737970560610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,13 +79,13 @@\n         background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 20px;\r\n         text-align: center;\r\n-        color: blue;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n+          color: blue;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970577322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: blue;\r\n+          color: primary;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970586788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: primary;\r\n+          color: blue;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970602334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: blue;\r\n+          color: rgba(13, 13, 209, 0.685);\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970651221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,8 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: rgba(13, 13, 209, 0.685);\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970659101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n-          line-height: 1;\r\n+          line-height: 0.5;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970664639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n-          line-height: 0.5;\r\n+          line-height: 0.8;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970671081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n-          line-height: 0.8;\r\n+          line-height: 1;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970745790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,10 +74,10 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        // background-color: #b9cdff;\r\n-        background-color: white;\r\n+        background-color: #b9cdff;\r\n+        // background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 20px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737970766236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,8 +83,9 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n+          color: white;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970774797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: white;\r\n+          color: whitesmoke;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970807615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        background-color: #b9cdff;\r\n+        background-color: #446bcd;\r\n         // background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 20px;\r\n         text-align: center;\r\n"
+                },
+                {
+                    "date": 1737970853231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n         margin-right: 10px;\r\n         background-color: #446bcd;\r\n         // background-color: white;\r\n         border: 1px solid #ccc;\r\n-        border-radius: 20px;\r\n+        border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n"
+                },
+                {
+                    "date": 1737970879122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,18 +74,18 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        background-color: #446bcd;\r\n-        // background-color: white;\r\n+        // background-color: #446bcd;\r\n+        background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: whitesmoke;\r\n+          color: #446bcd;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970932644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,18 +74,18 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        // background-color: #446bcd;\r\n-        background-color: white;\r\n+        background-color: #446bcd;\r\n+        // background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: #446bcd;\r\n+          // color: #446bcd;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970944920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,9 @@\n \r\n         p {\r\n           line-height: 1;\r\n           // color: #446bcd;\r\n+          color: white;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970981524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,19 +74,18 @@\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n-        background-color: #446bcd;\r\n-        // background-color: white;\r\n+        // background-color: #446bcd;\r\n+        background-color: white;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          // color: #446bcd;\r\n-          color: white;\r\n+          color: #446bcd;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737970996210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: white;\r\n+        background-color: whitesmoke;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971025294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: whitesmoke;\r\n+        background-color: #fff;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971063871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #fff;\r\n+        background-color: #ccc;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971074632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #ccc;\r\n+        background-color: #eceaea;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971081940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #eceaea;\r\n+        background-color: #f6f4f4;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971096538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #f6f4f4;\r\n+        background-color: #e5e5e5;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971108936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #e5e5e5;\r\n+        background-color: #f1f1f1;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971114491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #f1f1f1;\r\n+        background-color: #f6f6f6;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971178197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #f6f6f6;\r\n+        background-color: #F4F3F6\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n"
+                },
+                {
+                    "date": 1737971200743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,17 +75,16 @@\n     .order-calendar {\r\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n-        background-color: #F4F3F6\r\n+        background-color: #F4F3F6;\r\n         border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n         p {\r\n           line-height: 1;\r\n-          color: #446bcd;\r\n         }\r\n \r\n         .calendar-date {\r\n           font-size: 16px;\r\n"
+                },
+                {
+                    "date": 1737971217104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n       .calendar-box {\r\n         margin-right: 10px;\r\n         // background-color: #446bcd;\r\n         background-color: #F4F3F6;\r\n-        border: 1px solid #ccc;\r\n+        // border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n         text-align: center;\r\n         padding: 10px;\r\n \r\n"
+                },
+                {
+                    "date": 1737971240907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n           line-height: 1;\r\n         }\r\n \r\n         .calendar-date {\r\n-          font-size: 16px;\r\n+          font-size: 15px;\r\n           font-weight: bold;\r\n         }\r\n \r\n         .calendar-day,\r\n"
+                },
+                {
+                    "date": 1737971251024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n           line-height: 1;\r\n         }\r\n \r\n         .calendar-date {\r\n-          font-size: 15px;\r\n+          font-size: 14px;\r\n           font-weight: bold;\r\n         }\r\n \r\n         .calendar-day,\r\n"
+                },
+                {
+                    "date": 1737971263729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n     }\r\n \r\n     .order-calendar {\r\n       .calendar-box {\r\n-        margin-right: 10px;\r\n+        margin-right: 20px;\r\n         // background-color: #446bcd;\r\n         background-color: #F4F3F6;\r\n         // border: 1px solid #ccc;\r\n         border-radius: 15px;\r\n"
                 }
             ],
-            "date": 1737661959162,
+            "date": 1737958104507,
             "name": "Commit-0",
-            "content": "/* Main content styling */\r\n.content {\r\n  width: 88%;\r\n  padding: 20px;\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.header legend {\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n}\r\n\r\n.filter-dropdown {\r\n  width: 150px;\r\n  height: 60px;\r\n}\r\n\r\nmat-card {\r\n  padding: 10px;\r\n  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.order-summary {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.order-details {\r\n  margin-top: 20px;\r\n  line-height: 1.6;\r\n}\r\n\r\n.order-actions {\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer {\r\n  text-align: center;\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer button {\r\n  margin-top: 10px;\r\n}\r\n"
+            "content": "/* Main content styling */\r\n.content {\r\n  width: 99%;\r\n  padding: 5px;\r\n}\r\n\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.header legend {\r\n  font-size: 20px;\r\n  font-weight: bold;\r\n}\r\n\r\n.filter-dropdown {\r\n  font-size: 14px;\r\n  height: 35px;\r\n  margin-bottom: 10px;\r\n\r\n  .dropdown {\r\n    width: 120px;\r\n    padding: 4px;\r\n    font-size: 14px;\r\n    height: 30px;\r\n    border: 1px solid #ccc;\r\n    border-radius: 5px;\r\n    background-color: solid #f9f9f9;\r\n  }\r\n\r\n  .dropdown option {\r\n    font-size: 13px;\r\n  }\r\n}\r\n\r\n\r\n\r\n\r\n.footer {\r\n  text-align: center;\r\n  margin-top: 20px;\r\n}\r\n\r\n.footer button {\r\n  margin-top: 10px;\r\n}\r\n"
         }
     ]
 }

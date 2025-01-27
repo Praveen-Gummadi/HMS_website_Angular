@@ -3,6 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedDataService } from '../shared-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-signup',
@@ -13,12 +14,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
+  mobile: string = "";
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private sharedDataService: SharedDataService) {
+    private sharedDataService: SharedDataService,
+    private loginService: LoginService,) {
     this.signupForm = this.fb.group({
       name: ['', Validators.required],
       gender: ['', Validators.required],
@@ -32,15 +35,24 @@ export class SignupComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       if (params['key']) {
         this.signupForm.controls['mobile'].setValue(params['key']);
+        this.mobile = params['key']
       }
     });
   }
 
   onSubmit() {
     if (this.signupForm.valid) {
-      this.sharedDataService.setFormData(this.signupForm.value);
-      this.router.navigate(['/otp'], {queryParams:  {key: "Praveen"} });
-      console.log('Form Submitted:', this.signupForm.value);
+      this.router.navigate(['/otp'], { queryParams: { key: this.mobile } });
+      this.loginService.generateOtp(this.mobile).subscribe({
+        next: (response: any) => {
+          if (response.statusCode === 403) {
+            this.router.navigate(['/otp'], { queryParams: { key: this.mobile } });
+          } else {
+            console.error('Unexpected error:', response.errorMessages.join(', '));
+            alert('Unexpected error: ' + response.errorMessages.join(', '));
+          }
+        },
+      });
     }
   }
 }

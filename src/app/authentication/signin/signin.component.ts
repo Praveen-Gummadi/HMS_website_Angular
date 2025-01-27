@@ -41,7 +41,7 @@ export class SigninComponent {
           } else if (response.statusCode === 403) {
             alert(response.result);
             // this.router.navigate(['/signup'], { queryParams: { key: mobileNumber } });
-            this.router.navigate(['/signupdetails'], { queryParams: { key: mobileNumber } });
+            this.router.navigate(['/signup'], { queryParams: { key: mobileNumber } });
           } else {
             console.error('Unexpected error:', response.errorMessages.join(', '));
             alert('Unexpected error: ' + response.errorMessages.join(', '));

@@ -31,7 +31,7 @@
 }
 
 .sidebar {
-  width: 13%;
+  width: 14%;
   border-right: 1px solid #dee2e6;
   // width: 250px;
   // background-color: #f8f9fa;
@@ -50,5 +50,13 @@
   width: 100%;
   flex: 1;
   padding: 10px;
+}
+
+.footer {
+  bottom: 0;
+  text-align: center;
+  p {
+    font-size: 10px;
+  }
 }
 

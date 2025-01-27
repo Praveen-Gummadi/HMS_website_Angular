@@ -1,45 +1,99 @@
 <!-- Content -->
-  <div class="content">
-    <div class="header">
+  <div class="orders-section">
+    <!-- <div class="header">
       <legend>Orders</legend>
       <mat-form-field appearance="outline" class="filter-dropdown">
-        <mat-label>Lab Test</mat-label>
+        <mat-label>All Orders</mat-label>
         <mat-select>
+          <mat-option value="all-orders">All Orders</mat-option>
+          <mat-option value="consultation">Consultation</mat-option>
           <mat-option value="lab-test">Lab Test</mat-option>
+          <mat-option value="health-check">Health Check</mat-option>
         </mat-select>
       </mat-form-field>
+    </div> -->
+
+    <div class="header">
+      <legend>Orders</legend>
+      <div class="filter-dropdown">
+        <select id="orders" [(value)]="selectedFilter" (selectionChange)="filterOrders()" class="dropdown">
+          <option value="all-orders">All Orders</option>
+          <option value="consultation">Consultation</option>
+          <option value="lab-test">Lab Test</option>
+          <option value="health-check">Health Check</option>
+        </select>
+      </div>
     </div>
 
-    <mat-card>
-      <div class="order-summary">
-        <div>
-          <p>Ordered: <strong>28 October 2024</strong></p>
-          <p>Order ID: <strong>35184812</strong></p>
+    <mat-card class="order-card" *ngFor="let order of filteredOrders">
+      <mat-card-header>
+        <mat-card-title>
+          <div class="Order-header">
+            <p><strong>Order Date & Time:</strong> {{ order.date }}</p>
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+      <div class="order-body">
+        <mat-card-content>
+          <div class="order-details">
+            <div class="order-row">
+              <span class="label">Consultation Type</span>
+              <span class="value">: {{ order.type }}</span>
+            </div>
+            <div class="order-row">
+              <span class="label">Status</span>
+              <span class="value">: {{ order.status }}</span>
+            </div>
+            <div class="order-row">
+              <span class="label">Appointment Date & Time</span>
+              <span class="value">: {{ order.appointment }}</span>
+            </div>
+            <div class="order-row">
+              <span class="label">Patient Name</span>
+              <span class="value">: {{ order.patient }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" class="action-button" (click)="RescheduleDialog(order.id)">
+            <mat-icon>update</mat-icon>
+            ReSchedule
+          </button>
+          <button mat-raised-button color="warn" class="action-button" (click)="cancelOrder(order.id)">
+            <mat-icon>cancel</mat-icon>
+            Cancel
+          </button>
+        </mat-card-actions>
+        <div class="order-actions">
+          <button mat-raised-button color="primary" *ngIf="order.type === 'Virtual Consultation'">
+            <mat-icon>video_call</mat-icon>
+            Join Virtual Consultation
+          </button>
+          <button mat-raised-button color="primary" >
+            <mat-icon>content_paste</mat-icon>
+            Add Medical History
+          </button>
         </div>
-        <div>
-          <button mat-raised-button color="primary">Appointment Details</button>
-          <button mat-raised-button color="accent">Order Details</button>
+        <div class="order-calendar">
+          <div class="calendar-box">
+            <p class="calendar-date">{{ getCalendarDate(order.appointment) }}</p>
+            <p class="calendar-day">{{ getCalendarDay(order.appointment) }}</p>
+            <p class="calendar-time">{{ getCalendarTime(order.appointment) }}</p>
+          </div>
         </div>
-      </div>
-
-      <mat-divider></mat-divider>
-
-      <div class="order-details">
-        <p>Order: <strong>Lab tests</strong></p>
-        <p>Status: <strong>Appointment Confirmed</strong></p>
-        <p>Appointment Date & Time: <strong>30-Oct-2024 - 12:00 PM</strong></p>
-        <p>Patient Name: <strong>Sai Kumar Dothula</strong></p>
-      </div>
-
-      <div class="order-actions">
-        <button mat-button color="primary">Reschedule</button>
-        <button mat-button color="warn">Cancel</button>
       </div>
     </mat-card>
 
+
+
+
     <div class="footer">
       <p>Orders Displayed from 1st Jan 2024</p>
-      <button mat-raised-button color="accent">Load Past Orders</button>
+      <button mat-raised-button color="primary">
+        <mat-icon>refresh</mat-icon>
+        Load Past Orders
+      </button>
     </div>
   </div>
 

@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Appointment Cancellation</h2>
+<mat-dialog-content>
+  <form [formGroup]="cancelForm">
+    <p class="required-field">* Reason for Cancellation</p>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Select Reason</mat-label>
+      <mat-select formControlName="reason" required>
+        <mat-option value="personal">Personal Reason</mat-option>
+        <mat-option value="other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width" *ngIf="cancelForm.get('reason')?.value === 'other'">
+      <mat-label>Any Other Reason</mat-label>
+      <textarea matInput formControlName="otherReason" rows="2"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Refund Method</mat-label>
+      <mat-select formControlName="refundMethod" required>
+        <mat-option value="original">Original Payment Method</mat-option>
+        <mat-option value="voucher">Voucher</mat-option>
+        <mat-option value="bank">Bank Transfer</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-raised-button color="primary" [disabled]="cancelForm.invalid" (click)="showpopup()">Yes</button>
+</mat-dialog-actions>
+
+<!-- Popup Content -->
+<div class="custom-popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <mat-dialog-content>
+      Appointment Cancelled Succesfully.
+      <div class="popup-actions">
+        <button mat-flat-button mat-button (click)="submit()">Ok</button>
+      </div>
+    </mat-dialog-content>
+  </div>
+</div>

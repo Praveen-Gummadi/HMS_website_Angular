@@ -1,8 +1,105 @@
 /* Main content styling */
-.content {
-  width: 85%;
-  padding: 20px;
+.orders-section {
+  background: #fff;
+  border-radius: 8px;
+
+  .order-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    .Order-header{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .order-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      gap: 20px;
+    }
+
+    mat-card-content {
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .order-details {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 16px;
+      line-height: 1.2;
+      font-size: 12px;
+    }
+
+    .order-row {
+      display: contents;
+    }
+
+    .value {
+      text-align: left;
+
+    }
+
+    mat-card-actions {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+      .action-button {
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+
+
+    .order-actions {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 10px;
+      text-align: center;
+
+      button {
+        width: 230px;
+      }
+    }
+
+    .order-calendar {
+      .calendar-box {
+        margin-right: 20px;
+        // background-color: #446bcd;
+        background-color: #F4F3F6;
+        // border: 1px solid #ccc;
+        border-radius: 15px;
+        text-align: center;
+        padding: 10px;
+
+        p {
+          line-height: 1;
+        }
+
+        .calendar-date {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .calendar-day,
+        .calendar-time {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
+
 
 .header {
   display: flex;
@@ -16,35 +113,29 @@
 }
 
 .filter-dropdown {
-  width: 200px;
-  height: 60px;
+  font-size: 14px;
+  height: 35px;
+  margin-bottom: 10px;
+
+  .dropdown {
+    width: 150px;
+    padding: 5px;
+    font-size: 14px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-inline: 5px;
+  }
+
+  .dropdown option {
+    font-size: 13px;
+  }
 }
 
-mat-card {
-  padding: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
 
-.order-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.order-details {
-  margin-top: 5px;
-  line-height: 1.2;
-}
-
-.order-actions {
-  margin-top: 20px;
-}
 
 .footer {
   text-align: center;
   margin-top: 20px;
-}
-
-.footer button {
-  margin-top: 10px;
 }

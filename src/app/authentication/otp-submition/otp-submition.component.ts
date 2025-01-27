@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../login.service';
-import { SigninComponent } from '../signin/signin.component';
 
 @Component({
   selector: 'app-otp-submition',
@@ -27,9 +26,7 @@ export class OtpSubmitionComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private route: ActivatedRoute,
-    private router: Router,
-    // private signincompoenent: SigninComponent,
-  ) {}
+    private router: Router) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
@@ -84,6 +81,5 @@ export class OtpSubmitionComponent implements OnInit {
   resendOtp(): void {
     console.log('Resend OTP API call triggered for mobile:', this.mobileNumber);
     this.startTimer();
-    // this.signincompoenent.onContinue();
   }
 }
