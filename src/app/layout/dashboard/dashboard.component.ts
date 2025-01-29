@@ -16,7 +16,7 @@ export class DashboardComponent {
     {
       icon: 'male-doctor.png',
       title: 'Doctor Consultation',
-      route: '/',
+      route: '/doctors',
     },
     {
       icon: 'lab-icon-top.png',

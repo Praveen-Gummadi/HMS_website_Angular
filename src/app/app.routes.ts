@@ -10,7 +10,7 @@ import { OtpSubmitionComponent } from './authentication/otp-submition/otp-submit
 import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilelayout.component';
 import { MyordersComponent } from './routes/profile/myorders/myorders.component';
 import { MyhomeComponent } from './routes/profile/myhome/myhome.component';
-import { MyheaderComponent } from './routes/profile/myheader/myheader.component';
+import { DoctorConsultationComponent } from './routes/doctor-consultation/doctor-consultation.component';
 
 export const routes: Routes = [
     { path: 'cart', component: CartComponent },
@@ -18,8 +18,6 @@ export const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'signupdetails', component: SignupDetailsComponent },
     { path: 'otp', component: OtpSubmitionComponent },
-    { path: 'my', component: MyheaderComponent },
-
     {
         path: '',
         component: MasterLayoutComponent,
@@ -27,6 +25,7 @@ export const routes: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'lab', component: LabDashboardComponent },
+            { path: 'doctors', component: DoctorConsultationComponent },
         ]
     },
     {

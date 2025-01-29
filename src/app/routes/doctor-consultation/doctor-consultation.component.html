@@ -1,0 +1,192 @@
+<div class="container">
+  <!-- Location and Search Bar -->
+  <div class="header">
+      <div class="location">
+        <mat-card class="location-card">
+          <p class="location-name"><mat-icon>location_on</mat-icon>Bowenpally Police Station</p>
+          <p class="location-address">Pension Lane, Mohammed Nagar, New Bowenpally, Balanagar...</p>
+        </mat-card>
+      </div>
+
+    <div class="header-section1">
+      <h6>Doctor Consultation</h6>
+      <mat-form-field class="search-bar" appearance="outline">
+        <mat-label>Search for Doctors . . .</mat-label>
+        <input matInput [(ngModel)]="searchQuery"
+           (keyup)="onSearchKeyup($event)"
+           type="text" placeholder="Search for Doctors . . ." />
+        <button mat-icon-button matSuffix (click)="searchDoctors()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="header-section2">
+      <div class="image">
+        <img src="doctor_cosultation.png" alt="Doctor Consultation" />
+      </div>
+    </div>
+  </div>
+
+  <mat-divider style="margin-bottom: 20px;"></mat-divider>
+
+  <!-- Book Doctor Consultation Section -->
+  <div class="doctor-list" *ngIf="!isDoctorSelected">
+    <mat-card class="doctor-card" *ngFor="let doctor of filteredDoctors">
+      <div class="card-container">
+        <div class="doctor-info">
+          <img [src]="doctor.image" alt="{{ doctor.name }}" class="doctor-image" />
+          <div class="details">
+            <h4>{{ doctor.name }}</h4>
+            <p>{{ doctor.experience }} years of Experience</p>
+            <p>{{ doctor.specialization }}</p>
+            <p>{{ doctor.hospital }}</p>
+          </div>
+        </div>
+        <div class="actions">
+          <button mat-stroked-button color="primary" (click)="selectDoctor(doctor)">
+            <mat-icon>video_call</mat-icon>
+            Book Virtual Consultation
+          </button>
+          <button mat-stroked-button color="primary">
+            <mat-icon>directions_walk</mat-icon>
+            Book Walk-in Consultation
+          </button>
+        </div>
+        <div class="consultation-fee">
+          <p>Consultation Fee</p>
+          <p>₹ {{ doctor.fee }}/-</p>
+        </div>
+      </div>
+    </mat-card>
+
+    <div class="view-more">
+      <button mat-button color="primary">View More...</button>
+    </div>
+  </div>
+
+  <!-- Display selected doctor's details and calendar -->
+  <div *ngIf="isDoctorSelected" class="ngdoctor-list">
+    <mat-card class="ngcard-container">
+      <div class="ngdoctor-info">
+        <img [src]="selectedDoctor?.image" alt="{{ selectedDoctor?.name }}" class="ngdoctor-image" />
+        <div class="ngdetails">
+          <h4>{{ selectedDoctor?.name }}</h4>
+          <p>{{ selectedDoctor?.experience }} years of Experience</p>
+          <p>{{ selectedDoctor?.specialization }}</p>
+          <p>{{ selectedDoctor?.hospital }}</p>
+        </div>
+      </div>
+      <div class="ngactions">
+        <button mat-stroked-button color="primary">
+          <mat-icon>video_call</mat-icon>
+          Book Virtual Consultation
+        </button>
+        <button mat-stroked-button color="primary">
+          <mat-icon>directions_walk</mat-icon>
+          Book Walk-in Consultation
+        </button>
+      </div>
+      <div class="ngfee">
+        <p>Consultation Fee</p>
+        <p>₹ {{ selectedDoctor?.fee }}/-</p>
+      </div>
+    </mat-card>
+
+     <!-- step 1 -->
+    <div *ngIf="!showPreview" class="doctor-calendar">
+      <h4>Doctor Calendar</h4>
+      <div class="calendar-header">
+        <button mat-icon-button (click)="previousWeek()">&#8249;</button>
+        <div class="date-tabs">
+          <div
+            *ngFor="let date of displayedDates"
+            class="date-tab"
+            [class.selected]="date === selectedDate"
+            (click)="selectDate(date)">
+            <p>{{ date | date: 'dd' }}</p>
+            <span>{{ date | date: 'EEE MMM' }}</span>
+          </div>
+        </div>
+        <button mat-icon-button (click)="nextWeek()">&#8250;</button>
+      </div>
+      <div class="slots-container">
+        <h4 *ngIf="selectedDate">Available Slots for {{ selectedDate | date: 'fullDate' }}</h4>
+        <div class="slots">
+          <button
+            *ngFor="let slot of (daysSlots[selectedDate] || [])"
+            class="time-slot"
+            [class.selected]="slot === selectedSlot"
+            (click)="selectSlot(slot)">
+            {{ slot }}
+          </button>
+        </div>
+        <div class="navigation-buttons">
+          <button mat-button color="primary" (click)="goBackToDoctorList()">Back</button>
+          <button mat-flat-button color="primary" (click)="goToAppointmentPreview()">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- step 2 -->
+    <!-- Appointment Preview (Shown After Clicking Next) -->
+    <div *ngIf="showPreview" class="appointment-preview">
+      <h4>Appointment Preview</h4>
+      <div class="final-doctor-card">
+        <img [src]="selectedDoctor?.image" alt="{{ selectedDoctor?.name }}" class="final-doctor-image" />
+        <div class="final-doctor-details">
+          <h6>{{ selectedDoctor?.name }}</h6>
+          <p>{{ selectedDoctor?.specialization }}</p>
+        </div>
+        <div class="final-date-box">
+          <span class="final-date">{{ selectedDate | date: 'dd' }}</span>
+          <span class="final-time">{{ selectedDate | date: 'EEE MMM' }}</span>
+          <span class="final-time">{{ selectedSlot }}</span>
+        </div>
+      </div>
+
+      <div class="details-box">
+
+        <div class="final-details">
+          <p>Patient Name     : Krish K</p>
+          <p>Appointment Type : Virtual Consultation</p>
+        </div>
+
+        <div class="final-fee-box">
+          <p>Consultation Fee: <strong>{{ selectedDoctor?.fee }} /-</strong></p>
+
+          <div class="final-confirm-buttons">
+            <button mat-stroked-button color="primary" (click)="confirmAppointment(true)">
+              <mat-icon>payment</mat-icon>
+              Confirm with Payment
+            </button>
+            <button mat-stroked-button color="primary" (click)="confirmAppointment(false)">
+              <mat-icon>money_off</mat-icon>
+              Confirm without Payment
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="final-navigation-buttons">
+        <button mat-button color="primary" (click)="goBack()">Back</button>
+        <button mat-flat-button color="primary" (click)="goNext()">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Popup Content -->
+<div class="custom-popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <mat-dialog-content>
+      The appointment was successfully scheduled.
+      <div class="popup-actions">
+        <button mat-flat-button mat-button (click)="dialogsubmit()">Ok</button>
+      </div>
+    </mat-dialog-content>
+  </div>
+</div>
+
