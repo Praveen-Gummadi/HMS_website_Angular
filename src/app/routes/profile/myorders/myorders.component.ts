@@ -19,7 +19,7 @@ export class MyordersComponent {
   orders = [
     {
       id: '35184812',
-      date: '28 October 2024',
+      date: '28 December 2024',
       type: 'Virtual Consultation',
       status: 'Confirmed',
       appointment: '25 Jan 2025, 12:15 PM',
@@ -49,13 +49,13 @@ export class MyordersComponent {
 
   RescheduleDialog(orderId: string) {
     const dialogRef = this.dialog.open(RescheduleDialogComponent, {
-      width: '400px', // Adjust width as needed
-      data: {} // Pass any data if needed
+      width: '400px',
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log('Reschedule Data:', result); // Handle the form data
+        console.log('Reschedule Data:', result);
       }
     });
   }

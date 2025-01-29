@@ -31,6 +31,12 @@ export class SigninComponent {
     this.isFormValid = this.mobile.trim().length >= 10
   }
 
+  onSearchKeyup(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.onContinue();
+    }
+  }
+
   onContinue(): void {
     const mobileNumber = this.mobile.replace(/\D/g, '').slice(-10);
     if (this.isFormValid) {

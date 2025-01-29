@@ -17,6 +17,7 @@
         (input)="validateForm()"
         (keypress)="allowOnlyNumbers($event)"
         maxlength="14"
+        (keyup)="onSearchKeyup($event)"
       />
 
     </mat-form-field>

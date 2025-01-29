@@ -1,8 +1,9 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, ViewChild, AfterViewInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { MatStepper } from '@angular/material/stepper';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { MyheaderComponent } from '../profile/myheader/myheader.component';
+import { ActivatedRoute } from '@angular/router';
 
 type AvailableDate = {
   day: string;
@@ -20,7 +21,9 @@ declare var Razorpay: any;
   styleUrl: './cart.component.scss'
 })
 
-export class CartComponent {
+export class CartComponent implements AfterViewInit {
+
+  @ViewChild(MatStepper) stepper: MatStepper | undefined;
 
   locationDetails: string = 'GVR Infosystems Pvt. Ltd., Opp: Tata Motors, Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
 
@@ -32,6 +35,19 @@ export class CartComponent {
 
   // Flag to toggle form visibility
   showForm: boolean = false;
+
+  constructor(private route: ActivatedRoute) {
+    this.updateVisibleDates();
+  }
+
+  ngAfterViewInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const step = params['step']; // e.g., step=2
+      if (step && this.stepper) {
+        this.stepper.selectedIndex = +step - 1; // Set the step index (0-based index)
+      }
+    });
+  }
 
   // Toggle the form visibility
   toggleForm() {
@@ -98,7 +114,7 @@ export class CartComponent {
   saveandnext(stepper: MatStepper) {
     // Add any save logic here if needed
     console.log('Navigating to the next step...');
-    stepper.next(); // Move to the next step
+    stepper.next();
   }
 
    // Available dates for selection
@@ -116,10 +132,6 @@ export class CartComponent {
   visibleCount = 5; // Number of dates visible at a time
   currentIndex = 0;
   selectedDateIndex: number | null = null;
-
-  constructor() {
-    this.updateVisibleDates();
-  }
 
   // Update the visible dates
   updateVisibleDates() {

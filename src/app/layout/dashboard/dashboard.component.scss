@@ -1,4 +1,23 @@
+// @keyframes gentleZoom {
+//   0% {
+//     transform: scale(1);
+//     opacity: 0.8;
+//   }
+//   50% {
+//     transform: scale(1.02);
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: scale(1);
+//     opacity: 0.8;
+//   }
+// }
+
 .dashboard-container {
+  // background-image: url('/health_environment.jpg');
+  // background-size: cover;
+  // background-position: center;
+  // animation: gentleZoom 30s ease-in-out infinite;
   padding: 20px;
   background-color: #f9f9f9;
   display: flex;
@@ -19,7 +38,7 @@
 .services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the items */
+  justify-content: space-evenly; /* Center the items */
   gap: calc(3% + 20px); /* Responsive gap based on screen size */
   padding: 10px;
 }
@@ -79,7 +98,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  align-self: center;
+  justify-content: space-evenly;
 }
 
 .package-card {
@@ -90,8 +109,8 @@
 }
 
 .package-card:hover {
-  transform: scale(1.05);
-  gap: calc(3% + 20px);
+  transform: scaleY(1.05);
+  // gap: calc(3% + 20px);
 }
 
 

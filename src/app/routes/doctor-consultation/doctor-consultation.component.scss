@@ -446,9 +446,9 @@
 .popup-content {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: #fff;
   padding: 20px;
-  gap: 20px;
   border-radius: 10px;
   width: 400px;
   height: 150px;
