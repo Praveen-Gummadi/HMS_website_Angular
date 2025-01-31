@@ -28,12 +28,10 @@ export class CartComponent implements AfterViewInit {
 
   locationDetails = localStorage.getItem('userAddress');
 
-  // locationDetails: string = 'GVR Infosystems Pvt. Ltd., Opp: Tata Motors, Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
-
-  addressLine1: string = 'GVR Infosystems Pvt. Ltd., 3rd floor, Opp: Tata Motors Service Centre';
-  addressLine2: string = 'Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
-  phone: string = String(localStorage.getItem('usermobile'));
-  email: string = String(localStorage.getItem('useremail'));
+  addressLine1: string = '';
+  addressLine2: string = '';
+  phone: string = '';
+  email: string = '';
 
 
   // Flag to toggle form visibility
@@ -56,6 +54,15 @@ export class CartComponent implements AfterViewInit {
 
     if (this.isSignedIn) {
       this.phone = String(localStorage.getItem('usermobile'));
+      this.email = String(localStorage.getItem('useremail'));
+    }
+
+    if (this.locationDetails) {
+      const addressParts = this.locationDetails.split(', ');
+
+      this.addressLine1 = addressParts[0] || '';
+
+      this.addressLine2 = addressParts.slice(1).join(', ') || '';
     }
   }
 

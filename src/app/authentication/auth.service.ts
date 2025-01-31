@@ -34,15 +34,6 @@ export class AuthService {
     return this.username;
   }
 
-  getUserdata(): { username: string, mobile: string, email: string, address: string } {
-    const username = localStorage.getItem('username') ?? '';
-    const mobile = localStorage.getItem('mobile') ?? '';
-    const email = localStorage.getItem('email') ?? '';
-    const address = localStorage.getItem('address') ?? '';
-
-    return { username, mobile, email, address };
-  }
-
   logout(): void {
     this.signedIn = false;
     // localStorage.removeItem('authToken');
