@@ -13,6 +13,29 @@
 //   }
 // }
 
+/* Typewriter Animation */
+.typewriter-animation {
+  display: inline-block;
+  overflow: hidden;
+  color: rgb(40, 112, 188);
+  animation: typing 3s steps(40) 1s infinite, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 .dashboard-container {
   // background-image: url('/health_environment.jpg');
   // background-size: cover;

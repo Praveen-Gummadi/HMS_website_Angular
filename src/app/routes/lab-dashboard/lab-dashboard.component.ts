@@ -20,6 +20,8 @@ export class LabDashboardComponent {
   ItemCount:number = 0;
   ItemListInCart:any = [];
 
+  locationDetails = localStorage.getItem('userAddress');
+
   constructor(private labdashboardService: LabdashboardServiceService){}
   ngOnInit(): void {
     this.MedCheckUpService;

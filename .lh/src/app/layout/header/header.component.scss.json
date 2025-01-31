@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/layout/header/header.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1738218413097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738218442744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   align-items: center;\r\n }\r\n \r\n .logo {\r\n-  height: 50px;\r\n+  height: 60px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1738218452473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   align-items: center;\r\n }\r\n \r\n .logo {\r\n-  height: 60px;\r\n+  height: 55px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1738218470365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   align-items: center;\r\n }\r\n \r\n .logo {\r\n-  height: 55px;\r\n+  height: 52px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1738218505049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n }\r\n \r\n .logo {\r\n   height: 52px;\r\n+  margin-top: 5px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                },
+                {
+                    "date": 1738218537793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   align-items: center;\r\n }\r\n \r\n .logo {\r\n-  height: 52px;\r\n+  height: 53px;\r\n   margin-top: 5px;\r\n }\r\n \r\n .spacer {\r\n"
+                },
+                {
+                    "date": 1738218562196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n   align-items: center;\r\n }\r\n \r\n .logo {\r\n-  height: 53px;\r\n-  margin-top: 5px;\r\n+  height: 52px;\r\n+  margin-top: 8px;\r\n }\r\n \r\n .spacer {\r\n   flex: 1;\r\n"
+                }
+            ],
+            "date": 1738218413097,
+            "name": "Commit-0",
+            "content": ".main-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n}\r\n\r\nheader {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 1000;\r\n}\r\n\r\nmat-toolbar {\r\n  position: relative;\r\n  z-index: 10;\r\n  height: 50px;\r\n}\r\n\r\n.content {\r\n  flex: 1;\r\n  overflow-y: auto;\r\n  padding: 16px;\r\n}\r\n\r\n\r\n.header-toolbar {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  background-color: white;\r\n  color: black;\r\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.logo-section {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.logo {\r\n  height: 50px;\r\n}\r\n\r\n.spacer {\r\n  flex: 1;\r\n}\r\n\r\n.menu-section {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n}\r\n\r\n.language {\r\n  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n  font-size: 12px;\r\n  cursor: pointer;\r\n}\r\n\r\n.contact-info {\r\n  text-align: right;\r\n  font-size: 10px;\r\n  line-height: 1.2;\r\n  margin-left: 10px;\r\n}\r\n\r\n.nav-toolbar {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  background-color: white;\r\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.nav-menu a {\r\n  font-size: 13px;\r\n  color: black;\r\n  text-decoration: none;\r\n  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\n\r\n.nav-menu a:hover {\r\n  color: #007bff;\r\n  transform: scaleX(1.08);\r\n}\r\n\r\n\r\n"
+        }
+    ]
+}

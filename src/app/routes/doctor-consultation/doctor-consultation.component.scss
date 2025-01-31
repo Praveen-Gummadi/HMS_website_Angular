@@ -16,28 +16,62 @@
 
     .location-card {
       width: 70%;
-      height: 125px;
-      padding: 10px;
-      justify-content: center;
+      height: 145px;
       background-color: #89c6f95f;
-      border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       color: black;
-
-      p mat-icon {
-        vertical-align: middle;
-      }
-
-      .location-name {
-        font-weight: bold;
-        margin: 0 0 5px;
-      }
-
-      .location-address {
-        font-size: 14px;
-        margin: 0;
-      }
+      justify-content: center;
     }
+
+    .location-section {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .location-section mat-icon {
+      padding: 10px;
+      font-size: 25px;
+      color: black;
+    }
+
+    .location-section button {
+      padding: 0;
+    }
+
+    .location-text {
+      font-size: 14px;
+      color: black;
+      line-height: 1.5;
+      word-wrap: break-word;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+
+    // .location-card {
+    //   width: 70%;
+    //   height: 125px;
+    //   padding: 10px;
+    //   justify-content: center;
+    //   background-color: #89c6f95f;
+    //   border-radius: 8px;
+    //   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    //   color: black;
+
+    //   p mat-icon {
+    //     vertical-align: middle;
+    //   }
+
+    //   .location-name {
+    //     font-weight: bold;
+    //     margin: 0 0 5px;
+    //   }
+
+    //   .location-address {
+    //     font-size: 14px;
+    //     margin: 0;
+    //   }
+    // }
 
     .header-section1 {
       flex: 3;
@@ -47,6 +81,28 @@
         font-size: 20px;
         margin-bottom: 20px;
         color: #424242;
+      }
+
+      .typewriter-animation {
+        display: inline-block;
+        overflow: hidden;
+        color: rgb(40, 112, 188);
+        animation: typing 3s steps(40) 1s infinite, blink 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
       }
 
 

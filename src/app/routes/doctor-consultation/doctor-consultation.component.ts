@@ -21,6 +21,8 @@ interface Doctor {
 })
 export class DoctorConsultationComponent {
 
+  locationDetails = localStorage.getItem('userAddress');
+
   showPopup = false;
   searchQuery: string = '';
 

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/authentication/otp-submition/otp-submition.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738237538742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738237538742,
+            "name": "Commit-0",
+            "content": "<div class=\"body\">\r\n  <div class=\"logo-section\">\r\n    <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n      <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n    </a>\r\n  </div>\r\n\r\n  <div class=\"otp-container\">\r\n    <!-- otp Number Input -->\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Enter OTP</mat-label>\r\n      <input\r\n        matInput\r\n        type=\"text\"\r\n        placeholder=\"Enter OTP\"\r\n        [(ngModel)]=\"otp\"\r\n        (input)=\"validateForm()\"\r\n        (keypress)=\"allowOnlyNumbers($event)\"\r\n        maxlength=\"4\"\r\n      />\r\n\r\n    </mat-form-field>\r\n\r\n    <div class=\"resend-section\">\r\n      <!-- OTP Info -->\r\n      <p class=\"info-text\">OTP sent to the given mobile number</p>\r\n\r\n      <button\r\n        mat-flat-button\r\n        color=\"primary\"\r\n        class=\"button-class\"\r\n        (click)=\"resendOtp()\"\r\n        [disabled]=\"isResendDisabled\"\r\n      >\r\n        Resend OTP\r\n      </button>\r\n      <span *ngIf=\"isResendDisabled\">\r\n        {{ timer }}\r\n      </span>\r\n    </div>\r\n\r\n    <!-- Checkbox -->\r\n    <mat-checkbox\r\n      class=\"checkbox\"\r\n      [(ngModel)]=\"isWhatsAppChecked\"\r\n    >\r\n    <p class=\"checkbox-text\">Share health tips, appointment details, and offers with me on WhatsApp</p>\r\n    </mat-checkbox>\r\n\r\n    <!-- Continue Button -->\r\n    <button\r\n      mat-flat-button\r\n      color=\"primary\"\r\n      class=\"full-width\"\r\n      [disabled]=\"!isFormValid\"\r\n      (click)=\"onSubmitOtp()\"\r\n    >\r\n      Continue\r\n    </button>\r\n  </div>\r\n\r\n  <div class=\"img-section\">\r\n    <img src=\"signinbottom.png\" alt=\"Logo\" class=\"image\" />\r\n  </div>\r\n</div>\r\n"
+        }
+    ]
+}

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { LoginService } from '../login.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, RouterLink],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
@@ -42,12 +42,13 @@ export class SigninComponent {
     if (this.isFormValid) {
       this.loginService.generateOtp(mobileNumber).subscribe({
         next: (response: any) => {
+          localStorage.setItem('mobile-otp', mobileNumber);
           if (response.isSuccess) {
-            this.router.navigate(['/otp'], { queryParams: { key: mobileNumber } });
+            this.router.navigate(['/otp']);
           } else if (response.statusCode === 403) {
             alert(response.result);
             // this.router.navigate(['/signup'], { queryParams: { key: mobileNumber } });
-            this.router.navigate(['/signup'], { queryParams: { key: mobileNumber } });
+            this.router.navigate(['/signup']);
           } else {
             console.error('Unexpected error:', response.errorMessages.join(', '));
             alert('Unexpected error: ' + response.errorMessages.join(', '));

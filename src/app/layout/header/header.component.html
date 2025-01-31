@@ -3,7 +3,9 @@
   <header>
     <mat-toolbar class="header-toolbar" color="primary">
       <div class="logo-section">
-        <img src="logo.png" alt="Logo" class="logo" />
+        <a [routerLink]="['/']" class="logo-button">
+          <img src="logo.png" alt="Logo" class="logo" />
+        </a>
       </div>
       <div class="spacer"></div>
       <div class="menu-section">

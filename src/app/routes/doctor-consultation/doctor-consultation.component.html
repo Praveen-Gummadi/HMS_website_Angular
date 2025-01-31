@@ -2,16 +2,24 @@
   <!-- Location and Search Bar -->
   <div class="header">
       <div class="location">
+        <!-- Location Section -->
         <mat-card class="location-card">
-          <p class="location-name"><mat-icon>location_on</mat-icon>Bowenpally Police Station</p>
-          <p class="location-address">Pension Lane, Mohammed Nagar, New Bowenpally, Balanagar...</p>
+          <mat-card-content class="location-section">
+            <mat-icon>location_on</mat-icon>
+            <div>
+              <p class="location-text">{{ locationDetails }}</p>
+            </div>
+            <button mat-icon-button class="dropdown-icon">
+              <mat-icon class="dropdown-icon">expand_more</mat-icon>
+            </button>
+          </mat-card-content>
         </mat-card>
       </div>
 
     <div class="header-section1">
       <h6>Doctor Consultation</h6>
       <mat-form-field class="search-bar" appearance="outline">
-        <mat-label>Search for Doctors . . .</mat-label>
+        <mat-label class="typewriter-animation">Search for Doctors . . .</mat-label>
         <input matInput [(ngModel)]="searchQuery"
            (keyup)="onSearchKeyup($event)"
            type="text" placeholder="Search for Doctors . . ." />

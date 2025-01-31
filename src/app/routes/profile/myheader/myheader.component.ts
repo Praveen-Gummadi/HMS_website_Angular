@@ -26,7 +26,7 @@ export class MyheaderComponent {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/']);
   }
 
   onAccountClick(): void {

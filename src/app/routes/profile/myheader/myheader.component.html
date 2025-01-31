@@ -2,7 +2,9 @@
 <div class="header">
   <mat-toolbar color="primary">
     <div class="logo-section">
-      <img src="greylogo.png" alt="Logo" class="logo" />
+      <a [routerLink]="['/']" class="logo-button">
+        <img src="greylogo.png" alt="Logo" class="logo" />
+      </a>
     </div>
     <div class="spacer"></div>
     <button mat-flat-button class="account-button" [matMenuTriggerFor]="usermenu" (click)="onAccountClick()">

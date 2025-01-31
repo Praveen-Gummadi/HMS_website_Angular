@@ -28,7 +28,13 @@ export class HeaderComponent {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/signin']);
+    if (window.location.pathname === '/dashboard') {
+      window.location.reload();
+    } else if (window.location.pathname === '/doctors') {
+      window.location.reload();
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   onAccountClick(): void {

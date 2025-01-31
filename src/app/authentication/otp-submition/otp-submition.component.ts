@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-otp-submition',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, RouterLink],
   templateUrl: './otp-submition.component.html',
   styleUrl: './otp-submition.component.scss'
 })
 
 export class OtpSubmitionComponent implements OnInit {
-  mobileNumber: string = '';
+  mobileNumber = String(localStorage.getItem('mobile-otp'));
   otp: string = '';
   isWhatsAppChecked: boolean = false;
   isFormValid: boolean = false;
@@ -25,14 +25,9 @@ export class OtpSubmitionComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private route: ActivatedRoute,
     private router: Router) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((params) => {
-      this.mobileNumber = params['key'];
-    });
-
     this.startTimer();
   }
 
@@ -43,10 +38,19 @@ export class OtpSubmitionComponent implements OnInit {
           this.router.navigate(['/dashboard'], { queryParams: { key: response.result.token } });
           localStorage.setItem('authToken', response.result.token);
           localStorage.setItem('username', response.result?.user.firstName);
+          localStorage.setItem('usermobile', response.result?.user.mobile);
+          localStorage.setItem('useremail', response.result?.user.email);
+
+          const { address, city, state, zip, country } = response.result?.user;
+
+          const addressString = `${address}, ${city}, ${state}, ${zip}, ${country}`;
+
+          localStorage.setItem('userAddress', addressString);
       },
       error: (error: any) => {
         this.errorMessage = error.error.errorMessages || 'An error occurred';
         alert(this.errorMessage);
+        this.otp = '';
       }
     });
   }

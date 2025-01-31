@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app/routes/lab-dashboard/lab-dashboard.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1738228389083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738228426060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,9 @@\n \r\n   .searchbox {\r\n     flex: 1;\r\n     font-size: 16px;\r\n+    margin-top: 10px;\r\n     border-radius: 4px;\r\n     transition: box-shadow 0.3s ease;\r\n     width: 90%;\r\n \r\n"
+                },
+                {
+                    "date": 1738232266836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,31 @@\n   top: 0;\r\n   z-index: 1000;\r\n   background-color: #fff;\r\n }\r\n+\r\n+.typewriter-animation {\r\n+  display: inline-block;\r\n+  overflow: hidden;\r\n+  color: rgb(40, 112, 188);\r\n+  animation: typing 3s steps(40) 1s infinite, blink 0.75s step-end infinite;\r\n+}\r\n+\r\n+@keyframes typing {\r\n+  from {\r\n+    width: 0;\r\n+  }\r\n+  to {\r\n+    width: 100%;\r\n+  }\r\n+}\r\n+\r\n+@keyframes blink {\r\n+  50% {\r\n+    border-color: transparent;\r\n+  }\r\n+}\r\n+\r\n .search-container {\r\n   display: flex;\r\n   flex-direction: row;\r\n   gap: 20px;\r\n"
+                }
+            ],
+            "date": 1738228389083,
+            "name": "Commit-0",
+            "content": "header {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 1000;\r\n  background-color: #fff;\r\n}\r\n.search-container {\r\n  display: flex;\r\n  flex-direction: row;\r\n  gap: 20px;\r\n\r\n  // :hover {\r\n  //   transform: scale(1.03);\r\n  // }\r\n\r\n  .location-card {\r\n    text-align:justify;\r\n    display: flex;\r\n    align-items: center;\r\n    background-color: #418fdc;\r\n    border-radius: 10px;\r\n    max-width: 500px;\r\n    max-height: 70px;\r\n  }\r\n\r\n  .location-section {\r\n    display: flex;\r\n    align-items: center;\r\n    width: 100%;\r\n  }\r\n\r\n  .location-section mat-icon {\r\n    padding: 5px;\r\n    font-size: 24px;\r\n    color: white;\r\n  }\r\n\r\n  .location-text {\r\n    font-size: 12px;\r\n    color: white;\r\n    line-height: 1.2;\r\n    // white-space: normal;\r\n    // word-wrap: break-word;\r\n    max-width: 300px;\r\n  }\r\n\r\n  .searchbox {\r\n    flex: 1;\r\n    font-size: 16px;\r\n    border-radius: 4px;\r\n    transition: box-shadow 0.3s ease;\r\n    width: 90%;\r\n\r\n    &:focus {\r\n      outline: none;\r\n      border-color: #007bff;\r\n    }\r\n  }\r\n}\r\n\r\n// Cart Item Section\r\n.cart-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  // padding: 10px;\r\n\r\n  .heading {\r\n    h3 {\r\n      font-size: 16px;\r\n      font-weight: bold;\r\n    }\r\n  }\r\n\r\n  .cart-button {\r\n    display: flex;\r\n    align-items: center;\r\n\r\n    &:hover {\r\n      transform: scale(1.05);\r\n    }\r\n\r\n    .cart-icon-container {\r\n      display: flex;\r\n      align-items: center;\r\n\r\n      mat-icon {\r\n        font-size: 24px;\r\n      }\r\n\r\n      .badge {\r\n        background-color: #ff6f00;\r\n        color: #fff;\r\n        font-size: 12px;\r\n        border-radius: 50%;\r\n        padding: 2px 8px;\r\n        margin-left: 4px;\r\n        margin-right: 4px;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n// Med Checkup Cards Section\r\n.card {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  gap: 10px;\r\n  justify-content: space-between;\r\n  width: 100%;\r\n\r\n  .card-container {\r\n    width: 100%;\r\n    margin: 5px 0;\r\n    border-radius: 10px;\r\n    border: 1px solid #e0e0e0;\r\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);\r\n    background-color: #fff;\r\n\r\n    .flex-container {\r\n      display: flex;\r\n      flex-direction: row;\r\n      justify-content: space-between;\r\n\r\n      .leftside {\r\n        margin-bottom: 10px;\r\n\r\n        mat-card-title {\r\n          font-size: 16px;\r\n          color: #333;\r\n          margin: 0 0 8px 0;\r\n        }\r\n\r\n        mat-icon {\r\n          font-size: 16px;\r\n          vertical-align: bottom;\r\n        }\r\n\r\n        p {\r\n          font-size: 12px;\r\n          color: #555;\r\n          margin: 4px 0;\r\n        }\r\n      }\r\n\r\n      .reightside {\r\n        display: flex;\r\n        align-items: center;\r\n        justify-content: space-between;\r\n        gap: 10px;\r\n      }\r\n\r\n      .content {\r\n        display: flex;\r\n        flex-direction: column;\r\n      }\r\n\r\n      .matbutton {\r\n        display: flex;\r\n        align-items: center;\r\n      }\r\n\r\n    }\r\n  }\r\n}\r\n"
+        }
+    ]
+}

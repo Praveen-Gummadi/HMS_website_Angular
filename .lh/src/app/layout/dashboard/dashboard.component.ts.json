@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/layout/dashboard/dashboard.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1738239346905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1738239346905,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../shared/shared.module';\r\nimport { RouterModule } from '@angular/router';\r\n\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  standalone: true,\r\n  imports: [SharedModule, RouterModule],\r\n  templateUrl: './dashboard.component.html',\r\n  styleUrl: './dashboard.component.scss'\r\n})\r\nexport class DashboardComponent {\r\n\r\n  services = [\r\n    {\r\n      icon: 'male-doctor.png',\r\n      title: 'Doctor Consultation',\r\n      route: '/doctors',\r\n    },\r\n    {\r\n      icon: 'lab-icon-top.png',\r\n      title: 'Book Lab Tests/Profiles/Health Check-Up Packages',\r\n      route: '/lab',\r\n    },\r\n    {\r\n      icon: 'x-ray.jpg',\r\n      title: 'X-Rays, Scans and MRI',\r\n      route: '/',\r\n    },\r\n  ];\r\n\r\n  packages = [\r\n    {\r\n      title: 'Basic Health Checkup',\r\n      time: '24 - 48 Hrs',\r\n      tests: '59 Tests',\r\n    },\r\n    {\r\n      title: 'Full Body Health Checkup',\r\n      time: '24 - 48 Hrs',\r\n      tests: '81 Tests',\r\n    },\r\n    {\r\n      title: 'Comprehensive Full Body Checkup with Vitamin D & B12',\r\n      time: '24 - 48 Hrs',\r\n      tests: '85 Tests',\r\n    },\r\n  ];\r\n}\r\n"
+        }
+    ]
+}

@@ -4,6 +4,7 @@ import { MatStepper } from '@angular/material/stepper';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { MyheaderComponent } from '../profile/myheader/myheader.component';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../authentication/auth.service';
 
 type AvailableDate = {
   day: string;
@@ -25,18 +26,21 @@ export class CartComponent implements AfterViewInit {
 
   @ViewChild(MatStepper) stepper: MatStepper | undefined;
 
-  locationDetails: string = 'GVR Infosystems Pvt. Ltd., Opp: Tata Motors, Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
+  locationDetails = localStorage.getItem('userAddress');
+
+  // locationDetails: string = 'GVR Infosystems Pvt. Ltd., Opp: Tata Motors, Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
 
   addressLine1: string = 'GVR Infosystems Pvt. Ltd., 3rd floor, Opp: Tata Motors Service Centre';
   addressLine2: string = 'Sri Sai Enclave, Old Bowenpally, Hyderabad, Telangana, India.';
-  phone: string = '0987654321';
-  email: string = 'gvrinfo@gmail.com';
+  phone: string = String(localStorage.getItem('usermobile'));
+  email: string = String(localStorage.getItem('useremail'));
 
 
   // Flag to toggle form visibility
   showForm: boolean = false;
+  isSignedIn: boolean = false;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private authService: AuthService) {
     this.updateVisibleDates();
   }
 
@@ -47,6 +51,12 @@ export class CartComponent implements AfterViewInit {
         this.stepper.selectedIndex = +step - 1; // Set the step index (0-based index)
       }
     });
+
+    this.isSignedIn = this.authService.isSignedIn();
+
+    if (this.isSignedIn) {
+      this.phone = String(localStorage.getItem('usermobile'));
+    }
   }
 
   // Toggle the form visibility
@@ -243,5 +253,9 @@ export class CartComponent implements AfterViewInit {
 
     Razorpay.open(RozarpayOptions,successCallback, failureCallback)
    }
+
+   goBack(): void {
+    window.history.back();
+  }
 }
 

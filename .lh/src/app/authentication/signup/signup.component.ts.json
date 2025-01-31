@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/authentication/signup/signup.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1738230833560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1738237416546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import { Component, OnInit } from '@angular/core';\r\n import { SharedModule } from '../../shared/shared.module';\r\n import { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\n import { SharedDataService } from '../shared-data.service';\r\n-import { ActivatedRoute, Router } from '@angular/router';\r\n+import { ActivatedRoute, Router, RouterLink } from '@angular/router';\r\n import { LoginService } from '../login.service';\r\n \r\n @Component({\r\n   selector: 'app-signup',\r\n   standalone: true,\r\n-  imports: [SharedModule],\r\n+  imports: [SharedModule, RouterLink],\r\n   templateUrl: './signup.component.html',\r\n   styleUrl: './signup.component.scss'\r\n })\r\n export class SignupComponent implements OnInit {\r\n"
+                }
+            ],
+            "date": 1738230833560,
+            "name": "Commit-0",
+            "content": "import { Component, OnInit } from '@angular/core';\r\nimport { SharedModule } from '../../shared/shared.module';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { SharedDataService } from '../shared-data.service';\r\nimport { ActivatedRoute, Router } from '@angular/router';\r\nimport { LoginService } from '../login.service';\r\n\r\n@Component({\r\n  selector: 'app-signup',\r\n  standalone: true,\r\n  imports: [SharedModule],\r\n  templateUrl: './signup.component.html',\r\n  styleUrl: './signup.component.scss'\r\n})\r\nexport class SignupComponent implements OnInit {\r\n  signupForm: FormGroup;\r\n  mobile: string = \"\";\r\n\r\n  constructor(\r\n    private fb: FormBuilder,\r\n    private router: Router,\r\n    private route: ActivatedRoute,\r\n    private sharedDataService: SharedDataService,\r\n    private loginService: LoginService,) {\r\n    this.signupForm = this.fb.group({\r\n      name: ['', Validators.required],\r\n      gender: ['', Validators.required],\r\n      email: ['', [Validators.email, Validators.required]],\r\n      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],\r\n      whatsappOptIn: [false],\r\n    });\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.route.queryParams.subscribe(params => {\r\n      if (params['key']) {\r\n        this.signupForm.controls['mobile'].setValue(params['key']);\r\n        this.mobile = params['key']\r\n      }\r\n    });\r\n  }\r\n\r\n  onSubmit() {\r\n    if (this.signupForm.valid) {\r\n      this.router.navigate(['/otp'], { queryParams: { key: this.mobile } });\r\n      this.loginService.generateOtp(this.mobile).subscribe({\r\n        next: (response: any) => {\r\n          if (response.statusCode === 403) {\r\n            this.router.navigate(['/otp'], { queryParams: { key: this.mobile } });\r\n          } else {\r\n            console.error('Unexpected error:', response.errorMessages.join(', '));\r\n            alert('Unexpected error: ' + response.errorMessages.join(', '));\r\n          }\r\n        },\r\n      });\r\n    }\r\n  }\r\n}\r\n"
+        }
+    ]
+}

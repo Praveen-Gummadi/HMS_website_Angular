@@ -1,19 +1,21 @@
 <header>
   <div class="search-container">
-    <mat-form-field class="location-field" appearance="outline">
-        <mat-label>Location</mat-label>
-        <input matInput [matAutocomplete]="auto" placeholder="Select Location" value="Bowenpally Police..." />
-        <mat-icon matSuffix>location_on</mat-icon>
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of locations" [value]="option">
-                {{ option }}
-            </mat-option>
-        </mat-autocomplete>
 
-    </mat-form-field>
+    <!-- Location Section -->
+    <mat-card class="location-card">
+      <mat-card-content class="location-section">
+        <mat-icon>location_on</mat-icon>
+        <div>
+          <p class="location-text">{{ locationDetails }}</p>
+        </div>
+        <button mat-icon-button class="dropdown-icon">
+          <mat-icon class="dropdown-icon">expand_more</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
 
     <mat-form-field class="searchbox" appearance="outline">
-      <mat-label>Search for Lab Test, Scan & Health Checkup Packages</mat-label>
+      <mat-label class="typewriter-animation">Search for Lab Test, Scan & Health Checkup Packages . . .</mat-label>
       <input
         matInput
         type="search"
