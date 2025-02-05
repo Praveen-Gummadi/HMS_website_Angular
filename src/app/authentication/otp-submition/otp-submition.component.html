@@ -17,6 +17,7 @@
         (input)="validateForm()"
         (keypress)="allowOnlyNumbers($event)"
         maxlength="4"
+        (keydown.enter)="onSubmitOtp()"
       />
 
     </mat-form-field>
