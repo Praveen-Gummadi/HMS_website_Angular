@@ -81,53 +81,7 @@ export class LabDashboardComponent {
     },
   ];
 
-  // MedCheckUpServices =
-  // [
-  //   {
-  //     "id": 1,
-  //     "MedService": "Vitamin D (25-OH)",
-  //     "Reports": "Report in 24-28 Hrs",
-  //     "Available": "Home",
-  //     "Price": {
-  //       "Price": 1999,
-  //       "Discount": "45% OFF",
-  //       "FinalPrice": 1099
-  //     }
-  //   },
-  //   {
-  //     "id": 2,
-  //     "MedService": "Vitamin B12-Serum",
-  //     "Reports": "Report in 24-28 Hrs",
-  //     "Available": "Home",
-  //     "Price": {
-  //       "Price": 1999,
-  //       "Discount": "18% OFF",
-  //       "FinalPrice": 1099
-  //     }
-  //   },
-  //   {
-  //     "id": 3,
-  //     "MedService": "Lipid Profile",
-  //     "Reports": "Report in 24-28 Hrs",
-  //     "Available": "Home",
-  //     "Price": {
-  //       "Price": 1999,
-  //       "Discount": "50% OFF",
-  //       "FinalPrice": 1099
-  //     }
-  //   },
-  //   {
-  //     "id": 4,
-  //     "MedService": "Vitamin B4 (25-OH)",
-  //     "Reports": "Report in 24-28 Hrs",
-  //     "Available": "Home",
-  //     "Price": {
-  //       "Price": 1999,
-  //       "Discount": "60% OFF",
-  //       "FinalPrice": 1099
-  //     }
-  //   }
-  // ]
+
 
   addServiceToCard(cartItem:any){
     this.ItemListInCart = this.labdashboardService.addToCart(this.MedCheckUpService.find(selectedItem=>selectedItem.id === cartItem));

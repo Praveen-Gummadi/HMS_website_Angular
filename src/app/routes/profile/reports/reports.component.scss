@@ -1,0 +1,28 @@
+.patient-history-container {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  gap: 20px;
+}
+
+.profile-card {
+  width: 350px;
+  padding: 10px;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+
+    .image {
+      img {
+        width: 40%;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}

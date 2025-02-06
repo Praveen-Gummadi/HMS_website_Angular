@@ -11,6 +11,9 @@ import { ProfilelayoutComponent } from './routes/profile/profilelayout/profilela
 import { MyordersComponent } from './routes/profile/myorders/myorders.component';
 import { MyhomeComponent } from './routes/profile/myhome/myhome.component';
 import { DoctorConsultationComponent } from './routes/doctor-consultation/doctor-consultation.component';
+import { BasicinfoComponent } from './routes/profile/basicinfo/basicinfo.component';
+import { PatienthistoryComponent } from './routes/profile/patienthistory/patienthistory.component';
+import { ReportsComponent } from './routes/profile/reports/reports.component';
 
 export const routes: Routes = [
     { path: 'cart', component: CartComponent },
@@ -34,6 +37,9 @@ export const routes: Routes = [
       children: [
           { path: 'myorders', component: MyordersComponent },
           { path: 'myhome', component: MyhomeComponent },
+          { path: 'basicinfo', component: BasicinfoComponent },
+          { path: 'patienthistory', component: PatienthistoryComponent },
+          { path: 'reports', component: ReportsComponent },
       ]
     }
 ];

@@ -1,0 +1,87 @@
+<div class="container">
+  <mat-form-field appearance="outline" class="short">
+    <mat-label>Title</mat-label>
+    <mat-select [(ngModel)]="user.title">
+      <mat-option value="Mr">Mr</mat-option>
+      <mat-option value="Ms">Ms</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="user.firstName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Middle Name</mat-label>
+    <input matInput [(ngModel)]="user.middleName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="user.lastName">
+  </mat-form-field>
+
+  <div class="gender">
+    <mat-button-toggle-group [(ngModel)]="user.gender" class="gender-toggle" exclusive>
+      <mat-label style="padding: 8px;">Gender</mat-label>
+      <mat-button-toggle value="Male"><mat-icon>person</mat-icon> Male</mat-button-toggle>
+      <mat-button-toggle value="Female"><mat-icon>face</mat-icon> Female</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput [(ngModel)]="user.dob" type="date">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="user.email">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 98%;">
+    <mat-label>Address Line</mat-label>
+    <input matInput [(ngModel)]="user.address">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mandal/Area</mat-label>
+    <input matInput [(ngModel)]="user.mandal">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Location</mat-label>
+    <input matInput [(ngModel)]="user.location">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>City</mat-label>
+    <input matInput [(ngModel)]="user.city">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>State</mat-label>
+    <input matInput [(ngModel)]="user.state">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Country</mat-label>
+    <input matInput [(ngModel)]="user.country">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Zip Code</mat-label>
+    <input matInput [(ngModel)]="user.zip">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Referred by Doctor</mat-label>
+    <input matInput [(ngModel)]="user.referredBy">
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-button color="primary" (click)="save()">Save</button>
+    <button mat-button color="accent">Edit</button>
+  </div>
+</div>
