@@ -1,0 +1,33 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/back-groundimg.avif') no-repeat center center/cover;
+}
+
+.login-box {
+  width: 350px;
+  padding: 20px;
+  background: white;
+  opacity: 0.8;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+h6 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  Mat-label {
+    font-size: 12px;
+    color: #595e62;
+  }
+}

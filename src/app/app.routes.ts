@@ -14,6 +14,9 @@ import { DoctorConsultationComponent } from './routes/doctor-consultation/doctor
 import { BasicinfoComponent } from './routes/profile/basicinfo/basicinfo.component';
 import { PatienthistoryComponent } from './routes/profile/patienthistory/patienthistory.component';
 import { ReportsComponent } from './routes/profile/reports/reports.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { PartialsignupComponent } from './authentication/partialsignup/partialsignup.component';
+import { ReciptComponent } from './routes/profile/recipt/recipt.component';
 
 export const routes: Routes = [
     { path: 'cart', component: CartComponent },
@@ -21,6 +24,9 @@ export const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'signupdetails', component: SignupDetailsComponent },
     { path: 'otp', component: OtpSubmitionComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'login2', component: PartialsignupComponent },
+
     {
         path: '',
         component: MasterLayoutComponent,
@@ -40,6 +46,7 @@ export const routes: Routes = [
           { path: 'basicinfo', component: BasicinfoComponent },
           { path: 'patienthistory', component: PatienthistoryComponent },
           { path: 'reports', component: ReportsComponent },
+          { path: 'recipt', component: ReciptComponent },
       ]
     }
 ];

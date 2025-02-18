@@ -1,0 +1,60 @@
+<div class="receipt-container">
+  <div class="header">
+    <div class="headertext">
+      <h6>GVR Hospital</h6>
+      <p><strong>Receipt</strong></p>
+    </div>
+    <p><strong>Customer's name:</strong> {{ receiptData.customerName }}</p>
+    <p><strong>Order ID:</strong> {{ receiptData.orderId }}</p>
+    <p><strong>Order Date:</strong> {{ receiptData.orderDate }}</p>
+  </div>
+
+  <table class="receipt-details">
+    <thead>
+      <tr>
+        <th>PARTICULARS</th>
+        <th>ServiceName</th>
+        <th>Date of Appointment</th>
+        <th>Beneficiary Name</th>
+        <th>Qty</th>
+        <th>Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ receiptData.service }}</td>
+        <td>{{ receiptData.serviceName }}</td>
+        <td>{{ receiptData.appointmentDate }}</td>
+        <td>{{ receiptData.beneficiaryName }}</td>
+        <td>{{ receiptData.qty }}</td>
+        <td>{{ receiptData.amount }}</td>
+      </tr>
+
+      <tr>
+        <td colspan="5" style="text-align: right;"><strong>Total Amount:</strong></td>
+        <td>{{ receiptData.totalAmount }}</td>
+      </tr>
+
+      <tr>
+        <td colspan="5" style="text-align: right;"><strong>Amount Paid( - ):</strong></td>
+        <td>{{ receiptData.amountPaid }}</td>
+      </tr>
+
+      <tr>
+        <td colspan="5" style="text-align: right;"><strong>Amount Paid :</strong></td>
+        <td>{{ receiptData.amountPaid }}</td>
+      </tr>
+
+      <tr>
+        <td colspan="6" style="text-align: center;"><strong>{{ receiptData.amountInWords }}</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div class="footer">
+    <p><strong>Total Amount:</strong> ₹{{ receiptData.totalAmount }}</p>
+    <p><strong>Amount Paid ( - ) :</strong> ₹{{ receiptData.amountPaid }}</p>
+    <p><strong>Amount Paid :</strong> ₹{{ receiptData.amountPaid }}</p>
+    <p><strong>Amount in words:</strong> {{ receiptData.amountInWords }}</p>
+  </div> -->
+</div>

@@ -1,0 +1,50 @@
+// Ensure proper spacing and styling
+:host {
+  display: block;
+  width: 100%;
+}
+
+// Style the dialog content
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; // Adds spacing between form fields
+  padding: 16px 24px;
+}
+
+// Style form fields
+mat-form-field {
+  width: 100%;
+}
+
+// Dialog title styling
+mat-dialog-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+// Dialog actions (buttons)
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
+
+  button {
+    margin-left: 8px; // Add spacing between buttons
+  }
+}
+
+// Ensure responsive design
+@media (max-width: 600px) {
+  mat-dialog-content {
+    padding: 12px;
+  }
+
+  mat-dialog-title,
+  mat-dialog-actions {
+    padding: 12px;
+  }
+}

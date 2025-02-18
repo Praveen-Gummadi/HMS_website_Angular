@@ -1,10 +1,14 @@
-import { Component, NgModule, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, NgModule, ViewChild, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { MatStepper } from '@angular/material/stepper';
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { MyheaderComponent } from '../profile/myheader/myheader.component';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../authentication/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddpatientDialogComponent } from '../lab-dashboard/addpatient-dialog/addpatient-dialog.component';
+import { LabService } from '../lab-dashboard/lab.service';
+import { MatButtonToggle } from '@angular/material/button-toggle';
 
 type AvailableDate = {
   day: string;
@@ -17,12 +21,12 @@ declare var Razorpay: any;
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [SharedModule, MyheaderComponent],
+  imports: [SharedModule, MyheaderComponent, MatButtonToggle],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
 
-export class CartComponent implements AfterViewInit {
+export class CartComponent implements OnInit {
 
   @ViewChild(MatStepper) stepper: MatStepper | undefined;
 
@@ -30,19 +34,32 @@ export class CartComponent implements AfterViewInit {
 
   addressLine1: string = '';
   addressLine2: string = '';
+  username: string = '';
   phone: string = '';
   email: string = '';
+
+  cartItems: any[] = [];
+  tests: any[] = [];
+  selectedSlottype : string = '';
 
 
   // Flag to toggle form visibility
   showForm: boolean = false;
   isSignedIn: boolean = false;
 
-  constructor(private route: ActivatedRoute, private authService: AuthService) {
+  constructor(private route: ActivatedRoute, private authService: AuthService, private dialog: MatDialog,
+    private labservice: LabService,
+
+  ) {
     this.updateVisibleDates();
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
+
+    // this.cartItems = this.labservice.getCartItems();
+
+    this.cartItems = this.formatCartData(this.labservice.getCartItems());
+    console.log(this.cartItems);
     this.route.queryParams.subscribe(params => {
       const step = params['step']; // e.g., step=2
       if (step && this.stepper) {
@@ -53,6 +70,7 @@ export class CartComponent implements AfterViewInit {
     this.isSignedIn = this.authService.isSignedIn();
 
     if (this.isSignedIn) {
+      this.username = String(localStorage.getItem('username'));
       this.phone = String(localStorage.getItem('usermobile'));
       this.email = String(localStorage.getItem('useremail'));
     }
@@ -64,6 +82,37 @@ export class CartComponent implements AfterViewInit {
 
       this.addressLine2 = addressParts.slice(1).join(', ') || '';
     }
+
+    this.totalAmount;
+  }
+
+  formatCartData(data: any[]): any[] {
+    const patients: any[] = [];
+
+    // Group tests under patients dynamically
+    data.forEach(test => {
+      // Find if patient already exists
+      let patient = patients.find(p => p.id === test.patientID);
+
+      if (!patient) {
+        // If patient doesn't exist, create a new one
+        patient = {
+          id: test.patientID,  // Assuming `patientID` exists in API data
+          patientName: test.patientName, // Assuming `patientName` exists
+          tests: []
+        };
+        patients.push(patient);
+      }
+
+      // Add test details under the respective patient
+      patient.tests.push({
+        serviceItemID: test.serviceItemID,
+        serviceItemName: test.serviceItemName,
+        actualprice: test.price - (test.price * test.discount / 100) // Apply discount
+      });
+    });
+
+    return patients;
   }
 
   // Toggle the form visibility
@@ -72,15 +121,17 @@ export class CartComponent implements AfterViewInit {
   }
 
   // Dynamic cart data
-  cartItems = [
-    {
-      id: 1,
-      patientName: 'John Doe',
-      tests: [
-        { id: 1, testName: 'Glucose Random (RBS) - Sodium Flouride', price: 249 },
-      ],
-    },
-  ];
+  // cartItems = [
+  //   {
+  //     id: 1,
+  //     patientName: 'John Doe',
+  //     tests: [
+  //       { id: 1, testName: 'Glucose Random (RBS) - Sodium Flouride', price: 249 },
+  //     ],
+  //   },
+  // ];
+
+
 
   // Add a new patient
   addAnotherPatient() {
@@ -88,7 +139,8 @@ export class CartComponent implements AfterViewInit {
     this.cartItems.push({
       id: newPatientId,
       patientName: `Patient ${newPatientId}`,
-      tests: [], // Empty test list initially
+     tests: [], // Empty test list initially
+      // tests: this.cartItems
     });
   }
 
@@ -107,25 +159,40 @@ export class CartComponent implements AfterViewInit {
 
   // Remove a specific test from a specific patient
   removeTest(patientId: number, testId: number) {
-    const patient = this.cartItems.find((p) => p.id === patientId);
-    if (patient) {
-      patient.tests = patient.tests.filter((t) => t.id !== testId);
+    const patientIndex = this.cartItems.findIndex(p => p.id === patientId);
+
+    if (patientIndex !== -1) {
+      // Filter out the test to remove
+      this.cartItems[patientIndex].tests = this.cartItems[patientIndex].tests.filter((test: { serviceItemID: number; }) => test.serviceItemID !== testId);
+
+      // If the patient has no more tests, remove them from the cart
+      if (this.cartItems[patientIndex].tests.length === 0) {
+        this.cartItems.splice(patientIndex, 1);
+      }
+
+      // Force Angular to detect changes
+      this.cartItems = [...this.cartItems];
     }
   }
 
+
   // Summary amount (calculated dynamically)
   get totalAmount(): number {
-    // Reduce through all cartItems (patients) and sum up the test prices
+    if (!this.cartItems || this.cartItems.length === 0) return 0;
+
     return this.cartItems.reduce((total, patient) => {
-      const patientTotal = patient.tests.reduce((testTotal, test) => testTotal + test.price, 0);
+      if (!patient.tests || patient.tests.length === 0) return total;
+
+      const patientTotal = patient.tests.reduce((testTotal: number, test: { actualprice: number; }) => {
+        console.log(`Adding Test: Price: ${test.actualprice}`);
+        return testTotal + (test.actualprice || 0);
+      }, 0);
       return total + patientTotal;
     }, 0);
   }
 
-  // Remove item from cart
-  removeItem(id: number) {
-    this.cartItems = this.cartItems.filter((item) => item.id !== id);
-  }
+
+
 
   // Method to handle the "Next" button click
   saveandnext(stepper: MatStepper) {
@@ -264,5 +331,15 @@ export class CartComponent implements AfterViewInit {
    goBack(): void {
     window.history.back();
   }
-}
+  openAddPatientDialog(): void {
+    const dialogRef = this.dialog.open(AddpatientDialogComponent, {
+      width: '800px',
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Patient Data:', result);
+      }
+    });
+  }
+}

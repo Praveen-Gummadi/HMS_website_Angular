@@ -1,71 +1,77 @@
-<header>
-  <div class="search-container">
+<div class="body">
+  <header>
+    <div class="search-container">
 
-    <!-- Location Section -->
-    <mat-card class="location-card">
-      <mat-card-content class="location-section">
-        <mat-icon>location_on</mat-icon>
-        <div>
-          <p class="location-text">{{ locationDetails }}</p>
-        </div>
-        <button mat-icon-button class="dropdown-icon">
-          <mat-icon class="dropdown-icon">expand_more</mat-icon>
+      <!-- Location Section -->
+      <mat-card class="location-card">
+        <mat-card-content class="location-section">
+          <mat-icon>location_on</mat-icon>
+          <div>
+            <p class="location-text">{{ locationDetails }}</p>
+          </div>
+          <button mat-icon-button class="dropdown-icon">
+            <mat-icon class="dropdown-icon">expand_more</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-form-field class="searchbox" appearance="outline">
+        <mat-label class="typewriter-animation">Search for Lab Test, Scan & Health Checkup Packages . . .</mat-label>
+        <input
+          matInput
+          type="search"
+          placeholder="Search for Lab Test, Scan & Health Checkup Packages"
+        />
+        <button mat-icon-button matSuffix>
+          <mat-icon>search</mat-icon>
         </button>
-      </mat-card-content>
-    </mat-card>
+      </mat-form-field>
 
-    <mat-form-field class="searchbox" appearance="outline">
-      <mat-label class="typewriter-animation">Search for Lab Test, Scan & Health Checkup Packages . . .</mat-label>
-      <input
-        matInput
-        type="search"
-        placeholder="Search for Lab Test, Scan & Health Checkup Packages"
-      />
-      <button mat-icon-button matSuffix>
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
+    </div>
 
+
+    <div class="cart-item">
+      <div class="heading">
+          <h3>Book Lab Tests</h3>
+      </div>
+      <div class="cart-button">
+          <button mat-flat-button color="primary"  [routerLink]="'/cart'">
+              <div class="cart-icon-container">
+                <mat-icon>shopping_cart</mat-icon>
+                  <span class="badge">{{ ItemCount }}</span>
+                  <!-- <span>Test</span> -->
+              </div>
+          </button>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="lab-cantainer">
+    <div class="card" *ngFor="let item of labtest">
+      <mat-card class="card-container" appearance="outlined">
+          <mat-card-content class="flex-container">
+              <div class="leftside">
+                  <mat-card-title>{{ item.serviceItemName }}</mat-card-title>
+                  <p class="">Report in 24-28 Hrs</p>
+                  <p><mat-icon>home</mat-icon>Available at: Home</p>
+              </div>
+
+              <div class="reightside">
+                <div class="content">
+                  <p><s>₹{{ item.price }}</s></p>
+                  <p>{{ item.discount }} %OFF</p>
+                  ₹{{ item.actualprice }}
+                </div>
+                <button class="matbutton" mat-stroked-button color="primary" (click)="addServiceToCard(item.serviceItemID)">
+                  <mat-icon>add_circle</mat-icon>Add
+                </button>
+              </div>
+
+          </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 
-
-  <div class="cart-item">
-    <div class="heading">
-        <h3>Book Lab Tests</h3>
-    </div>
-    <div class="cart-button">
-        <button mat-raised-button color="primary"  [routerLink]="'/cart'">
-            <div class="cart-icon-container">
-              <mat-icon>shopping_cart</mat-icon>
-                <span class="badge">{{ ItemCount }}</span>
-                <span>Test</span>
-            </div>
-        </button>
-    </div>
-  </div>
-</header>
-
-
-<div class="card" *ngFor="let item of MedCheckUpService">
-  <mat-card class="card-container" appearance="outlined">
-      <mat-card-content class="flex-container">
-          <div class="leftside">
-              <mat-card-title>{{ item.MedService }}</mat-card-title>
-              <p class="">{{ item.Reports }}</p>
-              <p><mat-icon>home</mat-icon>Available at: {{ item.Available }}</p>
-          </div>
-
-          <div class="reightside">
-            <div class="content">
-              <p><s>₹{{ item.Price.Price }}</s></p>
-              <p>{{ item.Price.Discount }}</p>
-              ₹{{ item.Price.FinalPrice }}
-            </div>
-            <button class="matbutton" mat-raised-button color="primary" (click)="addServiceToCard(item.id)">
-              <mat-icon>add_circle</mat-icon>Add
-            </button>
-          </div>
-
-      </mat-card-content>
-  </mat-card>
 </div>
+

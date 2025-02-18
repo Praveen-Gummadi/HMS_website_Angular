@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { SharedDataService } from '../shared-data.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { LocationsService } from '../../services/locations.service';
 
 @Component({
   selector: 'app-signup-details',
@@ -13,14 +14,20 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 })
 export class SignupDetailsComponent implements OnInit {
   detailsForm: FormGroup;
+  countries: any[] = [];
+  states: any[] = [];
+  cities: any[] = [];
+  countrycode_store = '';
+  statecode_store = '';
 
   constructor(
     private fb: FormBuilder,
     private sharedDataService: SharedDataService,
     private route: ActivatedRoute,
+    private locationService: LocationsService,
   ) {
     this.detailsForm = this.fb.group({
-      title: ['Mr', Validators.required],
+      title: ['', Validators.required],
       name: ['', Validators.required],
       middleName: [''],
       lastName: ['', Validators.required],
@@ -60,7 +67,66 @@ export class SignupDetailsComponent implements OnInit {
         email: formData.email,
       });
     }
+
+    this.fetchCountries();
   }
+
+  fetchCountries() {
+    this.locationService.fetchCountriesAPI().subscribe(
+      (data: any[]) => {
+        this.countries = data;
+      },
+      (error) => {
+        console.error('Error fetching countries:', error);
+      }
+    );
+  }
+
+
+  onCountryChange(selectedCountry: any) {
+    console.log(selectedCountry);
+    if (selectedCountry) {
+      this.countrycode_store = selectedCountry.isoCode;
+      this.states = [];
+      this.cities = [];
+      this.detailsForm.patchValue({ state: '', city: '' });
+
+      this.locationService.fetchStatesAPI(this.countrycode_store).subscribe(
+        (data: any[]) => {
+          this.states = data;
+        },
+        (error) => {
+          console.error('Error fetching countries:', error);
+        }
+      );
+    }
+  }
+
+  compareCountries(option1: any, option2: any): boolean {
+    return option1 && option2 ? option1.isoCode === option2.isoCode : option1 === option2;
+  }
+
+  onStateChange(selectedState: any) {
+    if (selectedState) {
+      this.cities = [];
+      this.detailsForm.patchValue({ city: '' });
+      this.statecode_store = selectedState.isoCode;
+
+      this.locationService.fetchCitiesAPI(this.countrycode_store, this.statecode_store).subscribe(
+        (data: any[]) => {
+          this.cities = data;
+        },
+        (error) => {
+          console.error('Error fetching countries:', error);
+        }
+      );
+    }
+  }
+
+  compareStates(option1: any, option2: any): boolean {
+    return option1 && option2 ? option1.isoCode === option2.isoCode : option1 === option2;
+  }
+
 
   calculateAge(dob: string): number {
     const today = new Date();

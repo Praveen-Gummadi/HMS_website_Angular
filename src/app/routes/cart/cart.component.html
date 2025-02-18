@@ -37,11 +37,10 @@
           <legend>{{ cartItems.length }} Cart Items</legend>
 
           <mat-card class="patient-card" *ngFor="let patient of cartItems; let i = index">
-            <!-- Patient Details -->
             <div class="item-details">
               <legend class="patient-name">
                 <mat-icon>person</mat-icon>
-                {{ patient.patientName }}
+                Mr. {{ username }}
               </legend>
             </div>
 
@@ -50,17 +49,17 @@
               <div>
                 <p class="test-name">
                   <mat-icon>home</mat-icon>
-                  {{ test.testName }}
+                  {{ test.serviceItemName }}
                 </p>
               </div>
               <div class="item-price">
-                <span>₹{{ test.price }}/-</span>
+                <span>₹{{ test.actualprice }}/-</span>
                 <mat-icon
                   color="warn"
                   class="delete-icon"
-                  (click)="removeTest(patient.id, test.id)"
-                  >delete</mat-icon
-                >
+                  (click)="removeTest(patient.id, test.serviceItemID)">
+                  delete
+                </mat-icon>
               </div>
             </mat-card>
             <!-- Add Test Button for Each Patient -->
@@ -68,11 +67,11 @@
               <mat-icon>add_circle</mat-icon>
               Add More Tests or Health Check Packages
             </button>
-            </mat-card>
+          </mat-card>
 
             <!-- Add Patient Button -->
             <div class="button-container">
-              <button mat-raised-button (click)="addAnotherPatient()">
+              <button mat-raised-button (click)="openAddPatientDialog()">
                 <mat-icon>person_add</mat-icon>
                 Add Another Patient
               </button>

@@ -1,0 +1,29 @@
+<div class="login-container">
+  <div class="login-box">
+    <h6>Login</h6>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username (Email or Mobile)</mat-label>
+        <input matInput formControlName="username" placeholder="Enter Email or Mobile" />
+        <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+          Username is required.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('username')?.hasError('invalidUsername')">
+          Enter a valid email or 10-digit mobile number.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Enter Password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" class="full-width" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+  </div>
+</div>

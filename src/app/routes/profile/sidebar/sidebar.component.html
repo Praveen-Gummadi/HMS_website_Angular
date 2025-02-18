@@ -1,17 +1,17 @@
 <div class="container">
   <!-- Sidebar -->
   <div class="sidebar" [class.closed]="!isSidebarOpen" [ngClass]="{ 'collapsed': !isSidebarOpen }">
-    <legend>My Profile <mat-icon (click)="toggleSidebar()" style="margin-left: 10px; vertical-align: middle;">menu</mat-icon></legend>
-    <ul>
-      <li><a routerLink="/profile/myhome">Home</a></li>
-      <li><a routerLink="/profile/basicinfo">Basic Info</a></li>
-      <li><a routerLink="/profile/myorders">My Orders</a></li>
-      <li><a routerLink="/profile/patienthistory">Patient History</a></li>
-      <li><a routerLink="/profile/reports">Reports</a></li>
-      <li><a routerLink="/Signout">Signout</a></li>
-      <li><a routerLink="/Exit">Exit</a></li>
-    </ul>
-  </div>
+  <legend>My Profile <mat-icon (click)="toggleSidebar()" style="margin-left: 10px; vertical-align: middle;">menu</mat-icon></legend>
+  <ul>
+    <li><a routerLink="/profile/myhome" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a routerLink="/profile/basicinfo" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Basic Info</a></li>
+    <li><a routerLink="/profile/myorders" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">My Orders</a></li>
+    <li><a routerLink="/profile/patienthistory" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Patient History</a></li>
+    <li><a routerLink="/profile/reports" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Reports</a></li>
+    <li><a routerLink="/Signout" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Signout</a></li>
+    <li><a routerLink="/Exit" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Exit</a></li>
+  </ul>
+</div>
 </div>
 
 <button mat-mini-fab *ngIf="!isSidebarOpen" (click)="toggleSidebar()"

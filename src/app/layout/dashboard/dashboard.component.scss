@@ -17,8 +17,9 @@
 .typewriter-animation {
   display: inline-block;
   overflow: hidden;
-  color: rgb(40, 112, 188);
-  animation: typing 3s steps(40) 1s infinite, blink 0.75s step-end infinite;
+  // color: rgb(40, 112, 188);
+  color: black;
+  animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -41,11 +42,13 @@
   // background-size: cover;
   // background-position: center;
   // animation: gentleZoom 30s ease-in-out infinite;
+  background: url('/mainbcakground.avif') no-repeat center center/cover;
   padding: 20px;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100vh;
 }
 
 .full-width {
@@ -61,8 +64,8 @@
 .services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly; /* Center the items */
-  gap: calc(3% + 20px); /* Responsive gap based on screen size */
+  justify-content: space-evenly;
+  gap: calc(3% + 20px);
   padding: 10px;
 }
 
@@ -94,9 +97,11 @@
 
 .health-checkups {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 20px;
-  background-color: rgb(215, 221, 231);
+  border: 1px solid rgb(117, 115, 115);
+  border-radius: 8px;
   gap: 20px;
 }
 

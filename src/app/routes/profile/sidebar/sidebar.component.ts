@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SharedModule, RouterLink],
+  imports: [SharedModule, RouterLink, RouterLinkActive, MatButtonToggleModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
