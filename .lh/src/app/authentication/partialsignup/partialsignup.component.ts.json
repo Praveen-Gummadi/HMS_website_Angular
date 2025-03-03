@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/authentication/partialsignup/partialsignup.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740029363675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740029363675,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';\r\nimport { SharedModule } from '../../shared/shared.module';\r\n\r\n@Component({\r\n  selector: 'app-partialsignup',\r\n  standalone: true,\r\n  imports: [SharedModule],\r\n  templateUrl: './partialsignup.component.html',\r\n  styleUrl: './partialsignup.component.scss'\r\n})\r\nexport class PartialsignupComponent {\r\n  signupForm: FormGroup;\r\n\r\n  constructor(private fb: FormBuilder) {\r\n    this.signupForm = this.fb.group({\r\n      name: ['', [Validators.required, Validators.minLength(3)]],\r\n      email: ['', [Validators.required, Validators.email]],\r\n      mobile: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],\r\n      password: ['', [Validators.required, Validators.minLength(6)]],\r\n      confirmPassword: ['', Validators.required]\r\n    }, { validator: this.passwordsMatchValidator });\r\n  }\r\n\r\n  // Custom validator to check if passwords match\r\n  passwordsMatchValidator(group: AbstractControl) {\r\n    const password = group.get('password')?.value;\r\n    const confirmPassword = group.get('confirmPassword')?.value;\r\n    return password === confirmPassword ? null : { passwordsMismatch: true };\r\n  }\r\n\r\n  onSignup() {\r\n    if (this.signupForm.valid) {\r\n      console.log('Signup Successful', this.signupForm.value);\r\n    }\r\n  }\r\n}\r\n"
+        }
+    ]
+}

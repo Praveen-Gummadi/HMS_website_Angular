@@ -294,12 +294,18 @@
 
 
     <!-- Summary Section -->
-    <mat-card class="summary-card">
-      <legend>Estimated Amount</legend>
+     <mat-card class="summary-card">
+      <button mat-raised-button color="primary" (click)="saveandnext(stepper)"
+        *ngIf="!ispaymentSlotActive"
+        [disabled]="cartItems.length === 0">
+        <mat-icon>play_arrow</mat-icon>
+        <span class="button-text">Continue</span>
+      </button>
+      <!--<legend>Estimated Amount</legend>
       <span class="amount">₹{{ totalAmount }}/-</span>
-      <!-- <button mat-raised-button color="primary" (click)="addAnotherPatient()">
+      <button mat-raised-button color="primary" (click)="addAnotherPatient()">
        Add Patient Details
-      </button> -->
+      </button>
 
       <button
         mat-raised-button
@@ -311,7 +317,8 @@
       </button>
 
       <button mat-raised-button color="primary" (click)="saveandnext(stepper)"
-        *ngIf="!ispaymentSlotActive">
+        *ngIf="!ispaymentSlotActive"
+        [disabled]="cartItems.length === 0">
         <mat-icon>play_arrow</mat-icon>
         <span class="button-text">Continue</span>
       </button>
@@ -326,7 +333,65 @@
         <mat-icon>info</mat-icon>
         Test Prices may vary according to the Lab Centre. The actual price will
         be shown after Lab centre is selected during checkout.
-      </p>
+      </p> -->
+
+      <mat-card-content>
+        <div class="title">TOTAL CHARGES</div>
+
+        <!-- Offers and Coupons -->
+        <button mat-stroked-button class="coupon-btn">
+          <mat-icon>local_offer</mat-icon> Offers and Coupons
+        </button>
+
+        <!-- Charges Details -->
+        <div class="charges">
+          <div class="row">
+            <span>Total MRP</span>
+            <span class="amount">₹ {{ totalMRP.toFixed(2) }}</span>
+          </div>
+
+          <div class="row discount">
+            <span>Discount on MRP</span>
+            <span class="amount">-₹ {{ discount.toFixed(2) }}</span>
+          </div>
+
+          <div class="row">
+            <span>Home Collection Charges</span>
+            <span>
+              <del class="original-price">₹ {{ originalHomeCollectionCharges.toFixed(2) }}</del>
+              <span class="amount">₹ {{ discountedHomeCollectionCharges.toFixed(2) }}</span>
+            </span>
+          </div>
+
+          <div class="row">
+            <span>Circle Membership <mat-icon class="delete-icon">delete</mat-icon></span>
+            <span class="amount">₹ {{ circleMembership.toFixed(2) }}</span>
+          </div>
+
+          <div class="row total">
+            <span>To Pay</span>
+            <span class="amount">₹ {{ totalToPay.toFixed(2) }}</span>
+          </div>
+        </div>
+
+        <!-- Savings Section -->
+        <mat-card class="savings-card">
+          <div class="saving-row">
+            <mat-icon class="saving-icon">emoji_events</mat-icon>
+            <span>You saved <strong>₹{{ discount }}</strong></span>
+          </div>
+          <div class="saving-row">
+            <mat-icon class="saving-icon">account_circle</mat-icon>
+            <span>Circle Membership Savings</span>
+            <span class="amount">₹ {{ circleSavings.toFixed(2) }}</span>
+          </div>
+          <div class="saving-row">
+            <mat-icon class="saving-icon">shopping_cart</mat-icon>
+            <span>Cart Savings</span>
+            <span class="amount">₹ {{ cartSavings.toFixed(2) }}</span>
+          </div>
+        </mat-card>
+      </mat-card-content>
     </mat-card>
 </div>
 

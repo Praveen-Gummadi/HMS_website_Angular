@@ -89,16 +89,13 @@ export class CartComponent implements OnInit {
   formatCartData(data: any[]): any[] {
     const patients: any[] = [];
 
-    // Group tests under patients dynamically
     data.forEach(test => {
-      // Find if patient already exists
       let patient = patients.find(p => p.id === test.patientID);
 
       if (!patient) {
-        // If patient doesn't exist, create a new one
         patient = {
-          id: test.patientID,  // Assuming `patientID` exists in API data
-          patientName: test.patientName, // Assuming `patientName` exists
+          id: test.patientID,
+          patientName: test.patientName,
           tests: []
         };
         patients.push(patient);
@@ -172,6 +169,7 @@ export class CartComponent implements OnInit {
 
       // Force Angular to detect changes
       this.cartItems = [...this.cartItems];
+      this.labservice.removeItem(testId);
     }
   }
 
@@ -197,7 +195,10 @@ export class CartComponent implements OnInit {
   // Method to handle the "Next" button click
   saveandnext(stepper: MatStepper) {
     // Add any save logic here if needed
+    const currentIndex = stepper.selectedIndex;
     console.log('Navigating to the next step...');
+    console.log(currentIndex);
+    console.log(stepper);
     stepper.next();
   }
 
@@ -342,4 +343,21 @@ export class CartComponent implements OnInit {
       }
     });
   }
+
+
+  ///////////////////////////////////////////////////////
+  /////////////////////////////
+  ///
+  ///
+  //
+
+
+  totalMRP = 133.0;
+  discount = 53.0;
+  originalHomeCollectionCharges = 150.0;
+  discountedHomeCollectionCharges = 75.0;
+  circleMembership = 199.0;
+  totalToPay = 354.0;
+  circleSavings = 20.0;
+  cartSavings = 33.0;
 }

@@ -120,3 +120,14 @@ mat-input-element {
   background-color: #ffffff !important;
 }
 
+::ng-deep .mat-tooltip {
+  background: rgba(152, 80, 80, 0.6) !important; /* Semi-transparent black */
+  border-radius: 4px; /* Makes it slightly rectangular */
+  padding: 5px 10px; /* Adjust padding for horizontal rectangle */
+  text-align: center;
+  max-width: 300px; /* Restrict width */
+  white-space: nowrap; /* Prevents wrapping */
+  font-size: 14px;
+  color: white; /* Text color */
+}
+

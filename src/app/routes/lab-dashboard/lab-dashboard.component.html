@@ -55,17 +55,32 @@
                   <mat-card-title>{{ item.serviceItemName }}</mat-card-title>
                   <p class="">Report in 24-28 Hrs</p>
                   <p><mat-icon>home</mat-icon>Available at: Home</p>
+                  <p class="description" [matTooltip]="item.description" matTooltipPosition="above">
+                    {{ item.description }}
+                  </p>
               </div>
 
               <div class="reightside">
                 <div class="content">
+                  <mat-icon
+                    color="primary"
+                    (click)="addServiceToCard(item.serviceItemID)"
+                    *ngIf="!addedItems.has(item.serviceItemID)">add_circle</mat-icon>
+
+                  <mat-icon
+                    color="warn"
+                    (click)="addServiceToCard(item.serviceItemID)"
+                    *ngIf="addedItems.has(item.serviceItemID)">delete</mat-icon>
                   <p><s>₹{{ item.price }}</s></p>
-                  <p>{{ item.discount }} %OFF</p>
+                  <p>{{ item.discount }}%OFF</p>
                   ₹{{ item.actualprice }}
                 </div>
-                <button class="matbutton" mat-stroked-button color="primary" (click)="addServiceToCard(item.serviceItemID)">
-                  <mat-icon>add_circle</mat-icon>Add
-                </button>
+                <!-- <button class="matbutton" mat-stroked-button color="primary" (click)="addServiceToCard(item.serviceItemID)">
+                  <mat-icon *ngIf="!buttonName">add_circle</mat-icon>
+                  <mat-icon color="warn" *ngIf="buttonName">delete-icon</mat-icon>
+                  {{ !buttonName? 'Add' : 'Remove' }}
+                </button> -->
+
               </div>
 
           </mat-card-content>

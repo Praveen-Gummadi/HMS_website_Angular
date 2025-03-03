@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/app/layout/header/header.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1740033234261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740048248624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Component } from '@angular/core';\r\n+import { Component, NgModule } from '@angular/core';\r\n import { SharedModule } from '../../shared/shared.module';\r\n import { Router, RouterOutlet } from '@angular/router';\r\n import { RouterLink } from '@angular/router';\r\n import { AuthService } from '../../authentication/auth.service';\r\n"
+                }
+            ],
+            "date": 1740033234261,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../shared/shared.module';\r\nimport { Router, RouterOutlet } from '@angular/router';\r\nimport { RouterLink } from '@angular/router';\r\nimport { AuthService } from '../../authentication/auth.service';\r\n\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [SharedModule, RouterOutlet, RouterLink],\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss'\r\n})\r\nexport class HeaderComponent {\r\n\r\n  username: string = '';\r\n  isSignedIn: boolean = false;\r\n\r\n  constructor(private authService: AuthService, private router: Router) {\r\n    // Get the authentication status\r\n    this.isSignedIn = this.authService.isSignedIn();\r\n\r\n    if (this.isSignedIn) {\r\n      this.username = this.authService.getUsername();\r\n    }\r\n  }\r\n\r\n\r\n  logout(): void {\r\n    this.authService.logout();\r\n    if (window.location.pathname === '/dashboard') {\r\n      window.location.reload();\r\n    } else if (window.location.pathname === '/doctors') {\r\n      window.location.reload();\r\n    } else {\r\n      this.router.navigate(['/']);\r\n    }\r\n  }\r\n\r\n  onAccountClick(): void {\r\n    if (!this.isSignedIn) {\r\n      this.router.navigate(['/signin'], { queryParams: { url: this.router.url } });\r\n    }\r\n  }\r\n\r\n}\r\n"
+        }
+    ]
+}

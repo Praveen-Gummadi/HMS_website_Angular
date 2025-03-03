@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app/routes/profile/sidebar/sidebar.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740126901529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740127377641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .sidebar {\r\n-  width: 14%;\r\n+  width: 10%;\r\n   height: 100vh;\r\n   background-color: rgba(244, 237, 237, 0.342);\r\n   color: #595e62;\r\n   position: fixed;\r\n"
+                },
+                {
+                    "date": 1740127398658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .sidebar {\r\n-  width: 10%;\r\n+  width: 12%;\r\n   height: 100vh;\r\n   background-color: rgba(244, 237, 237, 0.342);\r\n   color: #595e62;\r\n   position: fixed;\r\n"
+                }
+            ],
+            "date": 1740126901529,
+            "name": "Commit-0",
+            "content": ".sidebar {\r\n  width: 14%;\r\n  height: 100vh;\r\n  background-color: rgba(244, 237, 237, 0.342);\r\n  color: #595e62;\r\n  position: fixed;\r\n  transition: transform 0.3s ease;\r\n  border-right: 1px solid #dee2e6;\r\n}\r\n\r\n.sidebar.closed {\r\n  transform: translateX(-100%);\r\n}\r\n\r\n.sidebar legend {\r\n  font-size: 1.4em;\r\n  font-weight: bold;\r\n  padding: 15px;\r\n}\r\n\r\n.sidebar a.active-link {\r\n  background-color: lightblue;\r\n  border-radius: 5px;\r\n}\r\n\r\n.sidebar ul {\r\n  list-style-type: none;\r\n  padding: 10px;\r\n}\r\n\r\n// .sidebar ul li {\r\n//   margin: 10px 0;\r\n// }\r\n\r\n.li {\r\n  margin: 5px;\r\n  padding:8px 0px 8px 10px;\r\n  color: #15558d;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n  }\r\n\r\n\r\n.sidebar ul li a {\r\n  color: #595e62;\r\n  text-decoration: none;\r\n  display: block;\r\n  padding: 10px;\r\n}\r\n\r\n.sidebar ul li a:hover {\r\n  background:lightblue;\r\n  border-radius: 5px;\r\n\r\n}\r\n"
+        }
+    ]
+}

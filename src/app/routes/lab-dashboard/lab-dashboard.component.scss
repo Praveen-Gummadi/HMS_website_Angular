@@ -155,6 +155,20 @@ header {
       flex-direction: row;
       justify-content: space-between;
 
+      .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        white-space: normal;
+
+        matTooltip {
+          min-width: 400px;
+        }
+      }
+
       .leftside {
         margin-bottom: 10px;
 
@@ -177,10 +191,17 @@ header {
       }
 
       .reightside {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: right;
+        align-content: right;
+        align-items: right;
+        text-align: right;
+        // justify-content: space-between;
         gap: 10px;
+        min-width: 60px;
+        mat-icon {
+          cursor: pointer;
+          align-self: flex-end;
+        }
       }
 
       .content {
@@ -188,10 +209,7 @@ header {
         flex-direction: column;
       }
 
-      .matbutton {
-        display: flex;
-        align-items: center;
-      }
+
 
     }
   }

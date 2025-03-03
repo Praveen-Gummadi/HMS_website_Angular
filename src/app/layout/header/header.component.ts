@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { Router, RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
@@ -26,6 +26,7 @@ export class HeaderComponent {
     }
   }
 
+
   logout(): void {
     this.authService.logout();
     if (window.location.pathname === '/dashboard') {
@@ -39,7 +40,7 @@ export class HeaderComponent {
 
   onAccountClick(): void {
     if (!this.isSignedIn) {
-      this.router.navigate(['/signin']);
+      this.router.navigate(['/signin'], { queryParams: { url: this.router.url } });
     }
   }
 

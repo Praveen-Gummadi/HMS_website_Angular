@@ -31,28 +31,39 @@ export class OtpSubmitionComponent implements OnInit {
     this.startTimer();
   }
 
-  onSubmitOtp() {
-    this.loginService.verifyOtp(this.mobileNumber, this.otp).subscribe({
-      next: (response: any) => {
-        if (response.isSuccess = 'true' )
-          this.router.navigate(['/dashboard'], { queryParams: { key: response.result.token } });
-          localStorage.setItem('authToken', response.result.token);
-          localStorage.setItem('username', response.result?.user.firstName);
-          localStorage.setItem('usermobile', response.result?.user.mobile);
-          localStorage.setItem('useremail', response.result?.user.email);
+  async onSubmitOtp() {
 
-          const { address, city, state, zip, country } = response.result?.user;
+    try {
+     const result = await this.loginService.verifyOtp(this.mobileNumber, this.otp)
+     console.log('OTP Verified:', result);
 
-          const addressString = `${address}, ${city}, ${state}, ${zip}, ${country}`;
 
-          localStorage.setItem('userAddress', addressString);
-      },
-      error: (error: any) => {
-        this.errorMessage = error.error.errorMessages || 'An error occurred';
-        alert(this.errorMessage);
-        this.otp = '';
-      }
-    });
+    } catch (error) {
+      console.error('OTP verification failed:', error);
+
+    }
+    // this.loginService.verifyOtp(this.mobileNumber, this.otp).subscribe({
+    //   next: (response: any) => {
+    //     if (response.isSuccess = 'true' )
+    //       this.router.navigate(['/dashboard'], { queryParams: { key: response.result.token } });
+    //       localStorage.setItem('authToken', response.result.token);
+    //       localStorage.setItem('username', response.result?.user.firstName);
+    //       localStorage.setItem('usermobile', response.result?.user.mobile);
+    //       localStorage.setItem('useremail', response.result?.user.email);
+
+    //       const { address, city, state, zip, country } = response.result?.user;
+
+    //       const addressString = `${address}, ${city}, ${state}, ${zip}, ${country}`;
+
+    //       localStorage.setItem('userAddress', addressString);
+    //   },
+    //   error: (error: any) => {
+    //     this.errorMessage = error.error.errorMessages || 'An error occurred';
+    //     alert(this.errorMessage);
+    //     this.otp = '';
+    //   }
+    // });
+    console.log('a')
   }
 
 

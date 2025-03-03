@@ -13,10 +13,17 @@ export class LabService {
   cartcount: number = 0;
 
   private cartItems: any[] = [];
+  cartitemids: any = {};
 
   addToCart(item: any) {
-    const newItem = { ...item, cartId: new Date().getTime() };
+    const cartid = new Date().getTime();
+    const newItem = { ...item, cartId: cartid };
     this.cartItems.push(newItem);
+    this.cartitemids[cartid] = true;
+  }
+
+  getcartitemids() {
+    return this.cartitemids;
   }
 
   getCartItems() {
@@ -24,8 +31,13 @@ export class LabService {
     return this.cartItems;
   }
 
-  removeItem(index: number) {
-    this.cartItems.splice(index, 1); // Remove item at given index
+  // removeItem(index: number) {
+  //   this.cartItems.splice(index, 1); // Remove item at given index
+  // }
+
+  removeItem(itemId: number) {
+    this.cartItems = this.cartItems.filter(item => item.serviceItemID !== itemId);
+    delete this.cartitemids[itemId];
   }
 
 
@@ -56,6 +68,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317
@@ -70,6 +83,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317
@@ -84,6 +98,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317
@@ -98,6 +113,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317
@@ -112,6 +128,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317
@@ -126,6 +143,7 @@ export class LabService {
           "serviceId": 13,
           "servicecode": "inv",
           "serviceName": "Investigations",
+          "description": "A blood test is a lab analysis of things that may be found in your blood. You may have blood tests to keep track of how well you are managing a condition, such as diabetes or high cholesterol. You may also have them for routine checkups or when you are ill. Blood tests are very common.",
           "patientTypeID": 1,
           "hospitalID": 387,
           "branchID": 317

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/app/routes/profile/myheader/myheader.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1740118204677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740118404372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <button mat-mini-fab *ngIf=\"isSidebarClosed\" (click)=\"toggleSidebar()\"\r\n+    <button mat-mini-fab *ngIf=\"isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n       style=\"margin-left: 50px; margin-top: 5px;\">\r\n       <mat-icon>menu</mat-icon>\r\n     </button>\r\n     <div class=\"spacer\"></div>\r\n"
+                },
+                {
+                    "date": 1740118485664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <button mat-mini-fab *ngIf=\"isSidebarOpen\" (click)=\"toggleSidebar()\"\r\n+    <button mat-mini-fab (click)=\"toggleSidebar()\"\r\n       style=\"margin-left: 50px; margin-top: 5px;\">\r\n       <mat-icon>menu</mat-icon>\r\n     </button>\r\n     <div class=\"spacer\"></div>\r\n"
+                },
+                {
+                    "date": 1740119066665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,8 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <button mat-mini-fab (click)=\"toggleSidebar()\"\r\n-      style=\"margin-left: 50px; margin-top: 5px;\">\r\n-      <mat-icon>menu</mat-icon>\r\n-    </button>\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                },
+                {
+                    "date": 1740119750456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n+    <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                },
+                {
+                    "date": 1740120961074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <div class=\"sidebar\" [class.closed]=\"!isSidebarOpen\" [ngClass]=\"{ 'collapsed': !isSidebarOpen }\">\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                },
+                {
+                    "date": 1740121254763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n+    <mat-icon style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon>\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                },
+                {
+                    "date": 1740121344921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <mat-icon style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon>\r\n+    <mat-icon (click)=\"toggleSidebar()\" style=\"margin-left: 10px; vertical-align: middle;\">menu</mat-icon>\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                },
+                {
+                    "date": 1740121991826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+<!-- Toolbar -->\r\n+<div class=\"header\">\r\n+  <mat-toolbar color=\"primary\">\r\n+    <div class=\"logo-section\">\r\n+      <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n+        <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n+      </a>\r\n+    </div>\r\n+    <button (click)=\"toggleSidebar()\">☰ Toggle Sidebar</button>\r\n+    <div class=\"spacer\"></div>\r\n+    <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n+      <mat-icon>account_circle</mat-icon>\r\n+      My Account\r\n+    </button>\r\n+\r\n+    <mat-menu #usermenu=\"matMenu\">\r\n+      <button *ngIf=\"isSignedIn\" routerLink=\"/profile/myhome\" mat-menu-item>\r\n+        <mat-icon>account_circle</mat-icon>\r\n+        <span>{{ username }}</span>\r\n+      </button>\r\n+      <button *ngIf=\"isSignedIn\" mat-menu-item (click)=\"logout()\">\r\n+        <mat-icon>exit_to_app</mat-icon>\r\n+        <span>Logout</span>\r\n+      </button>\r\n+    </mat-menu>\r\n+\r\n+  </mat-toolbar>\r\n+</div>\r\n"
+                },
+                {
+                    "date": 1740122805903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n       <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n         <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n       </a>\r\n     </div>\r\n-    <button (click)=\"toggleSidebar()\">☰ Toggle Sidebar</button>\r\n     <div class=\"spacer\"></div>\r\n     <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n       <mat-icon>account_circle</mat-icon>\r\n       My Account\r\n"
+                }
+            ],
+            "date": 1740118204677,
+            "name": "Commit-0",
+            "content": "<!-- Toolbar -->\r\n<div class=\"header\">\r\n  <mat-toolbar color=\"primary\">\r\n    <div class=\"logo-section\">\r\n      <a [routerLink]=\"['/']\" class=\"logo-button\">\r\n        <img src=\"greylogo.png\" alt=\"Logo\" class=\"logo\" />\r\n      </a>\r\n    </div>\r\n    <button mat-mini-fab *ngIf=\"isSidebarClosed\" (click)=\"toggleSidebar()\"\r\n      style=\"margin-left: 50px; margin-top: 5px;\">\r\n      <mat-icon>menu</mat-icon>\r\n    </button>\r\n    <div class=\"spacer\"></div>\r\n    <button mat-flat-button class=\"account-button\" [matMenuTriggerFor]=\"usermenu\" (click)=\"onAccountClick()\">\r\n      <mat-icon>account_circle</mat-icon>\r\n      My Account\r\n    </button>\r\n\r\n    <mat-menu #usermenu=\"matMenu\">\r\n      <button *ngIf=\"isSignedIn\" routerLink=\"/profile/myhome\" mat-menu-item>\r\n        <mat-icon>account_circle</mat-icon>\r\n        <span>{{ username }}</span>\r\n      </button>\r\n      <button *ngIf=\"isSignedIn\" mat-menu-item (click)=\"logout()\">\r\n        <mat-icon>exit_to_app</mat-icon>\r\n        <span>Logout</span>\r\n      </button>\r\n    </mat-menu>\r\n\r\n  </mat-toolbar>\r\n</div>\r\n"
+        }
+    ]
+}

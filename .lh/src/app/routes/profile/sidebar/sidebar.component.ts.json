@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app/routes/profile/sidebar/sidebar.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1740117985599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740119131092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,20 @@\n import { Component } from '@angular/core';\r\n import { SharedModule } from '../../../shared/shared.module';\r\n import { RouterLink, RouterLinkActive } from '@angular/router';\r\n import { MatButtonToggleModule } from '@angular/material/button-toggle';\r\n-import { ProfilelayoutComponent } from '../profilelayout/profilelayout.component';\r\n \r\n-\r\n @Component({\r\n   selector: 'app-sidebar',\r\n   standalone: true,\r\n-  imports: [SharedModule, RouterLink, RouterLinkActive, MatButtonToggleModule, ProfilelayoutComponent],\r\n+  imports: [SharedModule, RouterLink, RouterLinkActive, MatButtonToggleModule],\r\n   templateUrl: './sidebar.component.html',\r\n   styleUrl: './sidebar.component.scss'\r\n })\r\n export class SidebarComponent {\r\n \r\n   isSidebarOpen = true;\r\n \r\n-  constructor(private layout: ProfilelayoutComponent) {\r\n-\r\n-  }\r\n-\r\n   toggleSidebar() {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n-    this.layout.toggleSidebar()\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1740122820345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import { Component } from '@angular/core';\r\n+import { SharedModule } from '../../../shared/shared.module';\r\n+import { RouterLink, RouterLinkActive } from '@angular/router';\r\n+import { MatButtonToggleModule } from '@angular/material/button-toggle';\r\n+import { SharedDataService } from '../../../authentication/shared-data.service';\r\n+\r\n+@Component({\r\n+  selector: 'app-sidebar',\r\n+  standalone: true,\r\n+  imports: [SharedModule, RouterLink, RouterLinkActive, MatButtonToggleModule, ],\r\n+  templateUrl: './sidebar.component.html',\r\n+  styleUrl: './sidebar.component.scss'\r\n+})\r\n+export class SidebarComponent {\r\n+\r\n+  isSidebarOpen = true;\r\n+\r\n+  constructor(private sidebarService: SharedDataService) {\r\n+    this.isSidebarOpen = this.sidebarService.getSidebarState();\r\n+  }\r\n+\r\n+  toggleSidebar() {\r\n+    this.sidebarService.toggleSidebar();\r\n+    this.isSidebarOpen = this.sidebarService.getSidebarState();\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1740117985599,
+            "name": "Commit-0",
+            "content": "import { Component } from '@angular/core';\r\nimport { SharedModule } from '../../../shared/shared.module';\r\nimport { RouterLink, RouterLinkActive } from '@angular/router';\r\nimport { MatButtonToggleModule } from '@angular/material/button-toggle';\r\nimport { ProfilelayoutComponent } from '../profilelayout/profilelayout.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-sidebar',\r\n  standalone: true,\r\n  imports: [SharedModule, RouterLink, RouterLinkActive, MatButtonToggleModule, ProfilelayoutComponent],\r\n  templateUrl: './sidebar.component.html',\r\n  styleUrl: './sidebar.component.scss'\r\n})\r\nexport class SidebarComponent {\r\n\r\n  isSidebarOpen = true;\r\n\r\n  constructor(private layout: ProfilelayoutComponent) {\r\n    \r\n  }\r\n\r\n  toggleSidebar() {\r\n    this.isSidebarOpen = !this.isSidebarOpen;\r\n    this.layout.toggleSidebar()\r\n  }\r\n}\r\n"
+        }
+    ]
+}

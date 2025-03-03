@@ -9,7 +9,6 @@
 .header {
   width: 100%;
   height: 60px;
-  background-color: #007bff;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid #dee2e6;
@@ -30,21 +29,22 @@
   height: calc(100% - 60px);
 }
 
-.sidebar {
-  width: 14%;
-  border-right: 1px solid #dee2e6;
-  // width: 250px;
-  // background-color: #f8f9fa;
-  // border-right: 1px solid #dee2e6;
-  // padding: 16px;
-  // transition: width 0.3s ease;
-}
 
-.sidebar.closed {
-  width: 0;
-  padding: 0;
-  overflow: hidden;
-}
+// .sidebar {
+//   width: 14%;
+//   border-right: 1px solid #dee2e6;
+//   // width: 250px;
+//   // background-color: #f8f9fa;
+//   // border-right: 1px solid #dee2e6;
+//   // padding: 16px;
+//   // transition: width 0.3s ease;
+// }
+
+// .sidebar.closed {
+//   width: 0;
+//   padding: 0;
+//   overflow: hidden;
+// }
 
 .content {
   width: 100%;

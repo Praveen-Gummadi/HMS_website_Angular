@@ -24,7 +24,7 @@ export class LabDashboardComponent {
   loading: boolean = true;
 
   locationDetails = localStorage.getItem('userAddress');
-
+  cartids: any = {};
   constructor(private labService: LabService){}
   ngOnInit(): void {
     const res = this.labService.getlabtestDetails();
@@ -37,15 +37,47 @@ export class LabDashboardComponent {
 
     this.ItemCount = this.labService.cartcount;
 
+    this.cartids = this.labService.getcartitemids();
+    console.log(this.cartids);
+
     // this.MedCheckUpService;
   }
+
+  // buttonName: boolean = false;
+  // addServiceToCard(itemId: number) {
+  //   const selectedItem = this.labtest.find(item => item.serviceItemID === itemId);
+  //   if (selectedItem) {
+  //     const slectid = selectedItem.serviceItemID;
+  //     this.labService.addToCart(selectedItem);
+  //     console.log(selectedItem);
+  //     if (!this.buttonName) {
+  //       this.buttonName = true;
+  //       this.ItemCount++;
+  //     } else {
+  //       this.buttonName = false;
+  //       this.ItemCount--;
+  //     }
+  //   }
+  // }
+
+  addedItems = new Set<number>();
+
 
   addServiceToCard(itemId: number) {
     const selectedItem = this.labtest.find(item => item.serviceItemID === itemId);
     if (selectedItem) {
-      this.ItemCount++;
-      this.labService.addToCart(selectedItem);
-      console.log(selectedItem);
+      if (!this.addedItems.has(itemId)) {
+        // Add to cart
+        this.labService.addToCart(selectedItem);
+        this.addedItems.add(itemId); // Mark as added
+        this.ItemCount++;
+
+      } else {
+        // Remove from cart
+        this.labService.removeItem(itemId); // Assuming you have a remove method
+        this.addedItems.delete(itemId); // Mark as removed
+        this.ItemCount--;
+      }
     }
   }
 

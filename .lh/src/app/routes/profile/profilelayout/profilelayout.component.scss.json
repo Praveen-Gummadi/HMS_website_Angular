@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/app/routes/profile/profilelayout/profilelayout.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1740117601599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740117661821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,19 @@\n   font-size: 24px;\r\n   cursor: pointer;\r\n }\r\n \r\n+// .profile-layout {\r\n+//   width: 100%;\r\n+//   display: flex;\r\n+//   flex: 1;\r\n+//   height: calc(100% - 60px);\r\n+// }\r\n+\r\n .profile-layout {\r\n   width: 100%;\r\n   display: flex;\r\n-  flex: 1;\r\n+  flex-wrap: wrap;\r\n   height: calc(100% - 60px);\r\n }\r\n \r\n // .sidebar {\r\n"
+                },
+                {
+                    "date": 1740117680993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,69 @@\n+/* Main Layout */\r\n+.main-layout {\r\n+  display: flex;\r\n+  flex-direction: column;\r\n+  height: 100%;\r\n+}\r\n+\r\n+\r\n+.header {\r\n+  width: 100%;\r\n+  height: 60px;\r\n+  background-color: #007bff;\r\n+  color: white;\r\n+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n+  border-bottom: 3px solid #dee2e6;\r\n+}\r\n+\r\n+.toggle-button {\r\n+  background: none;\r\n+  border: none;\r\n+  color: white;\r\n+  font-size: 24px;\r\n+  cursor: pointer;\r\n+}\r\n+\r\n+// .profile-layout {\r\n+//   width: 100%;\r\n+//   display: flex;\r\n+//   flex: 1;\r\n+//   height: calc(100% - 60px);\r\n+// }\r\n+\r\n+.profile-layout {\r\n+  width: 100%;\r\n+  display: flex;\r\n+  flex-wrap: wrap;\r\n+  height: calc(100% - 66px);\r\n+}\r\n+\r\n+// .sidebar {\r\n+//   width: 14%;\r\n+//   border-right: 1px solid #dee2e6;\r\n+//   // width: 250px;\r\n+//   // background-color: #f8f9fa;\r\n+//   // border-right: 1px solid #dee2e6;\r\n+//   // padding: 16px;\r\n+//   // transition: width 0.3s ease;\r\n+// }\r\n+\r\n+.sidebar.closed {\r\n+  width: 0;\r\n+  padding: 0;\r\n+  overflow: hidden;\r\n+}\r\n+\r\n+.content {\r\n+  width: 100%;\r\n+  flex: 1;\r\n+  padding: 10px;\r\n+}\r\n+\r\n+.footer {\r\n+  bottom: 0;\r\n+  text-align: center;\r\n+  p {\r\n+    font-size: 10px;\r\n+  }\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1740117689965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n .profile-layout {\r\n   width: 100%;\r\n   display: flex;\r\n   flex-wrap: wrap;\r\n-  height: calc(100% - 66px);\r\n+  height: calc(100% - 65px);\r\n }\r\n \r\n // .sidebar {\r\n //   width: 14%;\r\n"
+                },
+                {
+                    "date": 1740117756091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \r\n .header {\r\n   width: 100%;\r\n   height: 60px;\r\n-  background-color: #007bff;\r\n   color: white;\r\n   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n   border-bottom: 3px solid #dee2e6;\r\n }\r\n"
+                },
+                {
+                    "date": 1740117782669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,17 +35,17 @@\n   flex-wrap: wrap;\r\n   height: calc(100% - 65px);\r\n }\r\n \r\n-// .sidebar {\r\n-//   width: 14%;\r\n-//   border-right: 1px solid #dee2e6;\r\n-//   // width: 250px;\r\n-//   // background-color: #f8f9fa;\r\n-//   // border-right: 1px solid #dee2e6;\r\n-//   // padding: 16px;\r\n-//   // transition: width 0.3s ease;\r\n-// }\r\n+.sidebar {\r\n+  width: 14%;\r\n+  border-right: 1px solid #dee2e6;\r\n+  // width: 250px;\r\n+  // background-color: #f8f9fa;\r\n+  // border-right: 1px solid #dee2e6;\r\n+  // padding: 16px;\r\n+  // transition: width 0.3s ease;\r\n+}\r\n \r\n .sidebar.closed {\r\n   width: 0;\r\n   padding: 0;\r\n"
+                },
+                {
+                    "date": 1740119112776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \r\n .profile-layout {\r\n   width: 100%;\r\n   display: flex;\r\n-  flex-wrap: wrap;\r\n+  flex-direction: row;\r\n   height: calc(100% - 65px);\r\n }\r\n \r\n .sidebar {\r\n@@ -65,73 +65,4 @@\n     font-size: 10px;\r\n   }\r\n }\r\n \r\n-/* Main Layout */\r\n-.main-layout {\r\n-  display: flex;\r\n-  flex-direction: column;\r\n-  height: 100%;\r\n-}\r\n-\r\n-\r\n-.header {\r\n-  width: 100%;\r\n-  height: 60px;\r\n-  background-color: #007bff;\r\n-  color: white;\r\n-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n-  border-bottom: 3px solid #dee2e6;\r\n-}\r\n-\r\n-.toggle-button {\r\n-  background: none;\r\n-  border: none;\r\n-  color: white;\r\n-  font-size: 24px;\r\n-  cursor: pointer;\r\n-}\r\n-\r\n-// .profile-layout {\r\n-//   width: 100%;\r\n-//   display: flex;\r\n-//   flex: 1;\r\n-//   height: calc(100% - 60px);\r\n-// }\r\n-\r\n-.profile-layout {\r\n-  width: 100%;\r\n-  display: flex;\r\n-  flex-wrap: wrap;\r\n-  height: calc(100% - 60px);\r\n-}\r\n-\r\n-// .sidebar {\r\n-//   width: 14%;\r\n-//   border-right: 1px solid #dee2e6;\r\n-//   // width: 250px;\r\n-//   // background-color: #f8f9fa;\r\n-//   // border-right: 1px solid #dee2e6;\r\n-//   // padding: 16px;\r\n-//   // transition: width 0.3s ease;\r\n-// }\r\n-\r\n-.sidebar.closed {\r\n-  width: 0;\r\n-  padding: 0;\r\n-  overflow: hidden;\r\n-}\r\n-\r\n-.content {\r\n-  width: 100%;\r\n-  flex: 1;\r\n-  padding: 10px;\r\n-}\r\n-\r\n-.footer {\r\n-  bottom: 0;\r\n-  text-align: center;\r\n-  p {\r\n-    font-size: 10px;\r\n-  }\r\n-}\r\n-\r\n"
+                },
+                {
+                    "date": 1740122911636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,22 +21,16 @@\n   font-size: 24px;\r\n   cursor: pointer;\r\n }\r\n \r\n-// .profile-layout {\r\n-//   width: 100%;\r\n-//   display: flex;\r\n-//   flex: 1;\r\n-//   height: calc(100% - 60px);\r\n-// }\r\n-\r\n .profile-layout {\r\n   width: 100%;\r\n   display: flex;\r\n-  flex-direction: row;\r\n-  height: calc(100% - 65px);\r\n+  flex: 1;\r\n+  height: calc(100% - 60px);\r\n }\r\n \r\n+\r\n .sidebar {\r\n   width: 14%;\r\n   border-right: 1px solid #dee2e6;\r\n   // width: 250px;\r\n"
+                },
+                {
+                    "date": 1740127331880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,23 +29,23 @@\n   height: calc(100% - 60px);\r\n }\r\n \r\n \r\n-.sidebar {\r\n-  width: 14%;\r\n-  border-right: 1px solid #dee2e6;\r\n-  // width: 250px;\r\n-  // background-color: #f8f9fa;\r\n-  // border-right: 1px solid #dee2e6;\r\n-  // padding: 16px;\r\n-  // transition: width 0.3s ease;\r\n-}\r\n+// .sidebar {\r\n+//   width: 14%;\r\n+//   border-right: 1px solid #dee2e6;\r\n+//   // width: 250px;\r\n+//   // background-color: #f8f9fa;\r\n+//   // border-right: 1px solid #dee2e6;\r\n+//   // padding: 16px;\r\n+//   // transition: width 0.3s ease;\r\n+// }\r\n \r\n-.sidebar.closed {\r\n-  width: 0;\r\n-  padding: 0;\r\n-  overflow: hidden;\r\n-}\r\n+// .sidebar.closed {\r\n+//   width: 0;\r\n+//   padding: 0;\r\n+//   overflow: hidden;\r\n+// }\r\n \r\n .content {\r\n   width: 100%;\r\n   flex: 1;\r\n"
+                }
+            ],
+            "date": 1740117601599,
+            "name": "Commit-0",
+            "content": "/* Main Layout */\r\n.main-layout {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100%;\r\n}\r\n\r\n\r\n.header {\r\n  width: 100%;\r\n  height: 60px;\r\n  background-color: #007bff;\r\n  color: white;\r\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\r\n  border-bottom: 3px solid #dee2e6;\r\n}\r\n\r\n.toggle-button {\r\n  background: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: 24px;\r\n  cursor: pointer;\r\n}\r\n\r\n.profile-layout {\r\n  width: 100%;\r\n  display: flex;\r\n  flex: 1;\r\n  height: calc(100% - 60px);\r\n}\r\n\r\n// .sidebar {\r\n//   width: 14%;\r\n//   border-right: 1px solid #dee2e6;\r\n//   // width: 250px;\r\n//   // background-color: #f8f9fa;\r\n//   // border-right: 1px solid #dee2e6;\r\n//   // padding: 16px;\r\n//   // transition: width 0.3s ease;\r\n// }\r\n\r\n.sidebar.closed {\r\n  width: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\n.content {\r\n  width: 100%;\r\n  flex: 1;\r\n  padding: 10px;\r\n}\r\n\r\n.footer {\r\n  bottom: 0;\r\n  text-align: center;\r\n  p {\r\n    font-size: 10px;\r\n  }\r\n}\r\n\r\n"
+        }
+    ]
+}

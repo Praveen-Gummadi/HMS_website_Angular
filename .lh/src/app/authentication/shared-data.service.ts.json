@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/app/authentication/shared-data.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1740121054683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1740121393645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import { Injectable } from '@angular/core';\r\n+\r\n+@Injectable({\r\n+  providedIn: 'root'\r\n+})\r\n+export class SharedDataService {\r\n+\r\n+  private formData: any;\r\n+\r\n+  setFormData(data: any) {\r\n+    this.formData = data;\r\n+  }\r\n+\r\n+  getFormData() {\r\n+    return this.formData;\r\n+  }\r\n+\r\n+  private isSidebarOpen = false;\r\n+\r\n+  toggleSidebar() {\r\n+    this.isSidebarOpen = !this.isSidebarOpen;\r\n+    console.log(`${this.isSidebarOpen ? 'open' : 'closed'}`);\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1740121621219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,33 +16,10 @@\n   }\r\n \r\n   private isSidebarOpen = false;\r\n \r\n-  toggleSidebar() {\r\n+  toggleSidebar(): boolean {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n     console.log(`${this.isSidebarOpen ? 'open' : 'closed'}`);\r\n+    return this.isSidebarOpen;\r\n   }\r\n }\r\n-import { Injectable } from '@angular/core';\r\n-\r\n-@Injectable({\r\n-  providedIn: 'root'\r\n-})\r\n-export class SharedDataService {\r\n-\r\n-  private formData: any;\r\n-\r\n-  setFormData(data: any) {\r\n-    this.formData = data;\r\n-  }\r\n-\r\n-  getFormData() {\r\n-    return this.formData;\r\n-  }\r\n-\r\n-  private isSidebarOpen = false;\r\n-\r\n-  toggleSidebar() {\r\n-    this.isSidebarOpen = !this.isSidebarOpen;\r\n-    console.log(`Sidebar is now ${this.isSidebarOpen ? 'open' : 'closed'}`);\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1740122283908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,12 @@\n   }\r\n \r\n   private isSidebarOpen = false;\r\n \r\n-  toggleSidebar(): boolean {\r\n+  toggleSidebar() {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n-    console.log(`${this.isSidebarOpen ? 'open' : 'closed'}`);\r\n+  }\r\n+\r\n+  getSidebarState() {\r\n     return this.isSidebarOpen;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1740122428911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   getFormData() {\r\n     return this.formData;\r\n   }\r\n \r\n-  private isSidebarOpen = false;\r\n+  private isSidebarOpen = true;\r\n \r\n   toggleSidebar() {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n   }\r\n"
+                },
+                {
+                    "date": 1740122502420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+import { Injectable } from '@angular/core';\r\n+\r\n+@Injectable({\r\n+  providedIn: 'root'\r\n+})\r\n+export class SharedDataService {\r\n+\r\n+  private formData: any;\r\n+\r\n+  setFormData(data: any) {\r\n+    this.formData = data;\r\n+  }\r\n+\r\n+  getFormData() {\r\n+    return this.formData;\r\n+  }\r\n+\r\n+  private isSidebarOpen = true;\r\n+\r\n+  toggleSidebar() {\r\n+    this.isSidebarOpen = !this.isSidebarOpen;\r\n+    console.log(this.isSidebarOpen);\r\n+  }\r\n+\r\n+  getSidebarState() {\r\n+    return this.isSidebarOpen;\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1740122724961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   getFormData() {\r\n     return this.formData;\r\n   }\r\n \r\n-  private isSidebarOpen = true;\r\n+  isSidebarOpen: boolean = true;\r\n \r\n   toggleSidebar() {\r\n     this.isSidebarOpen = !this.isSidebarOpen;\r\n     console.log(this.isSidebarOpen);\r\n@@ -25,31 +25,4 @@\n   getSidebarState() {\r\n     return this.isSidebarOpen;\r\n   }\r\n }\r\n-import { Injectable } from '@angular/core';\r\n-\r\n-@Injectable({\r\n-  providedIn: 'root'\r\n-})\r\n-export class SharedDataService {\r\n-\r\n-  private formData: any;\r\n-\r\n-  setFormData(data: any) {\r\n-    this.formData = data;\r\n-  }\r\n-\r\n-  getFormData() {\r\n-    return this.formData;\r\n-  }\r\n-\r\n-  private isSidebarOpen = true;\r\n-\r\n-  toggleSidebar() {\r\n-    this.isSidebarOpen = !this.isSidebarOpen;\r\n-  }\r\n-\r\n-  getSidebarState() {\r\n-    return this.isSidebarOpen;\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1740122832275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,16 +13,5 @@\n \r\n   getFormData() {\r\n     return this.formData;\r\n   }\r\n-\r\n-  isSidebarOpen: boolean = true;\r\n-\r\n-  toggleSidebar() {\r\n-    this.isSidebarOpen = !this.isSidebarOpen;\r\n-    console.log(this.isSidebarOpen);\r\n-  }\r\n-\r\n-  getSidebarState() {\r\n-    return this.isSidebarOpen;\r\n-  }\r\n }\r\n"
+                }
+            ],
+            "date": 1740121054683,
+            "name": "Commit-0",
+            "content": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class SharedDataService {\r\n\r\n  private formData: any;\r\n\r\n  setFormData(data: any) {\r\n    this.formData = data;\r\n  }\r\n\r\n  getFormData() {\r\n    return this.formData;\r\n  }\r\n\r\n  private isSidebarOpen = false;\r\n\r\n  toggleSidebar() {\r\n    this.isSidebarOpen = !this.isSidebarOpen;\r\n    console.log(`Sidebar is now ${this.isSidebarOpen ? 'open' : 'closed'}`);\r\n  }\r\n}\r\n"
+        }
+    ]
+}

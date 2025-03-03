@@ -98,6 +98,77 @@ transform: scale(1.09);
   background-color: white;
 }
 
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.coupon-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffefdb;
+  color: #ff9800;
+  margin-bottom: 12px;
+}
+
+.charges {
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.discount {
+  color: green;
+  font-weight: bold;
+}
+
+.original-price {
+  color: gray;
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.savings-card {
+  background: #f4fdf4;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.saving-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.saving-icon {
+  color: #ff9800;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.delete-icon {
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/////close
+
 .cart-card mat-card-content {
   padding: 20px;
 }
@@ -133,26 +204,26 @@ transform: scale(1.09);
   transform: scale(1.2);
 }
 
-/* Summary Section */
-.summary-card .amount {
-  font-size: 24px;
-  font-weight: bold;
-}
+// /* Summary Section */
+// .summary-card .amount {
+//   font-size: 24px;
+//   font-weight: bold;
+// }
 
-.summary-card button {
-  margin-top: 10px;
-}
+// .summary-card button {
+//   margin-top: 10px;
+// }
 
-.summary-card .disclaimer {
-  margin-top: 50px;
-  color: gray;
-  font-size: 12px;
-}
+// .summary-card .disclaimer {
+//   margin-top: 50px;
+//   color: gray;
+//   font-size: 12px;
+// }
 
-.summary-card mat-icon {
-  font-size: 18px;
-  margin-right: 5px;
-}
+// .summary-card mat-icon {
+//   font-size: 18px;
+//   margin-right: 5px;
+// }
 
 .patient-card {
   // margin-bottom: 16px;

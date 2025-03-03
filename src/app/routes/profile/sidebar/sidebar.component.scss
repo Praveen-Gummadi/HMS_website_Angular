@@ -1,5 +1,5 @@
 .sidebar {
-  width: 14%;
+  width: 12%;
   height: 100vh;
   background-color: rgba(244, 237, 237, 0.342);
   color: #595e62;
@@ -50,4 +50,5 @@
 
 .sidebar ul li a:hover {
   background:lightblue;
+  border-radius: 5px;
 }

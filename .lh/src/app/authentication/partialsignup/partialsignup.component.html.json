@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/authentication/partialsignup/partialsignup.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740029408985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740029408985,
+            "name": "Commit-0",
+            "content": "<div class=\"body\">\r\n  <form [formGroup]=\"signupForm\" (ngSubmit)=\"onSignup()\">\r\n    <h6>Signup</h6>\r\n    <div class=\"multi-color-line\"></div>\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Name</mat-label>\r\n      <input matInput formControlName=\"name\" placeholder=\"Enter your name\" />\r\n      <mat-error *ngIf=\"signupForm.get('name')?.hasError('required')\">\r\n        Name is required.\r\n      </mat-error>\r\n      <mat-error *ngIf=\"signupForm.get('name')?.hasError('minlength')\">\r\n        Name must be at least 3 characters.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Email</mat-label>\r\n      <input matInput formControlName=\"email\" placeholder=\"Enter your email\" />\r\n      <mat-error *ngIf=\"signupForm.get('email')?.hasError('required')\">\r\n        Email is required.\r\n      </mat-error>\r\n      <mat-error *ngIf=\"signupForm.get('email')?.hasError('email')\">\r\n        Enter a valid email.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Mobile No</mat-label>\r\n      <input matInput formControlName=\"mobile\" placeholder=\"Enter your mobile number\" />\r\n      <mat-error *ngIf=\"signupForm.get('mobile')?.hasError('required')\">\r\n        Mobile number is required.\r\n      </mat-error>\r\n      <mat-error *ngIf=\"signupForm.get('mobile')?.hasError('pattern')\">\r\n        Enter a valid 10-digit mobile number.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Password</mat-label>\r\n      <input matInput type=\"password\" formControlName=\"password\" placeholder=\"Enter your password\" />\r\n      <mat-error *ngIf=\"signupForm.get('password')?.hasError('required')\">\r\n        Password is required.\r\n      </mat-error>\r\n      <mat-error *ngIf=\"signupForm.get('password')?.hasError('minlength')\">\r\n        Password must be at least 6 characters.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n    <mat-form-field appearance=\"outline\" class=\"full-width\">\r\n      <mat-label>Confirm Password</mat-label>\r\n      <input matInput type=\"password\" formControlName=\"confirmPassword\" placeholder=\"Confirm your password\" />\r\n      <mat-error *ngIf=\"signupForm.get('confirmPassword')?.hasError('required')\">\r\n        Confirm Password is required.\r\n      </mat-error>\r\n      <mat-error *ngIf=\"signupForm.get('confirmPassword')?.hasError('passwordsMismatch')\">\r\n        Passwords do not match.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n    <button mat-flat-button color=\"primary\" class=\"full-width\" [disabled]=\"signupForm.invalid\">\r\n      Signup\r\n    </button>\r\n  </form>\r\n</div>\r\n\r\n"
+        }
+    ]
+}
